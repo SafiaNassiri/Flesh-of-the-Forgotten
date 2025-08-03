@@ -1,11 +1,12 @@
-TextureRect
-Control
+Button
+Label
 VBoxContainer
 Panel
+CanvasLayer
+Control
 Node
+ItemList
+TextureRect
 RichTextLabel
 MarginContainer
-CanvasLayer
-Label
 Node2D
-Button
