@@ -1,0 +1,11 @@
+TextureRect
+Control
+VBoxContainer
+Panel
+Node
+RichTextLabel
+MarginContainer
+CanvasLayer
+Label
+Node2D
+Button
