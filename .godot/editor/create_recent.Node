@@ -1,5 +1,6 @@
-Control
 Label
+TextEdit
+Control
 Button
 RichTextLabel
 VBoxContainer

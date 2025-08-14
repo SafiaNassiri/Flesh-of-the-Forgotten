@@ -118,8 +118,19 @@ func _on_choice_selected(index):
 	if index >= choices.size():
 		return
 	var choice = choices[index]
+
+	# Apply choice effects
 	if choice.has("effects"):
-		DialogueRouter.apply_effects(choice.effects)
+		var effects = choice.effects
+		if effects.has("morality"):
+			PlayerStats.add_morality(effects.morality)
+		if effects.has("bond"):
+			PlayerStats.add_bond(effects.bond)
+		if effects.has("flags"):
+			for key in effects.flags.keys():
+				PlayerStats.set_flag(key, effects.flags[key])
+
+	# Proceed to next node or ending
 	if choice.has("goto"):
 		DialogueRouter.goto_node(choice.goto)
 		_show_current_node()
@@ -127,9 +138,26 @@ func _on_choice_selected(index):
 		var next_key = choice.exit_to
 		if next_key.begins_with("ending:"):
 			var ending_name = next_key.substr(7)
-			show_ending(ending_name)
+			_show_ending_based_on_stats(ending_name)
 		else:
 			_load_scene(next_key)
+
+func _show_ending_based_on_stats(default_ending_key:String):
+	var ending_key = default_ending_key
+	
+	# Example: override ending based on stats
+	if PlayerStats.get_flag("low_bond_path", false):
+		ending_key = "predatory"
+	elif PlayerStats.get_flag("high_bond_path", false) and PlayerStats.bond >= 5:
+		ending_key = "trickster"
+	elif PlayerStats.morality >= 5:
+		ending_key = "benevolent"
+	elif PlayerStats.morality <= -3:
+		ending_key = "tyrant"
+	elif PlayerStats.bond <= 0:
+		ending_key = "mortal"
+
+	show_ending(ending_key)
 
 # In your SceneController.gd
 func show_ending(key: String):

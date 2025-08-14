@@ -13,3 +13,6 @@ res://scenes/MainMenu.gd
 res://scenes/EndGame.tscn
 res://scenes/EndGame.gd
 res://dialogue/endings_info.json
+res://scripts/PlayerStats.gd
+res://scripts/SceneController.gd
+res://scripts/MainMenu.gd

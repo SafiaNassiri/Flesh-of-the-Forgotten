@@ -40,28 +40,24 @@ func _load_unlocked_endings():
 			f.close()
 
 func _populate_endings_list():
-	# Remove previous dynamically created ending buttons (keep TitleLabel, Reset, Return)
+	# Clear all dynamic children
 	for child in endings_vbox.get_children():
-		if not (child.name in ["TitleLabel", "ResetEndings", "Return"]):
-			child.queue_free()
+		child.queue_free()
 
-	# Add title label if not exists
-	if not endings_vbox.has_node("TitleLabel"):
-		var title_label = Label.new()
-		title_label.name = "TitleLabel"
-		title_label.text = "Unlocked Endings"
-		title_label.add_theme_font_size_override("font_size", 24)
-		endings_vbox.add_child(title_label)
-	else:
-		endings_vbox.get_node("TitleLabel").text = "Unlocked Endings"
+	# Add title label
+	var title_label = Label.new()
+	title_label.name = "TitleLabel"
+	title_label.text = "Unlocked Endings"
+	title_label.add_theme_font_size_override("font_size", 50) # Title font size
+	title_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	endings_vbox.add_child(title_label)
 
 	# Load endings info JSON
-	var file = FileAccess.open("res://dialogue/endings_info.json", FileAccess.READ)
 	var data = {}
+	var file = FileAccess.open("res://dialogue/endings_info.json", FileAccess.READ)
 	if file:
-		var text = file.get_as_text()
+		var parsed = JSON.parse_string(file.get_as_text())
 		file.close()
-		var parsed = JSON.parse_string(text)
 		if typeof(parsed) == TYPE_DICTIONARY:
 			data = parsed
 		else:
@@ -69,29 +65,50 @@ func _populate_endings_list():
 	else:
 		print("Failed to open endings_info.json")
 
-	# Create a button for each ending
+	# Add unlocked endings first
 	for key in data.keys():
-		var btn = Button.new()
-		btn.name = "EndingBtn_" + key
-		btn.text = key.capitalize() if key in unlocked_endings else "???"
-		btn.disabled = key not in unlocked_endings
-		btn.connect("pressed", Callable(self, "_on_ending_pressed").bind(key))
-		endings_vbox.add_child(btn)
+		if key in unlocked_endings:
+			var btn = Button.new()
+			btn.name = "EndingBtn_" + key
+			btn.text = key.capitalize()
+			btn.disabled = false
+			btn.add_theme_font_size_override("font_size", 25) # Button font size
+			btn.connect("pressed", Callable(self, "_on_ending_pressed").bind(key))
+			endings_vbox.add_child(btn)
 
-	# Ensure Reset and Return buttons are at the bottom
-	if not endings_vbox.has_node("ResetEndings"):
-		var reset_btn = Button.new()
-		reset_btn.name = "ResetEndings"
-		reset_btn.text = "Reset Player File"
-		reset_btn.connect("pressed", Callable(self, "_on_reset_endings_pressed"))
-		endings_vbox.add_child(reset_btn)
+	# Add locked endings
+	for key in data.keys():
+		if key not in unlocked_endings:
+			var btn = Button.new()
+			btn.name = "EndingBtn_" + key
+			btn.text = "???"
+			btn.disabled = true
+			btn.add_theme_font_size_override("font_size", 25) # Button font size
+			btn.connect("pressed", Callable(self, "_on_ending_pressed").bind(key))
+			endings_vbox.add_child(btn)
 
-	if not endings_vbox.has_node("Return"):
-		var return_btn = Button.new()
-		return_btn.name = "Return"
-		return_btn.text = "Return to Main Menu"
-		return_btn.connect("pressed", Callable(self, "_on_return_pressed"))
-		endings_vbox.add_child(return_btn)
+	# Add a spacer Label
+	var spacer = Label.new()
+	spacer.name = "Spacer"
+	spacer.text = ""
+	spacer.custom_minimum_size = Vector2(0, 20)
+	endings_vbox.add_child(spacer)
+
+	# Add Reset button
+	var reset_btn = Button.new()
+	reset_btn.name = "ResetEndings"
+	reset_btn.text = "Reset Player File"
+	reset_btn.add_theme_font_size_override("font_size", 25) # Button font size
+	reset_btn.connect("pressed", Callable(self, "_on_reset_endings_pressed"))
+	endings_vbox.add_child(reset_btn)
+
+	# Add Return button
+	var return_btn = Button.new()
+	return_btn.name = "Return"
+	return_btn.text = "Return to Main Menu"
+	return_btn.add_theme_font_size_override("font_size", 25) # Button font size
+	return_btn.connect("pressed", Callable(self, "_on_return_pressed"))
+	endings_vbox.add_child(return_btn)
 
 func _on_play_pressed():
 	# Load first game scene

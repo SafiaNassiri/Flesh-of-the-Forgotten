@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 
 DialogueRouter="*res://autoload/DialogueRouter.gd"
 GameState="*res://autoload/GameState.gd"
+PlayerStats="*res://autoload/PlayerStats.gd"
 
 [input]
 
