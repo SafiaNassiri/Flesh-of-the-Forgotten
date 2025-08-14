@@ -1,0 +1,96 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs0guwy62jwoc"]
+
+[ext_resource type="Script" uid="uid://fsui23n35kob" path="res://scripts/MainMenu.gd" id="1_yqorp"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_yqorp")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="MenuVBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -343.0
+offset_top = -299.0
+offset_right = 335.0
+offset_bottom = 301.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/MenuVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Flesh of the Forgotten"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/MenuVBox"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Panel/MenuVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Play"
+
+[node name="Endings" type="Button" parent="Panel/MenuVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Endings"
+
+[node name="Quit" type="Button" parent="Panel/MenuVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+
+[node name="EndingsVBox" type="VBoxContainer" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -343.0
+offset_top = -299.0
+offset_right = 335.0
+offset_bottom = 301.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/EndingsVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Unlocked Endings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/EndingsVBox"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="ResetEndings" type="Button" parent="Panel/EndingsVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Reset Endings"
+
+[node name="Return" type="Button" parent="Panel/EndingsVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Return Main Menu"
+
+[connection signal="pressed" from="Panel/MenuVBox/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Panel/MenuVBox/Endings" to="." method="_on_endings_pressed"]
+[connection signal="pressed" from="Panel/MenuVBox/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/EndingsVBox/ResetEndings" to="." method="_on_reset_endings_pressed"]
+[connection signal="pressed" from="Panel/EndingsVBox/Return" to="." method="_on_return_pressed"]

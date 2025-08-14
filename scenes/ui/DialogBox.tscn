@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkb6j82pg233j"]
+
+[ext_resource type="Script" uid="uid://28agngegbdlj" path="res://scripts/DialogBox.gd" id="1_xrudr"]
+
+[node name="DialogBox" type="CanvasLayer"]
+script = ExtResource("1_xrudr")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -648.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 1125.0
+offset_bottom = 625.0
+
+[node name="DialogueText" type="RichTextLabel" parent="Panel/VBox"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="Choices" type="VBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8

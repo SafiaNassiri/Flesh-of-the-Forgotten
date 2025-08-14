@@ -1,0 +1,131 @@
+[
+  {
+	"id": "start",
+	"speaker": "Narration",
+	"text": "You descend into the Womb-Below. The air thickens, pulsating with the heartbeat of ancient power. Shadows twist into living shapes around you.",
+	"goto": "high_low_fork"
+  },
+  {
+	"id": "high_low_fork",
+	"speaker": "Godling",
+	"text": "Your bond with me will decide the course of divinity. Choose wisely, for the path you take shapes both your power and your soul.",
+	"choices": [
+	  {
+		"text": "High Bond Path: Surrender completely.",
+		"effects": {"flags": {"high_bond_path": true}},
+		"goto": "ascension_chamber"
+	  },
+	  {
+		"text": "High Bond Path: Merge equally.",
+		"effects": {"flags": {"high_bond_path": true, "shared_merge": true}},
+		"goto": "ascension_chamber"
+	  },
+	  {
+		"text": "Low Bond Path: Kill the godling.",
+		"effects": {"flags": {"low_bond_path": true}},
+		"goto": "final_confrontation_entry"
+	  }
+	]
+  },
+  {
+	"id": "ascension_chamber",
+	"speaker": "Narration",
+	"text": "The chamber glows with divine energy. Tendrils of light and shadow reach for you, testing your will. Your choices here will echo through eternity.",
+	"choices": [
+	  {
+		"text": "Fully submit and accept the godling's essence.",
+		"effects": {"bond": 5},
+		"goto": "godling_ascension"
+	  },
+	  {
+		"text": "Attempt a balanced merge, retaining your identity.",
+		"effects": {"bond": 3, "flags": {"shared_merge": true}},
+		"goto": "godling_ascension"
+	  },
+	  {
+		"text": "Hesitate and observe the chamber's energies first.",
+		"effects": {"bond": 1, "morality": 0, "flags": {"hesitant": true}},
+		"goto": "ascension_chamber_trap"
+	  }
+	]
+  },
+  {
+	"id": "ascension_chamber_trap",
+	"speaker": "Narration",
+	"text": "The chamber pulses violently. A surge of divine energy lashes out, threatening your body and mind. You must react quickly.",
+	"choices": [
+	  {
+		"text": "Embrace the surge, risking self-loss.",
+		"effects": {"bond": 4, "morality": 0, "flags": {"surge_taken": true}},
+		"goto": "godling_ascension"
+	  },
+	  {
+		"text": "Resist and try to stabilize yourself.",
+		"effects": {"bond": -1, "morality": 1},
+		"goto": "godling_ascension"
+	  }
+	]
+  },
+  {
+	"id": "godling_ascension",
+	"speaker": "Godling",
+	"text": "The essence flows into you, reshaping flesh, mind, and spirit. Your power is unparalleled, but at what cost?",
+	"choices": [
+	  {
+		"text": "Submissive surrender, let the godling dominate.",
+		"exit_to": "ending:predatory"
+	  },
+	  {
+		"text": "Equal merge, share the power.",
+		"exit_to": "ending:trickster"
+	  }
+	]
+  },
+  {
+	"id": "final_confrontation_entry",
+	"speaker": "Narration",
+	"text": "Rejecting the godling’s influence, you enter the final trial alone. The Womb-Below seethes with predators and lost souls, testing your strength, morality, and cunning.",
+	"goto": "final_confrontation"
+  },
+  {
+	"id": "final_confrontation",
+	"speaker": "Narration",
+	"text": "Predators descend from every shadow. Will you protect the weak, or sacrifice others to survive? Every choice leaves a mark on your destiny.",
+	"choices": [
+	  {
+		"text": "Protect the weak, even at your own peril.",
+		"effects": {"morality": 2, "flags": {"protector": true}},
+		"goto": "final_chamber"
+	  },
+	  {
+		"text": "Sacrifice others to survive, gaining ruthless power.",
+		"effects": {"morality": -2, "flags": {"tyrant": true}},
+		"goto": "final_chamber"
+	  },
+	  {
+		"text": "Manipulate the predators against each other.",
+		"effects": {"morality": 0, "bond": 1, "flags": {"cunning_path": true}},
+		"goto": "final_chamber"
+	  }
+	]
+  },
+  {
+	"id": "final_chamber",
+	"speaker": "Narration",
+	"text": "The heart of the Womb-Below opens. A massive void hums with the potential to end or transcend life itself. Your previous choices converge here.",
+	"choices": [
+	  {
+		"text": "Claim ultimate power and reshape the world.",
+		"exit_to": "ending:tyrant"
+	  },
+	  {
+		"text": "Walk away with humanity intact.",
+		"exit_to": "ending:mortal"
+	  },
+	  {
+		"text": "Merge cunningly with lingering god essence.",
+		"exit_to": "ending:trickster"
+	  }
+	]
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "benevolent": {
+	"title": "Benevolent Ending",
+	"text": "Light returns to the land as the godling’s essence heals the wounds of war. Villages flourish, rivers sparkle, and Kael’s deeds are remembered as a legend of compassion and courage."
+  },
+  "predatory": {
+	"title": "Predatory Ending",
+	"text": "The godling’s hunger consumes everything in its path. Mountains crumble, forests wither, and the skies darken as whispers of fear echo through empty cities. Kael is lost to the shadows."
+  },
+  "mortal": {
+	"title": "Mortal Ending",
+	"text": "Kael strikes true, ending the godling’s reign. Freed from divine influence, he walks the earth as a mortal, bearing the weight of his choices and leaving a legacy that will outlive him."
+  },
+  "tyrant": {
+	"title": "Tyrant Ending",
+	"text": "Empowered by the godling’s soul, Kael rises as a ruler of unmatched strength. His decrees shape nations, his wrath enforces order, and though feared, his dominion lasts through unyielding power."
+  },
+  "trickster": {
+	"title": "Trickster Ending",
+	"text": "Kael and the godling become one, a being of cunning and chaos. Reality bends under their influence, laughter and mischief mingle with terror, and the world becomes an unpredictable stage for their games."
+  }
+}

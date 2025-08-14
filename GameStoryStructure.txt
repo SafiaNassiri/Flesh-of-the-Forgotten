@@ -1,0 +1,119 @@
+ACT STRUCTURE
+
+Act I – Awakening & Bond
+
+Setting: Shrine of Roots → Bone Marsh → Outskirts of Drowned City.
+
+Focus: Introduction of godling, establishing morality/bond.
+
+Danger: Low — more psychological pressure than combat.
+
+Act II – Predators & Temptation
+
+Setting: Hollow Market → Predator Hunts → Forbidden Temples.
+
+Focus: Temptations, god-flesh predators, bigger moral stakes.
+
+Danger: Medium–High — survival and resource scarcity.
+
+Act III – Birth or Death of Divinity
+
+Setting: Womb-Below.
+
+Focus: Choosing what god you will become (or if you remain human).
+
+Danger: Extreme — final test of bond/morality.
+
+· · ─ ·✶· ─ · ·· · ─ ·✶· ─ · ·· · ─ ·✶· ─ · ·· · ─ ·✶· ─ · ·· · ─ ·✶· ─ · ·
+
+FLOWCHART OVERVIEW
+
+ACT I — AWAKENING
+
+[Start: Shrine of Roots]
+↓
+CHOICE 1: Accept godling's deal?
+    (Eager) → Bond +2
+    (Reluctant) → Bond +1
+    (Refuse) → Bond –1 (forced merge)
+↓
+[Time Skip: 300 years later]
+↓
+[Bone Marsh]
+↓
+CHOICE 2: Wounded scavenger
+    (Help) → Morality +1, Bond –1
+    (Kill) → Morality –1, Bond +1
+    (Leave) → Morality –1
+↓
+CHOICE 3: First predator encounter
+    (Use godling’s power openly) → Bond +2, Increases danger later
+    (Fight without godling) → Bond –1, Gain human allies
+↓
+[Reach Outskirts of Drowned City]
+
+----------------------------------
+ACT II — PREDATORS & TEMPTATION
+
+[Enter Hollow Market]
+↓
+CHOICE 4: Deal with god-flesh trader
+    (Trade ally’s safety for info) → Morality –2, Bond +1
+    (Refuse deal) → Morality +1, Bond –1
+    (Kill trader) → Morality –1, Bond +2
+↓
+CHOICE 5: Predator hunt
+    (Bait another human) → Morality –2, Bond +2
+    (Hunt alone) → Bond –1
+    (Run) → Morality +1, Bond –1
+↓
+CHOICE 6: Forbidden Temple vision
+    (Accept deeper merge) → Bond +3, physical mutation
+    (Resist) → Bond –2, possible sanity loss
+↓
+[Path forks: High Bond Path → Low Bond Path]
+
+----------------------------------
+ACT III — WOMB-BELOW
+
+High Bond Path:
+↓
+CHOICE 7A: Godling’s ascension
+    (Surrender completely) → Ending: Godling dominates (Evil/Submissive or Good/Submissive)
+    (Merge equally) → Ending: Shared deity (Neutral/Dominant)
+↓
+Low Bond Path:
+↓
+CHOICE 7B: Kill godling
+    (Merciful release) → Ending: Remain mortal (Good/Dominant)
+    (Consume godling’s essence) → Ending: You ascend alone (Evil/Dominant)
+↓
+CHOICE 8: Final confrontation with predators
+    (Protect the weak) → Pushes Good alignment
+    (Sacrifice others to survive) → Pushes Evil alignment
+↓
+[Final Ascension / Oblivion Scene]
+
+· · ─ ·✶· ─ · ·· · ─ ·✶· ─ · ·· · ─ ·✶· ─ · ·· · ─ ·✶· ─ · ·· · ─ ·✶· ─ · ·
+
+ENDING MATRIX
+
+(based on Morality + Bond axes)
+
+| Bond | Morality | Ending                                                  |
+| ---- | -------- | ------------------------------------------------------- |
+| High | Good     | Benevolent godling reborn, guiding Varn to peace.       |
+| High | Evil     | Predatory godling ascends, devours the last of mankind. |
+| Low  | Good     | Kael kills godling, lives as a mortal legend.           |
+| Low  | Evil     | Kael consumes godling, becomes tyrant god.              |
+| Mid  | Neutral  | Kael & godling merge, chaotic trickster god.            |
+
+· · ─ ·✶· ─ · ·· · ─ ·✶· ─ · ·· · ─ ·✶· ─ · ·· · ─ ·✶· ─ · ·· · ─ ·✶· ─ · ·
+
+NOTES FOR IMPLEMENTATION
+
+Godling Banter: Every choice has an orange-text reaction, even minor ones.
+
+Mutation Tracking: At certain Bond thresholds, Kael’s descriptions change — claws, black veins, distorted voice.
+
+Dynamic Narration: Morality shifts subtly change narrator tone (white text) to be more hopeful or hopeless.

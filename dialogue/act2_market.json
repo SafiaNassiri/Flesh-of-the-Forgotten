@@ -1,0 +1,148 @@
+[
+  {
+	"id": "start",
+	"speaker": "Narration",
+	"text": "Kael enters the Hollow Market. The stench of god-flesh traders fills the air. Shadows move unnaturally, and whispers claw at your mind.",
+	"goto": "godflesh_trader"
+  },
+  {
+	"id": "godflesh_trader",
+	"speaker": "Godling",
+	"text": "A trader offers forbidden knowledge... but at a terrible cost. Will you bargain?",
+	"choices": [
+	  {
+		"text": "Trade ally’s safety for info.",
+		"effects": {"morality": -2, "bond": 1, "flags": {"traded_ally": true}},
+		"goto": "market_escape"
+	  },
+	  {
+		"text": "Refuse the deal.",
+		"effects": {"morality": 1, "bond": -1},
+		"goto": "market_escape"
+	  },
+	  {
+		"text": "Kill the trader.",
+		"effects": {"morality": -1, "bond": 2, "flags": {"trader_killed": true}},
+		"goto": "market_escape"
+	  }
+	]
+  },
+  {
+	"id": "market_escape",
+	"speaker": "Narration",
+	"text": "Chaos erupts as guards and predators swarm the market. Kael must navigate the carnage, deciding whom to save and whom to abandon.",
+	"choices": [
+	  {
+		"text": "Save a group of trapped humans.",
+		"effects": {"morality": 2, "bond": -1, "flags": {"saved_humans": true}},
+		"goto": "predator_hunt"
+	  },
+	  {
+		"text": "Focus solely on your own escape.",
+		"effects": {"morality": -1, "bond": 1},
+		"goto": "predator_hunt"
+	  },
+	  {
+		"text": "Set a trap for the predators.",
+		"effects": {"morality": 0, "bond": 2, "flags": {"predator_trap_set": true}},
+		"goto": "predator_hunt"
+	  }
+	]
+  },
+  {
+	"id": "predator_hunt",
+	"speaker": "Narration",
+	"text": "A pack of predators closes in. Humans scatter — will you use others as bait, fight alone, or manipulate the predators?",
+	"choices": [
+	  {
+		"text": "Bait another human.",
+		"effects": {"morality": -2, "bond": 2},
+		"goto": "hidden_alley"
+	  },
+	  {
+		"text": "Hunt alone.",
+		"effects": {"bond": -1},
+		"goto": "hidden_alley"
+	  },
+	  {
+		"text": "Lead predators into a trap.",
+		"effects": {"morality": 1, "bond": 1, "flags": {"predator_trap_success": true}},
+		"goto": "hidden_alley"
+	  }
+	]
+  },
+  {
+	"id": "hidden_alley",
+	"speaker": "Narration",
+	"text": "Kael slips into a hidden alley, breathing hard. Graffiti marks warn of the temple ahead and those who entered never returned. A shadow seems to watch him.",
+	"choices": [
+	  {
+		"text": "Investigate the shadow.",
+		"effects": {"morality": 1, "bond": 1},
+		"goto": "temple_guardian"
+	  },
+	  {
+		"text": "Ignore it and move on.",
+		"effects": {"morality": -1, "bond": 0},
+		"goto": "forbidden_temple"
+	  }
+	]
+  },
+  {
+	"id": "temple_guardian",
+	"speaker": "Narration",
+	"text": "A spectral guardian emerges, eyes glowing. It tests Kael’s strength and will. Respect earns guidance; aggression brings injury.",
+	"choices": [
+	  {
+		"text": "Respect the guardian.",
+		"effects": {"morality": 2, "bond": 1, "flags": {"guardian_respected": true}},
+		"goto": "forbidden_temple"
+	  },
+	  {
+		"text": "Attack the guardian.",
+		"effects": {"morality": -1, "bond": 2, "flags": {"guardian_slain": true}},
+		"goto": "forbidden_temple"
+	  }
+	]
+  },
+  {
+	"id": "forbidden_temple",
+	"speaker": "Godling",
+	"text": "A vision in the forbidden temple tempts you: deeper merge, greater power, but risk of losing yourself.",
+	"choices": [
+	  {
+		"text": "Accept deeper merge.",
+		"effects": {"bond": 3, "flags": {"mutation_stage1": true}},
+		"goto": "temple_puzzle"
+	  },
+	  {
+		"text": "Resist temptation.",
+		"effects": {"bond": -2, "flags": {"sanity_loss": true}},
+		"goto": "temple_puzzle"
+	  }
+	]
+  },
+  {
+	"id": "temple_puzzle",
+	"speaker": "Narration",
+	"text": "Kael encounters the temple’s inner sanctum: a series of intricate glyphs and traps. He must solve the puzzle to proceed, risking injury or madness.",
+	"choices": [
+	  {
+		"text": "Solve it carefully using knowledge from murals.",
+		"effects": {"morality": 1, "bond": 1},
+		"goto": "fork_path"
+	  },
+	  {
+		"text": "Rush through with brute force.",
+		"effects": {"morality": -1, "bond": 2},
+		"goto": "fork_path"
+	  }
+	]
+  },
+  {
+	"id": "fork_path",
+	"speaker": "Narration",
+	"text": "Paths diverge: your bond with the godling and your past choices determine your next challenge.",
+	"exit_to": "act3_womb_below"
+  }
+]

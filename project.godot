@@ -11,14 +11,13 @@ config_version=5
 [application]
 
 config/name="FleshOfTheForgotten"
-run/main_scene="res://scenes/MainMenu.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+run/main_scene="uid://bs0guwy62jwoc"
+config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
 
-Global="*res://global.gd"
-Player="*res://src/player.gd"
-StoryData="*res://src/StoryData.gd"
+DialogueRouter="*res://autoload/DialogueRouter.gd"
+GameState="*res://autoload/GameState.gd"
 
 [input]
 

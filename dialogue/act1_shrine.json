@@ -1,0 +1,153 @@
+[
+  {
+	"id": "start",
+	"speaker": "Narration",
+	"text": "Kael drags himself through the roots of the decaying shrine. A faint warmth pulses beneath the stone floor, whispering promises of power and danger.",
+	"choices": [
+	  {
+		"text": "Accept the godling's offer eagerly.",
+		"effects": {"bond": 2},
+		"goto": "shrine_chamber"
+	  },
+	  {
+		"text": "Reluctantly agree to the merge.",
+		"effects": {"bond": 1},
+		"goto": "shrine_chamber"
+	  },
+	  {
+		"text": "Refuse the godling's offer.",
+		"effects": {"bond": -1, "flags": {"forced_merge": true}},
+		"goto": "shrine_chamber"
+	  }
+	]
+  },
+  {
+	"id": "shrine_chamber",
+	"speaker": "Narration",
+	"text": "The shrine's inner chamber stretches into darkness. Faded murals show the ancient wars of gods and mortals. The godling's light coils around Kael's hand, tempting him.",
+	"choices": [
+	  {
+		"text": "Focus on the murals and learn from them.",
+		"effects": {"bond": 1, "morality": 0},
+		"goto": "merge_ceremony"
+	  },
+	  {
+		"text": "Ignore the history and feel the godling's power.",
+		"effects": {"bond": 2, "morality": -1},
+		"goto": "merge_ceremony"
+	  }
+	]
+  },
+  {
+	"id": "merge_ceremony",
+	"speaker": "Godling",
+	"text": "The merge is irreversible. Your body, your mind, your essence… intertwined with mine. Are you ready?",
+	"choices": [
+	  {
+		"text": "Proceed without hesitation.",
+		"effects": {"bond": 2},
+		"goto": "time_skip"
+	  },
+	  {
+		"text": "Hesitate, but eventually comply.",
+		"effects": {"bond": 1},
+		"goto": "time_skip"
+	  },
+	  {
+		"text": "Resist with all your might.",
+		"effects": {"bond": -2, "morality": 1, "flags": {"resisted_merge": true}},
+		"goto": "time_skip"
+	  }
+	]
+  },
+  {
+	"id": "time_skip",
+	"speaker": "Narration",
+	"text": "Time stretches and twists; centuries pass in a breath. When Kael awakens, the bone marsh awaits, thick mist curling above stagnant waters.",
+	"goto": "bone_marsh"
+  },
+  {
+	"id": "bone_marsh",
+	"speaker": "Narration",
+	"text": "Black water laps around rotting skeletons. A wounded scavenger cries out, trapped in the muck. Strange shapes move beneath the surface.",
+	"choices": [
+	  {
+		"text": "Help the scavenger.",
+		"effects": {"morality": 1, "bond": -1, "flags": {"helped_scavenger": true}},
+		"goto": "marsh_creature"
+	  },
+	  {
+		"text": "Kill the scavenger.",
+		"effects": {"morality": -1, "bond": 1},
+		"goto": "marsh_creature"
+	  },
+	  {
+		"text": "Leave them be.",
+		"effects": {"morality": -1},
+		"goto": "marsh_creature"
+	  }
+	]
+  },
+  {
+	"id": "marsh_creature",
+	"speaker": "Narration",
+	"text": "Something stirs beneath the murky water. A long, sinuous shape rises, eyes glowing red. Kael feels the godling’s presence urging him to act.",
+	"choices": [
+	  {
+		"text": "Strike first using godling's power.",
+		"effects": {"bond": 2, "flags": {"power_used": true}},
+		"goto": "predator_encounter"
+	  },
+	  {
+		"text": "Try to reason with the creature.",
+		"effects": {"bond": 1, "morality": 2},
+		"goto": "predator_encounter"
+	  },
+	  {
+		"text": "Run and hide in the marsh reeds.",
+		"effects": {"bond": -1, "morality": -1},
+		"goto": "predator_encounter"
+	  }
+	]
+  },
+  {
+	"id": "predator_encounter",
+	"speaker": "Godling",
+	"text": "A predator prowls nearby. Do you dare show my power, or fight with your own strength?",
+	"choices": [
+	  {
+		"text": "Use the godling's power openly.",
+		"effects": {"bond": 2, "flags": {"power_used_again": true}},
+		"goto": "marsh_escape"
+	  },
+	  {
+		"text": "Fight without godling's power.",
+		"effects": {"bond": -1, "flags": {"human_allies_gained": true}},
+		"goto": "marsh_escape"
+	  }
+	]
+  },
+  {
+	"id": "marsh_escape",
+	"speaker": "Narration",
+	"text": "Kael pushes through the fetid waters and reaches higher ground. The drowned city looms ahead, fog wrapping around its broken towers.",
+	"choices": [
+	  {
+		"text": "Scout the ruins cautiously.",
+		"effects": {"morality": 1},
+		"goto": "outskirts"
+	  },
+	  {
+		"text": "Rush in boldly, letting shadows hide you.",
+		"effects": {"bond": 1},
+		"goto": "outskirts"
+	  }
+	]
+  },
+  {
+	"id": "outskirts",
+	"speaker": "Narration",
+	"text": "Kael reaches the outskirts of the drowned city. Shadows shift and the air hums with unseen eyes. Every ruined building whispers secrets of the past.",
+	"exit_to": "act2_market"
+  }
+]
