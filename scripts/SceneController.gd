@@ -13,6 +13,7 @@ var typing := false
 var waiting_for_click := false
 var current_speaker := ""
 var in_ending := false
+var ending_to_load := ""
 var endings_data = {}
 
 func _ready():
@@ -22,14 +23,12 @@ func _ready():
 		var text = file.get_as_text()
 		file.close()
 		
-		# In Godot 4, parse_string returns Dictionary directly
-		var parsed = JSON.parse_string(text)
-		
-		# Check if it's a dictionary
-		if typeof(parsed) == TYPE_DICTIONARY:
+		var parsed = JSON.parse_string(text) # Godot 4 may already give array
+		if typeof(parsed) == TYPE_ARRAY:
 			endings_data = parsed
+			print("Loaded endings:", endings_data)
 		else:
-			print("Failed to parse endings.json: Not a valid dictionary")
+			print("Failed to parse endings.json: Not a valid array")
 	else:
 		print("ERROR: Could not load endings.json")
 	
@@ -39,7 +38,6 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if typing:
-			# Finish typing immediately
 			dialog_ui.show_line(current_speaker, current_node_text)
 			typing = false
 			waiting_for_click = true
@@ -68,7 +66,6 @@ func _show_current_node():
 	typing = true
 	waiting_for_click = false
 
-	# Start typewriter effect
 	dialog_ui.clear_text()
 	set_process(true)
 
@@ -80,11 +77,15 @@ func _process(delta):
 		else:
 			typing = false
 			waiting_for_click = true
-			set_process(false)
+	elif waiting_for_click and ending_to_load != "":
+		if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("mouse_left"):
+			var key = ending_to_load
+			ending_to_load = ""
+			waiting_for_click = false
+			_load_final_ending_scene(key)
 
 func _process_node_end():
 	if in_ending:
-		# Already handled; do nothing or can reset state
 		return
 
 	var node = DialogueRouter.get_current_node()
@@ -119,7 +120,6 @@ func _on_choice_selected(index):
 		return
 	var choice = choices[index]
 
-	# Apply choice effects
 	if choice.has("effects"):
 		var effects = choice.effects
 		if effects.has("morality"):
@@ -130,7 +130,6 @@ func _on_choice_selected(index):
 			for key in effects.flags.keys():
 				PlayerStats.set_flag(key, effects.flags[key])
 
-	# Proceed to next node or ending
 	if choice.has("goto"):
 		DialogueRouter.goto_node(choice.goto)
 		_show_current_node()
@@ -143,35 +142,38 @@ func _on_choice_selected(index):
 			_load_scene(next_key)
 
 func _show_ending_based_on_stats(default_ending_key:String):
-	var ending_key = default_ending_key
+	var ED = load("res://scripts/EndingDeterminer.gd")
+	var ending_key = ED.determine_ending(PlayerStats.morality, PlayerStats.bond, PlayerStats.flags)
 	
-	# Example: override ending based on stats
-	if PlayerStats.get_flag("low_bond_path", false):
-		ending_key = "predatory"
-	elif PlayerStats.get_flag("high_bond_path", false) and PlayerStats.bond >= 5:
-		ending_key = "trickster"
-	elif PlayerStats.morality >= 5:
-		ending_key = "benevolent"
-	elif PlayerStats.morality <= -3:
-		ending_key = "tyrant"
-	elif PlayerStats.bond <= 0:
-		ending_key = "mortal"
-
 	show_ending(ending_key)
 
-# In your SceneController.gd
 func show_ending(key: String):
-	if key in endings_data:
+	var ending_info = null
+	for e in endings_data:
+		if e.get("ending") == key:
+			ending_info = e
+			break
+	
+	if ending_info:
 		_save_unlocked_ending(key)
 		in_ending = true
-
-		# Load EndGame scene instead of showing text in dialog
-		var end_scene = preload("res://scenes/EndGame.tscn").instantiate()
-		end_scene.ending_key = key
-		get_tree().current_scene.queue_free()  # remove current scene
-		get_tree().root.add_child(end_scene)
+		# Only use description, ignore conditions
+		if ending_info.has("description"):
+			_show_ending_description(ending_info["description"], key)
+		else:
+			_load_final_ending_scene(key)
 	else:
 		dialog_ui.show_line("Narration", "Ending not found.")
+
+func _show_ending_description(text: String, next_ending_key: String):
+	current_speaker = "Narration"
+	current_node_text = text
+	typewriter_index = 0
+	typing = true
+	waiting_for_click = false
+	ending_to_load = next_ending_key
+	dialog_ui.clear_text()
+	set_process(true)
 
 func _load_unlocked_endings():
 	unlocked_endings.clear()
@@ -193,3 +195,9 @@ func _save_unlocked_ending(key: String):
 		for e in unlocked_endings:
 			f.store_line(e)
 		f.close()
+
+func _load_final_ending_scene(key: String):
+	var end_scene = preload("res://scenes/EndGame.tscn").instantiate()
+	end_scene.ending_key = key
+	get_tree().current_scene.queue_free()
+	get_tree().root.add_child(end_scene)

@@ -1,7 +1,26 @@
-{
-  "benevolent": "The godling is reborn, its radiant light guiding Varn through centuries of peace and unity. Cities bloom like flowers under its gaze, and Kael’s name is sung in every hall.",
-  "predatory": "A predatory godling ascends, its hunger endless. Shadows coil over the land as it devours the last remnants of mankind, leaving only whispers in the void.",
-  "mortal": "Kael drives his blade through the godling’s heart. Freed from divine chains, he lives and dies as a mortal, his story etched into legend and carried by the wind.",
-  "tyrant": "Kael consumes the godling’s essence, ascending as a god of dominion. His will shapes the land, and though the world bows, it does so in fear, not love.",
-  "trickster": "Kael and the godling merge, their minds entwined into a chaotic deity. Laughter and calamity walk hand in hand, and no mortal can predict the next twist of fate."
-}
+[
+  {
+	"ending": "benevolent",
+	"description": "You chose compassion over conquest. With a steady heart and a guiding hand, you protect rather than rule, leaving a legacy of peace and trust."
+  },
+  {
+	"ending": "predatory",
+	"description": "Your bond became a chain, your kindness a mask. You feed on the connection you’ve forged, drawing strength from dependency until nothing remains but hunger."
+  },
+  {
+	"ending": "mortal",
+	"description": "Power slips through your fingers like sand. You walk away not as a legend, but as a person—free from burden, yet forever changed by what you’ve seen."
+  },
+  {
+	"ending": "tyrant",
+	"description": "You claim the throne with an iron will. Fear becomes your crown, control your currency. Under your rule, loyalty is bought in blood."
+  },
+  {
+	"ending": "trickster",
+	"description": "Neither hero nor villain, you weave chaos into the fabric of fate. Through cunning and misdirection, you turn every alliance into a game you always win."
+  },
+  {
+	"ending": "lost",
+	"description": "You wander without purpose, your deeds forgotten and your potential unrealized. The world moves on around you, and you are left in the shadows of what could have been."
+  }
+]

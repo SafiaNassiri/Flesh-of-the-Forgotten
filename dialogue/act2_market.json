@@ -3,6 +3,7 @@
 	"id": "start",
 	"speaker": "Narration",
 	"text": "Kael enters the Hollow Market. The stench of god-flesh traders fills the air. Shadows move unnaturally, and whispers claw at your mind.",
+	"effects": {},
 	"goto": "godflesh_trader"
   },
   {
@@ -12,17 +13,17 @@
 	"choices": [
 	  {
 		"text": "Trade ally’s safety for info.",
-		"effects": {"morality": -2, "bond": 1, "flags": {"traded_ally": true}},
+		"effects": {"morality": -30, "bond": 20, "flags": {"traded_ally": true}},
 		"goto": "market_escape"
 	  },
 	  {
 		"text": "Refuse the deal.",
-		"effects": {"morality": 1, "bond": -1},
+		"effects": {"morality": 30, "bond": -10},
 		"goto": "market_escape"
 	  },
 	  {
 		"text": "Kill the trader.",
-		"effects": {"morality": -1, "bond": 2, "flags": {"trader_killed": true}},
+		"effects": {"morality": -20, "bond": 25, "flags": {"trader_killed": true}},
 		"goto": "market_escape"
 	  }
 	]
@@ -34,17 +35,17 @@
 	"choices": [
 	  {
 		"text": "Save a group of trapped humans.",
-		"effects": {"morality": 2, "bond": -1, "flags": {"saved_humans": true}},
+		"effects": {"morality": 40, "bond": -15, "flags": {"saved_humans": true}},
 		"goto": "predator_hunt"
 	  },
 	  {
 		"text": "Focus solely on your own escape.",
-		"effects": {"morality": -1, "bond": 1},
+		"effects": {"morality": -20, "bond": 20},
 		"goto": "predator_hunt"
 	  },
 	  {
 		"text": "Set a trap for the predators.",
-		"effects": {"morality": 0, "bond": 2, "flags": {"predator_trap_set": true}},
+		"effects": {"morality": 0, "bond": 40, "flags": {"predator_trap_set": true}},
 		"goto": "predator_hunt"
 	  }
 	]
@@ -56,17 +57,17 @@
 	"choices": [
 	  {
 		"text": "Bait another human.",
-		"effects": {"morality": -2, "bond": 2},
+		"effects": {"morality": -40, "bond": 20},
 		"goto": "hidden_alley"
 	  },
 	  {
 		"text": "Hunt alone.",
-		"effects": {"bond": -1},
+		"effects": {"morality": 0, "bond": -20},
 		"goto": "hidden_alley"
 	  },
 	  {
 		"text": "Lead predators into a trap.",
-		"effects": {"morality": 1, "bond": 1, "flags": {"predator_trap_success": true}},
+		"effects": {"morality": 30, "bond": 20, "flags": {"predator_trap_success": true}},
 		"goto": "hidden_alley"
 	  }
 	]
@@ -78,12 +79,12 @@
 	"choices": [
 	  {
 		"text": "Investigate the shadow.",
-		"effects": {"morality": 1, "bond": 1},
+		"effects": {"morality": 10, "bond": 30},
 		"goto": "temple_guardian"
 	  },
 	  {
 		"text": "Ignore it and move on.",
-		"effects": {"morality": -1, "bond": 0},
+		"effects": {"morality": -10, "bond": 0},
 		"goto": "forbidden_temple"
 	  }
 	]
@@ -95,12 +96,12 @@
 	"choices": [
 	  {
 		"text": "Respect the guardian.",
-		"effects": {"morality": 2, "bond": 1, "flags": {"guardian_respected": true}},
+		"effects": {"morality": 30, "bond": 15, "flags": {"guardian_respected": true}},
 		"goto": "forbidden_temple"
 	  },
 	  {
 		"text": "Attack the guardian.",
-		"effects": {"morality": -1, "bond": 2, "flags": {"guardian_slain": true}},
+		"effects": {"morality": -30, "bond": 30, "flags": {"guardian_slain": true}},
 		"goto": "forbidden_temple"
 	  }
 	]
@@ -112,12 +113,12 @@
 	"choices": [
 	  {
 		"text": "Accept deeper merge.",
-		"effects": {"bond": 3, "flags": {"mutation_stage1": true}},
+		"effects": {"morality": 0, "bond": 30, "flags": {"mutation_stage1": true}},
 		"goto": "temple_puzzle"
 	  },
 	  {
 		"text": "Resist temptation.",
-		"effects": {"bond": -2, "flags": {"sanity_loss": true}},
+		"effects": {"morality": 0, "bond": -20, "flags": {"sanity_loss": true}},
 		"goto": "temple_puzzle"
 	  }
 	]
@@ -129,12 +130,12 @@
 	"choices": [
 	  {
 		"text": "Solve it carefully using knowledge from murals.",
-		"effects": {"morality": 1, "bond": 1},
+		"effects": {"morality": 20, "bond": 15},
 		"goto": "fork_path"
 	  },
 	  {
 		"text": "Rush through with brute force.",
-		"effects": {"morality": -1, "bond": 2},
+		"effects": {"morality": -20, "bond": 30},
 		"goto": "fork_path"
 	  }
 	]
@@ -143,6 +144,7 @@
 	"id": "fork_path",
 	"speaker": "Narration",
 	"text": "Paths diverge: your bond with the godling and your past choices determine your next challenge.",
+	"effects": {},
 	"exit_to": "act3_womb_below"
   }
 ]

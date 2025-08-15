@@ -3,6 +3,7 @@
 	"id": "start",
 	"speaker": "Narration",
 	"text": "You descend into the Womb-Below. The air thickens, pulsating with the heartbeat of ancient power. Shadows twist into living shapes around you.",
+	"effects": {},
 	"goto": "high_low_fork"
   },
   {
@@ -12,17 +13,17 @@
 	"choices": [
 	  {
 		"text": "High Bond Path: Surrender completely.",
-		"effects": {"flags": {"high_bond_path": true}},
+		"effects": {"bond": 30, "morality": 0, "flags": {"high_bond_path": true}},
 		"goto": "ascension_chamber"
 	  },
 	  {
 		"text": "High Bond Path: Merge equally.",
-		"effects": {"flags": {"high_bond_path": true, "shared_merge": true}},
+		"effects": {"bond": 25, "morality": 0, "flags": {"high_bond_path": true, "shared_merge": true}},
 		"goto": "ascension_chamber"
 	  },
 	  {
 		"text": "Low Bond Path: Kill the godling.",
-		"effects": {"flags": {"low_bond_path": true}},
+		"effects": {"bond": -25, "morality": 0, "flags": {"low_bond_path": true}},
 		"goto": "final_confrontation_entry"
 	  }
 	]
@@ -34,17 +35,17 @@
 	"choices": [
 	  {
 		"text": "Fully submit and accept the godling's essence.",
-		"effects": {"bond": 5},
+		"effects": {"bond": 30, "morality": 0},
 		"goto": "godling_ascension"
 	  },
 	  {
 		"text": "Attempt a balanced merge, retaining your identity.",
-		"effects": {"bond": 3, "flags": {"shared_merge": true}},
+		"effects": {"bond": 20, "morality": 0, "flags": {"shared_merge": true}},
 		"goto": "godling_ascension"
 	  },
 	  {
 		"text": "Hesitate and observe the chamber's energies first.",
-		"effects": {"bond": 1, "morality": 0, "flags": {"hesitant": true}},
+		"effects": {"bond": 10, "morality": 0, "flags": {"hesitant": true}},
 		"goto": "ascension_chamber_trap"
 	  }
 	]
@@ -56,12 +57,12 @@
 	"choices": [
 	  {
 		"text": "Embrace the surge, risking self-loss.",
-		"effects": {"bond": 4, "morality": 0, "flags": {"surge_taken": true}},
+		"effects": {"bond": 20, "morality": 0, "flags": {"surge_taken": true}},
 		"goto": "godling_ascension"
 	  },
 	  {
 		"text": "Resist and try to stabilize yourself.",
-		"effects": {"bond": -1, "morality": 1},
+		"effects": {"bond": -10, "morality": 20},
 		"goto": "godling_ascension"
 	  }
 	]
@@ -73,10 +74,12 @@
 	"choices": [
 	  {
 		"text": "Submissive surrender, let the godling dominate.",
+		"effects": {},
 		"exit_to": "ending:predatory"
 	  },
 	  {
 		"text": "Equal merge, share the power.",
+		"effects": {},
 		"exit_to": "ending:trickster"
 	  }
 	]
@@ -85,6 +88,7 @@
 	"id": "final_confrontation_entry",
 	"speaker": "Narration",
 	"text": "Rejecting the godling’s influence, you enter the final trial alone. The Womb-Below seethes with predators and lost souls, testing your strength, morality, and cunning.",
+	"effects": {},
 	"goto": "final_confrontation"
   },
   {
@@ -94,17 +98,17 @@
 	"choices": [
 	  {
 		"text": "Protect the weak, even at your own peril.",
-		"effects": {"morality": 2, "flags": {"protector": true}},
+		"effects": {"morality": 40, "bond": 0, "flags": {"protector": true}},
 		"goto": "final_chamber"
 	  },
 	  {
 		"text": "Sacrifice others to survive, gaining ruthless power.",
-		"effects": {"morality": -2, "flags": {"tyrant": true}},
+		"effects": {"morality": -40, "bond": 0, "flags": {"tyrant": true}},
 		"goto": "final_chamber"
 	  },
 	  {
 		"text": "Manipulate the predators against each other.",
-		"effects": {"morality": 0, "bond": 1, "flags": {"cunning_path": true}},
+		"effects": {"morality": 0, "bond": 25, "flags": {"cunning_path": true}},
 		"goto": "final_chamber"
 	  }
 	]
@@ -116,14 +120,17 @@
 	"choices": [
 	  {
 		"text": "Claim ultimate power and reshape the world.",
+		"effects": {"morality": -20, "bond": 0},
 		"exit_to": "ending:tyrant"
 	  },
 	  {
 		"text": "Walk away with humanity intact.",
+		"effects": {"morality": 40, "bond": -10},
 		"exit_to": "ending:mortal"
 	  },
 	  {
 		"text": "Merge cunningly with lingering god essence.",
+		"effects": {"morality": -10, "bond": 20},
 		"exit_to": "ending:trickster"
 	  }
 	]

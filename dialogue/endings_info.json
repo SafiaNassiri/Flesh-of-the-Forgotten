@@ -18,5 +18,9 @@
   "trickster": {
 	"title": "Trickster Ending",
 	"text": "Kael and the godling become one, a being of cunning and chaos. Reality bends under their influence, laughter and mischief mingle with terror, and the world becomes an unpredictable stage for their games."
+  },
+  "lost": {
+	"title": "Lost Ending",
+	"text": "Kael drifts through the world without direction. Opportunities pass him by, allies fade into memory, and the power he carried slips away. Nothing is won, nothing is remembered, and the story of his life dissolves into quiet obscurity."
   }
 }

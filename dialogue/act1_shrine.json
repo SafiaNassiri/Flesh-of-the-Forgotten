@@ -6,17 +6,17 @@
 	"choices": [
 	  {
 		"text": "Accept the godling's offer eagerly.",
-		"effects": {"bond": 2},
+		"effects": {"morality": 20, "bond": 15},
 		"goto": "shrine_chamber"
 	  },
 	  {
 		"text": "Reluctantly agree to the merge.",
-		"effects": {"bond": 1},
+		"effects": {"morality": 10, "bond": 10},
 		"goto": "shrine_chamber"
 	  },
 	  {
 		"text": "Refuse the godling's offer.",
-		"effects": {"bond": -1, "flags": {"forced_merge": true}},
+		"effects": {"morality": -20, "bond": -10, "flags": {"forced_merge": true}},
 		"goto": "shrine_chamber"
 	  }
 	]
@@ -28,12 +28,12 @@
 	"choices": [
 	  {
 		"text": "Focus on the murals and learn from them.",
-		"effects": {"bond": 1, "morality": 0},
+		"effects": {"morality": 15, "bond": 10},
 		"goto": "merge_ceremony"
 	  },
 	  {
 		"text": "Ignore the history and feel the godling's power.",
-		"effects": {"bond": 2, "morality": -1},
+		"effects": {"morality": -15, "bond": 15},
 		"goto": "merge_ceremony"
 	  }
 	]
@@ -45,17 +45,17 @@
 	"choices": [
 	  {
 		"text": "Proceed without hesitation.",
-		"effects": {"bond": 2},
+		"effects": {"morality": 0, "bond": 20},
 		"goto": "time_skip"
 	  },
 	  {
 		"text": "Hesitate, but eventually comply.",
-		"effects": {"bond": 1},
+		"effects": {"morality": 5, "bond": 15},
 		"goto": "time_skip"
 	  },
 	  {
 		"text": "Resist with all your might.",
-		"effects": {"bond": -2, "morality": 1, "flags": {"resisted_merge": true}},
+		"effects": {"morality": 30, "bond": -15, "flags": {"resisted_merge": true}},
 		"goto": "time_skip"
 	  }
 	]
@@ -64,6 +64,7 @@
 	"id": "time_skip",
 	"speaker": "Narration",
 	"text": "Time stretches and twists; centuries pass in a breath. When Kael awakens, the bone marsh awaits, thick mist curling above stagnant waters.",
+	"effects": {},
 	"goto": "bone_marsh"
   },
   {
@@ -73,17 +74,17 @@
 	"choices": [
 	  {
 		"text": "Help the scavenger.",
-		"effects": {"morality": 1, "bond": -1, "flags": {"helped_scavenger": true}},
+		"effects": {"morality": 30, "bond": 10, "flags": {"helped_scavenger": true}},
 		"goto": "marsh_creature"
 	  },
 	  {
 		"text": "Kill the scavenger.",
-		"effects": {"morality": -1, "bond": 1},
+		"effects": {"morality": -30, "bond": 15},
 		"goto": "marsh_creature"
 	  },
 	  {
 		"text": "Leave them be.",
-		"effects": {"morality": -1},
+		"effects": {"morality": -10, "bond": 0},
 		"goto": "marsh_creature"
 	  }
 	]
@@ -95,17 +96,17 @@
 	"choices": [
 	  {
 		"text": "Strike first using godling's power.",
-		"effects": {"bond": 2, "flags": {"power_used": true}},
+		"effects": {"morality": -10, "bond": 20, "flags": {"power_used": true}},
 		"goto": "predator_encounter"
 	  },
 	  {
 		"text": "Try to reason with the creature.",
-		"effects": {"bond": 1, "morality": 2},
+		"effects": {"morality": 20, "bond": 10},
 		"goto": "predator_encounter"
 	  },
 	  {
 		"text": "Run and hide in the marsh reeds.",
-		"effects": {"bond": -1, "morality": -1},
+		"effects": {"morality": -10, "bond": -5},
 		"goto": "predator_encounter"
 	  }
 	]
@@ -117,12 +118,12 @@
 	"choices": [
 	  {
 		"text": "Use the godling's power openly.",
-		"effects": {"bond": 2, "flags": {"power_used_again": true}},
+		"effects": {"morality": -5, "bond": 20, "flags": {"power_used_again": true}},
 		"goto": "marsh_escape"
 	  },
 	  {
 		"text": "Fight without godling's power.",
-		"effects": {"bond": -1, "flags": {"human_allies_gained": true}},
+		"effects": {"morality": 5, "bond": -5, "flags": {"human_allies_gained": true}},
 		"goto": "marsh_escape"
 	  }
 	]
@@ -134,12 +135,12 @@
 	"choices": [
 	  {
 		"text": "Scout the ruins cautiously.",
-		"effects": {"morality": 1},
+		"effects": {"morality": 10, "bond": 0},
 		"goto": "outskirts"
 	  },
 	  {
 		"text": "Rush in boldly, letting shadows hide you.",
-		"effects": {"bond": 1},
+		"effects": {"morality": 0, "bond": 10},
 		"goto": "outskirts"
 	  }
 	]
@@ -148,6 +149,7 @@
 	"id": "outskirts",
 	"speaker": "Narration",
 	"text": "Kael reaches the outskirts of the drowned city. Shadows shift and the air hums with unseen eyes. Every ruined building whispers secrets of the past.",
+	"effects": {},
 	"exit_to": "act2_market"
   }
 ]
