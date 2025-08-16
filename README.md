@@ -4,7 +4,7 @@ Flesh of the Forgotten is a dark, narrative-driven fantasy game where your choic
 
 ---
 
-#BatJam 2.0 2025
+# BatJam 2.0 2025
 
 This game was developed for the BatJam 2.0 game jam, which ran for two weeks. The game's narrative and core mechanics are a direct response to the jam's theme: Symbiotic Relationship.
 
