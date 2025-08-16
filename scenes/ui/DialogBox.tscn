@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkb6j82pg233j"]
+[gd_scene load_steps=4 format=3 uid="uid://bkb6j82pg233j"]
 
 [ext_resource type="Script" uid="uid://28agngegbdlj" path="res://scripts/DialogBox.gd" id="1_xrudr"]
 [ext_resource type="AudioStream" uid="uid://unnx1awb1jkk" path="res://SFX/707041__vilkas_sound__vs-button-click-04.mp3" id="2_rfax6"]
+[ext_resource type="Texture2D" uid="uid://rpjasd22yche" path="res://Images/Screenshot 2025-08-16 193605.png" id="2_y63tx"]
 
 [node name="DialogBox" type="CanvasLayer"]
 script = ExtResource("1_xrudr")
@@ -17,6 +18,13 @@ offset_top = -648.0
 offset_right = 576.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Background" type="TextureRect" parent="Panel"]
+modulate = Color(1, 1, 1, 0.627451)
+offset_right = 1150.0
+offset_bottom = 644.0
+texture = ExtResource("2_y63tx")
+expand_mode = 2
 
 [node name="VBox" type="VBoxContainer" parent="Panel"]
 layout_mode = 0

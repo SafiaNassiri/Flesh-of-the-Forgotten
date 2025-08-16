@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://besrgxjg0jd4e"]
+[gd_scene load_steps=5 format=3 uid="uid://besrgxjg0jd4e"]
 
 [ext_resource type="Script" uid="uid://bbb07jkd3rqce" path="res://scripts/EndGame.gd" id="1_i47uf"]
 [ext_resource type="AudioStream" uid="uid://unnx1awb1jkk" path="res://SFX/707041__vilkas_sound__vs-button-click-04.mp3" id="2_3w24k"]
+[ext_resource type="Texture2D" uid="uid://rpjasd22yche" path="res://Images/Screenshot 2025-08-16 193605.png" id="2_ho1j5"]
 [ext_resource type="AudioStream" uid="uid://becqb5cs55qlu" path="res://SFX/55831__sergenious__fantasy.wav" id="3_hw18e"]
 
 [node name="EndGame" type="Control"]
@@ -15,6 +16,13 @@ ending_text = ""
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+
+[node name="Background" type="TextureRect" parent="Panel"]
+modulate = Color(1, 1, 1, 0.627451)
+offset_right = 1150.0
+offset_bottom = 644.0
+texture = ExtResource("2_ho1j5")
+expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0

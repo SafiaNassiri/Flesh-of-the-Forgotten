@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs0guwy62jwoc"]
+[gd_scene load_steps=5 format=3 uid="uid://bs0guwy62jwoc"]
 
 [ext_resource type="Script" uid="uid://fsui23n35kob" path="res://scripts/MainMenu.gd" id="1_yqorp"]
 [ext_resource type="AudioStream" uid="uid://dsjq38nqxasev" path="res://SFX/614091__szegvari__dark-atmo-vocal-myst-thriller-fantasy.wav" id="2_0ykhv"]
+[ext_resource type="Texture2D" uid="uid://rpjasd22yche" path="res://Images/Screenshot 2025-08-16 193605.png" id="2_ow34m"]
 [ext_resource type="AudioStream" uid="uid://unnx1awb1jkk" path="res://SFX/707041__vilkas_sound__vs-button-click-04.mp3" id="3_2wh52"]
 
 [node name="MainMenu" type="Node"]
@@ -10,6 +11,13 @@ script = ExtResource("1_yqorp")
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
+
+[node name="Background" type="TextureRect" parent="Panel"]
+modulate = Color(1, 1, 1, 0.627451)
+offset_right = 1150.0
+offset_bottom = 644.0
+texture = ExtResource("2_ow34m")
+expand_mode = 2
 
 [node name="MenuVBox" type="VBoxContainer" parent="Panel"]
 layout_mode = 1

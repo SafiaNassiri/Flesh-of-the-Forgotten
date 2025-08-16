@@ -1,12 +1,4 @@
 res://scenes/MainMenu.tscn
-res://scripts/MainMenu.gd
 res://scenes/ui/DialogBox.tscn
-res://scenes/EndGame.tscn
-res://scripts/DialogBox.gd
-res://scripts/EndGame.gd
 res://scenes/Main.tscn
-res://scripts/SceneController.gd
-res://autoload/GameState.gd
-res://autoload/DialogueRouter.gd
-res://scripts/EndingDeterminer.gd
-res://dialogue/act3_womb_below.json
+res://scenes/EndGame.tscn
