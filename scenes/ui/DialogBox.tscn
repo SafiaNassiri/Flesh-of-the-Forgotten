@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkb6j82pg233j"]
+[gd_scene load_steps=3 format=3 uid="uid://bkb6j82pg233j"]
 
 [ext_resource type="Script" uid="uid://28agngegbdlj" path="res://scripts/DialogBox.gd" id="1_xrudr"]
+[ext_resource type="AudioStream" uid="uid://unnx1awb1jkk" path="res://SFX/707041__vilkas_sound__vs-button-click-04.mp3" id="2_rfax6"]
 
 [node name="DialogBox" type="CanvasLayer"]
 script = ExtResource("1_xrudr")
@@ -25,7 +26,7 @@ offset_right = 1125.0
 offset_bottom = 625.0
 
 [node name="DialogueText" type="RichTextLabel" parent="Panel/VBox"]
-custom_minimum_size = Vector2(0, 500)
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 bbcode_enabled = true
 fit_content = true
@@ -33,3 +34,6 @@ fit_content = true
 [node name="Choices" type="VBoxContainer" parent="Panel/VBox"]
 layout_mode = 2
 theme_override_constants/separation = 8
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_rfax6")

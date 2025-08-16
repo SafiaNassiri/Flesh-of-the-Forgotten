@@ -1,5 +1,3 @@
-# Dialogue Router for Godot 4
-# This script is designed to be an AutoLoad (singleton)
 extends Node
 
 signal game_ended(ending_id: String)
@@ -9,7 +7,6 @@ var script_data := []
 var current_node_id := ""
 var current_scene_key := ""
 
-# Map node IDs to their JSON file
 var scene_file_map := {
 	"start": "act1_shrine",
 	"start_cautious": "act2_market",
@@ -82,12 +79,10 @@ func goto_node(id:String) -> bool:
 		current_node_id = id
 		return true
 	else:
-		# Check if the ID is an "exit_to" transition for the next act
 		if scene_file_map.has(id):
 			GameState.next_node_id = id
 			return true
 		
-		# If it's a new file but not an "exit_to" transition
 		push_error("goto_node failed: node '%s' not found in CURRENTLY LOADED SCRIPT (%s.json)." % [id, current_scene_key])
 		return false
 
@@ -96,7 +91,7 @@ func emit_ending_and_reset(ending_id: String):
 	script_data = []
 	current_node_id = ""
 	current_scene_key = ""
-	GameState.reset_all() # Reset GameState on game end
+	GameState.reset_all()
 
 func get_node_by_id(id:String):
 	for n in script_data:

@@ -9,3 +9,5 @@
 
 [node name="SceneController" type="Node" parent="."]
 script = ExtResource("2_0bbpv")
+
+[node name="AmbientPlayer" type="AudioStreamPlayer2D" parent="."]

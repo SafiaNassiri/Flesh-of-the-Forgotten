@@ -1,50 +1,78 @@
 {
   "ending:godling_negotiated_cautious": {
-	"title": "A Benevolent Guardian",
-	"text": "Your cautious approach allowed you to negotiate. The godling’s power is now a part of you, but not its will. You are a new kind of deity, one that serves as a guardian rather than a conqueror. You have become a benevolent god."
+	"title": "The Benevolent Guardian",
+	"text": "Your cautious nature led to a profound understanding. You absorbed the godling's power without surrendering your identity, a benevolent guardian in a world of chaos. Your rule is one of gentle influence, protecting the weak while guiding the misguided. You are a new kind of deity, one who safeguards rather than dominates."
   },
   "ending:godling_slain_cautious": {
-	"title": "A Mortal Legend",
-	"text": "Your morality allowed you to sever the connection, but at a cost. The godling’s essence is scattered, its power now your own. But you are forever changed, a mortal with a divine scar, and you have become a mortal legend."
+	"title": "The Mortal Saint",
+	"text": "Your moral conviction guided your hand, severing the divine link at a profound personal cost. The godling's power fragmented, leaving you with its echoes as a sacred, indelible scar. You are now a mortal legend, forever touched by the divine but bound to the earthly realm, a beacon of human resolve."
   },
   "ending:godling_slain_bold": {
-	"title": "A Predatory Tyrant",
-	"text": "Your boldness allowed you to defeat the godling. Its power is now a part of you, but so is its predatory will. You are a conqueror, and your new godhood is based on conquest. You have become a predatory tyrant."
+	"title": "The Divine Hero",
+	"text": "Your bold assault overwhelmed the godling, leading to its absolute defeat. You did not consume its power; you broke it. The godling's essence shattered, its echoes forever resonating with your own might. You are now a mortal legend who became a beacon of strength and victory, your story a myth passed down through generations."
   },
   "ending:godling_dominated_bold": {
-	"title": "A Tyrant",
-	"text": "Your boldness allowed you to dominate the godling. It is now a slave to your will, and its power is your own. You have become an unstoppable force, a puppet master of the divine. You have become a tyrant."
+	"title": "The Absolute Emperor",
+	"text": "With unyielding will, you broke the godling's spirit, bending it to your absolute command. Its immense power became a mere extension of your desires. You stand as an unstoppable force, a puppet master of the divine, a god who stands alone at the pinnacle of creation."
   },
   "ending:godling_absorbed_dark": {
 	"title": "The Ultimate Trickster",
-	"text": "Your darkness allowed you to absorb the godling entirely. Its will is your own, and its power is your birthright. You are not a godling, you are the god, and the world is your toy. You have become the ultimate trickster."
+	"text": "Embracing the deepest shadows, you fully absorbed the godling, erasing its very individuality. Its will, its memories, its power – all are now inextricably your own. You are no longer a godling, but The Ultimate Trickster, a cosmic puppeteer for whom reality itself is merely a plaything."
   },
   "ending:godling_obliterated_dark": {
 	"title": "The Lost God",
-	"text": "Your darkness allowed you to obliterate the godling. But in doing so, you have lost all sense of self. Your mind is a vortex of chaotic energy, and you are lost forever in the shadows of what could have been. You have become the lost god."
+	"text": "In a void of pure malevolence, you utterly obliterated the godling, but the act shattered your own essence. Your mind became a swirling vortex of chaotic energy, the self-lost in the abyss. You are now a formless echo trapped forever in the shadow of what could have been."
   },
   "ending:predatory_cautious": {
-	"title": "A Benevolent Predator",
-	"text": "You chose to merge carefully, retaining your identity. You are a new kind of deity, one that serves as a guardian rather than a conqueror. But your caution has a cost, and your power will slowly consume you. You have become a benevolent predator."
+	"title": "The Benevolent Predator",
+	"text": "You chose a careful merger, hoping to temper the godling's predatory essence while retaining your own identity. You are now a deity whose power offers protection, yet whose core remains a primal, consuming force, perpetually battling for control within you."
   },
   "ending:trickster_cautious": {
-	"title": "A Benevolent Trickster",
-	"text": "You chose to merge carefully, retaining your identity. You are a new kind of deity, one that serves as a guardian rather than a conqueror. But your caution has a cost, and your power will slowly consume you. You have become a benevolent trickster."
+	"title": "The Benevolent Trickster",
+	"text": "Your cunning led to a measured fusion with the godling's mischievous spirit. You retained your identity, but its playful power now flows through you, untamed and unpredictable. You are a guardian who weaves fate with subtle, often perplexing, artistry."
   },
   "ending:predatory_bold": {
-	"title": "A Predatory God",
-	"text": "You chose to merge boldly, retaining your identity. You are a new kind of deity, one that serves as a conqueror rather than a guardian. But your boldness has a cost, and your power will slowly consume you. You have become a predatory god."
+	"title": "The Predatory God",
+	"text": "You merged boldly, fully embracing the godling's predatory nature, allowing it to define your new divine form. You are an unapologetic conqueror whose will is absolute. The world bends to your ambition, and your power surges, boundless and unyielding."
   },
   "ending:trickster_bold": {
-	"title": "A Trickster God",
-	"text": "You chose to merge boldly, retaining your identity. You are a new kind of deity, one that serves as a conqueror rather than a guardian. But your boldness has a cost, and your power will slowly consume you. You have become a trickster god."
+	"title": "The Trickster God",
+	"text": "A daring spirit guided your fusion with the godling's whimsical essence. You are now a cosmic prankster whose every whim can reshape reality. Your power is a boundless wellspring of delightful chaos, and the cosmos is your grand stage for unending mischief."
   },
   "ending:predatory_dark": {
 	"title": "The Ultimate Predator",
-	"text": "Your darkness allowed you to merge with the godling entirely. Its will is your own, and its power is your birthright. You are not a godling, you are the god, and the world is your toy. You have become the ultimate predator."
+	"text": "Your descent into darkness culminated in a complete absorption of the godling, forging a being of pure, unadulterated malice. Its predatory instincts are now your own, amplified by your twisted will. You are a god who feeds on the very essence of fear and despair, an inescapable cosmic horror."
   },
   "ending:trickster_dark": {
-	"title": "The Ultimate Trickster",
-	"text": "Your darkness allowed you to merge with the godling entirely. Its will is your own, and its power is your birthright. You are not a godling, you are the god, and the world is your toy. You have become the ultimate trickster."
+	"title": "The Malevolent Trickster",
+	"text": "In the cold embrace of the void, you merged entirely with the godling, twisting its playful nature into something sinister. Its will became your own, its power now a tool for malevolent delight. You are a god of nightmares, whose cruel games haunt the very fabric of existence."
+  },
+  "ending:premature_end": {
+	"title": "A Forgotten Whisper",
+	"text": "Your defiance was absolute, a final, futile act against an ancient power. The life force you desperately clung to simply gave out. The shrine offers no mercy, only silent indifference as your journey ends here, before it truly began. You are nothing but a forgotten whisper in the dust."
+  },
+  "ending:cautious_betrayal": {
+	"title": "A Fool's Bargain",
+	"text": "You made a trade, a simple act of desperation, but the godling's connection was a sacred thing, not a weapon to be used so lightly. A sacred bond was broken. Its life force, the very thing that kept you alive, vanished in an instant, leaving you to die. Your memory lingers as a whisper of a forgotten saint, a cautionary tale of a soul who traded a greater purpose for a few more desperate breaths."
+  },
+  "ending:bold_miscalculation": {
+	"title": "A Monument to Hubris",
+	"text": "You believed you could simply take what you needed, but you did not understand the true nature of what you sought. The trader’s demise was a trap, a failsafe that released a surge of chaotic power. It tore your shared essence apart, consuming both you and the godling in a flash of blinding light, leaving behind only dust and a silent monument to your hubris."
+  },
+  "ending:dark_corruption": {
+	"title": "The Poisoned God",
+	"text": "You consumed the trader, believing their essence would grant you more power. But their very being was a twisted, poisoned well. The godling within you screamed as its core was corrupted, and the power that was once salvation became a caustic acid in your veins. Your mind unravels, your body contorts, and you become a dying, monstrous testament to a power you could not control."
+  },
+  "ending:cautious_mutual_destruction": {
+	"title": "A Lonely End",
+	"text": "You chose to fight the very thing that made you strong. Your cautious defiance was your undoing. The godling’s power, the very life you borrowed, turned upon itself. The force that had held you together now tears you apart. Your body and soul fragment into a fine dust, your final thought a silent scream. You have died alone, in the darkness of **The Ossuary of the Gods**, having chosen death over a new kind of life."
+  },
+  "ending:bold_mutual_destruction": {
+	"title": "An Arrogant Fall",
+	"text": "You challenged the godling, believing your audacity would win the day. But you were fighting a part of yourself, a war you could not possibly win. Your power surges, meets the godling's head-on, and the two forces annihilate each other in a cataclysmic blast. The walls of **The Ossuary of the Gods** crumble around you as you are atomized, a monument to your hubris. You wanted a glorious end, and you got a final, pointless battle."
+  },
+  "ending:dark_mutual_destruction": {
+	"title": "The Ultimate Madness",
+	"text": "The dark merge has consumed you, and your final act is a battle against your own corruption. You strike at the godling, but it is a reflection of yourself, a battle against your own soul. The overwhelming power you unleash consumes everything, and you feel your mind unraveling, turning to madness. The godling laughs, a shared, final echo in your mind, as the two of you merge in a chaotic, final destruction. There is no victory here, only an end to a journey that was doomed from the start."
   }
 }

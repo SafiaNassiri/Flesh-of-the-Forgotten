@@ -1,5 +1,8 @@
 extends Node
 
+@onready var ambient_music_player := $AmbientMusicPlayer
+@onready var button_sound_player := $ButtonSoundPlayer
+
 @onready var menu_vbox := $Panel/MenuVBox
 @onready var endings_vbox := $Panel/EndingsVBox
 @onready var ending_buttons_vbox := $Panel/EndingsVBox/EndingsScroll/CenterContainer/EndingButtonsVBox
@@ -12,6 +15,7 @@ var unlocked_endings := []
 var endings_info = {}
 
 func _ready():
+	ambient_music_player.play()
 	endings_vbox.visible = false
 	
 	_load_endings_info()
@@ -48,14 +52,6 @@ func _load_unlocked_endings():
 func _populate_endings_list():
 	print("MainMenu: _populate_endings_list called.")
 	
-	# The CenterContainer now handles the centering automatically,
-	# so these lines are no longer necessary.
-	# ending_buttons_vbox.set_alignment(BoxContainer.ALIGNMENT_CENTER)
-	# var flags = ending_buttons_vbox.size_flags_vertical
-	# flags = flags & ~Control.SIZE_EXPAND
-	# flags = flags | Control.SIZE_SHRINK_CENTER
-	# ending_buttons_vbox.size_flags_vertical = flags
-	
 	for child in ending_buttons_vbox.get_children():
 		child.queue_free()
 	
@@ -64,9 +60,6 @@ func _populate_endings_list():
 	for key in endings_info.keys():
 		var btn = Button.new()
 		btn.name = "EndingBtn_" + key
-		
-		# Set the button's horizontal size flags to Shrink Center.
-		# This is still a good practice to prevent the button from expanding to fill the VBoxContainer.
 		btn.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 		
 		var is_unlocked = key in unlocked_endings
@@ -89,19 +82,25 @@ func _populate_endings_list():
 	print("MainMenu: Children in ending_buttons_vbox: ", ending_buttons_vbox.get_children().size())
 
 func _on_play_pressed():
+	_play_button_sound()
+	var timer = get_tree().create_timer(0.31)
+	await timer.timeout
 	GameState.reset_all()
 	get_tree().change_scene_to_file("res://scenes/Main.tscn")
 
 func _on_endings_pressed():
+	_play_button_sound()
 	print("MainMenu: 'Endings' button pressed. Showing endings_vbox.")
 	menu_vbox.visible = false
 	endings_vbox.visible = true
 	_populate_endings_list()
 
 func _on_quit_pressed():
+	_play_button_sound()
 	get_tree().quit()
 
 func _on_reset_button_pressed() -> void:
+	_play_button_sound()
 	var f = FileAccess.open(unlocked_endings_file, FileAccess.WRITE)
 	if f:
 		f.store_string("")
@@ -110,15 +109,81 @@ func _on_reset_button_pressed() -> void:
 	_populate_endings_list()
 
 func _on_return_button_pressed() -> void:
+	_play_button_sound()
 	endings_vbox.visible = false
 	menu_vbox.visible = true
 
 func _on_ending_pressed(key: String):
+	_play_button_sound()
 	if key in unlocked_endings and endings_info.has(key):
-		var dialog = AcceptDialog.new()
 		var ending_info = endings_info[key]
-		dialog.dialog_text = "%s\n\n%s" % [ending_info["title"], ending_info["text"]]
-		add_child(dialog)
-		dialog.popup_centered()
+
+		var popup_panel = Panel.new()
+		popup_panel.name = "EndingPopup"
+		popup_panel.set_size(Vector2(600, 400))
+		
+		var viewport_size = get_viewport().get_visible_rect().size
+		popup_panel.position = (viewport_size - popup_panel.size) / 2
+		
+		var background = ColorRect.new()
+		background.color = Color(0, 0, 0, 0.75)
+		background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		popup_panel.add_child(background)
+		
+		var margin_container = MarginContainer.new()
+		margin_container.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		margin_container.add_theme_constant_override("margin_left", 20)
+		margin_container.add_theme_constant_override("margin_top", 20)
+		margin_container.add_theme_constant_override("margin_right", 20)
+		margin_container.add_theme_constant_override("margin_bottom", 20)
+		popup_panel.add_child(margin_container)
+		
+		var content_vbox = VBoxContainer.new()
+		content_vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		content_vbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		margin_container.add_child(content_vbox)
+
+		var title_label = Label.new()
+		title_label.text = ending_info["title"]
+		title_label.add_theme_font_size_override("font_size", 30)
+		title_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		content_vbox.add_child(title_label)
+
+		var separator = Control.new()
+		separator.custom_minimum_size = Vector2(0, 20)
+		content_vbox.add_child(separator)
+
+		var info_label = RichTextLabel.new()
+		info_label.bbcode_enabled = true
+		info_label.autowrap_mode = TextServer.AUTOWRAP_WORD
+		info_label.bbcode_text = "[center]%s[/center]" % ending_info["text"]
+		info_label.add_theme_font_size_override("normal_font_size", 25)
+		info_label.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		content_vbox.add_child(info_label)
+		
+		var close_btn = Button.new()
+		close_btn.text = "Close"
+		close_btn.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+		close_btn.custom_minimum_size = Vector2(150, 40)
+		close_btn.add_theme_font_size_override("font_size", 25)
+		
+		var normal_stylebox = StyleBoxFlat.new()
+		normal_stylebox.bg_color = Color.BLACK
+		normal_stylebox.set_corner_radius_all(8)
+		
+		var hover_stylebox = StyleBoxFlat.new()
+		hover_stylebox.bg_color = Color.GRAY
+		hover_stylebox.set_corner_radius_all(8)
+
+		close_btn.add_theme_stylebox_override("normal", normal_stylebox)
+		close_btn.add_theme_stylebox_override("hover", hover_stylebox)
+		close_btn.connect("pressed", Callable(popup_panel, "queue_free"))
+		content_vbox.add_child(close_btn)
+		
+		add_child(popup_panel)
 	else:
 		print("Ending info not found for key: ", key)
+
+func _play_button_sound():
+	if button_sound_player:
+		button_sound_player.play()

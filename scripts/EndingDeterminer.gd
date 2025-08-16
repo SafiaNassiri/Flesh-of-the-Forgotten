@@ -1,13 +1,9 @@
-# EndingDeterminer.gd
 extends Node
 
 static func determine_ending(flags: Dictionary) -> String:
-	# This function returns the simplified key for endings.json based on flags.
-	# The order of these checks matters; more specific or "final" endings should be checked first.
 
 	# --- Low-Bond Paths (Final Confrontation) ---
 	# These are the direct results of defying the godling.
-
 	if flags.has("assimilated_godling"):
 		return "ending:godling_absorbed_dark"
 
@@ -28,7 +24,6 @@ static func determine_ending(flags: Dictionary) -> String:
 
 	# --- High-Bond Paths (Final Merge) ---
 	# These are the results of submitting to the godling's influence.
-	
 	if flags.has("final_submissive_dark"):
 		return "ending:predatory_dark"
 
@@ -48,6 +43,5 @@ static func determine_ending(flags: Dictionary) -> String:
 		return "ending:trickster_cautious"
 
 	# --- Fallback (Lowest Priority) ---
-	# If no specific ending conditions are met, default to a 'lost' ending.
-	# This can be a useful debugging tool.
+	# If no specific ending conditions are met, default to a 'lost' ending.	
 	return "ending:godling_obliterated_dark"

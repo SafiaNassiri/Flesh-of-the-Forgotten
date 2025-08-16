@@ -2,7 +2,7 @@
   {
 	"id": "cautious_start",
 	"speaker": "Narration",
-	"text": "[color=white]You descend into the Womb-Below, a place of ancient, living stone. The air thickens with a raw, primal energy, pulsating with the heartbeat of the land. Shadows twist and twitch, testing your patience. You move carefully, listening to every groan of the earth, every shifting stone. There are dangers here, and you are not in a hurry to find them.[/color]",
+	"text": "[color=white]You descend into the **Ossuary of the Gods**, a place of ancient, living stone. The air thickens with a raw, primal energy, pulsating with the heartbeat of the land. Shadows twist and twitch, testing your patience. You move carefully, listening to every groan of the earth, every shifting stone. The godling within you is a quiet, watchful companion, its strength a shield that keeps you from being overwhelmed. It has guided you this far, and its voice is a soothing echo in your mind: [/color][color=#ffbf00]\"We are close, Kael. Do not rush. This place is not a battlefield. It is a memory of what was, and a test of what will be.\"[/color]\n[color=white]A voice from the shadows, faint but clear, speaks to you. It is a mortal, one of the few who has survived this far. [/color][color=#00cc00]\"Beware, traveler. This place will take you. Do not let its whispers fill you with greed. Turn back before it is too late. There are others here... lost, forgotten. This place is their tomb.\"[/color]",
 	"choices": [
 	  {
 		"text": "Continue",
@@ -14,7 +14,7 @@
   {
 	"id": "bold_start",
 	"speaker": "Narration",
-	"text": "[color=white]You storm into the Womb-Below, your footsteps echoing with authority. The air vibrates with power and whispers, shadows recoiling and shivering at your presence. This is a place of raw power, and you feel the godling within you hum with anticipation. This is a final test of strength, and you are ready for the challenge.[/color]",
+	"text": "[color=white]You storm into the **Ossuary of the Gods**, your footsteps echoing with authority. The air vibrates with power and whispers, shadows recoiling and shivering at your presence. This is a place of raw power, and you feel the godling within you hum with anticipation. Its voice is a thrill in your mind, a shared eagerness: [/color][color=#ffbf00]\"This is the end of the line, Kael. This place is a storm, and we are the lightning. This is the final test of strength, and we are ready for the challenge. The gods of this world are weak, Kael. They have grown complacent. We will show them what true power is.\"[/color]",
 	"choices": [
 	  {
 		"text": "Continue",
@@ -26,7 +26,7 @@
   {
 	"id": "dark_start",
 	"speaker": "Narration",
-	"text": "[color=white]The Womb-Below welcomes you like a predator greeting its equal. Your merge with the godling pulses through the corridors, a malevolent energy that warps the very shadows into your will. You do not just enter this place; you are becoming it. There are no obstacles here, only extensions of your own burgeoning power.[/color]",
+	"text": "[color=white]The **Ossuary of the Gods** welcomes you like a predator greeting its equal. Your binding with the godling pulses through the corridors, a malevolent energy that warps the very shadows into your will. You do not just enter this place; you are becoming it. There are no obstacles here, only extensions of your own burgeoning power. The godling’s voice is a chilling, shared thought: [/color][color=#ffbf00]\"The time for petty choices is over. We have come home. This is where we claim what is ours. The gods who came before us have failed. They have squandered their power, and we will not make the same mistake.\"[/color]\n[color=white]A voice from the shadows, filled with pain and madness, whispers to you. [/color][color=#ff0000]\"It will consume you, just as it consumed me. This power is a cage. You will not escape... You will not escape... There's nothing left but the hunger!\"[/color]",
 	"choices": [
 	  {
 		"text": "Continue",
@@ -38,21 +38,36 @@
   {
 	"id": "high_low_fork_cautious",
 	"speaker": "Godling",
-	"text": "[color=goldenrod]\"This is the end of the line. Your caution has tempered our bond, for better or worse. You stand on the precipice of my final essence. Choose carefully: surrender what remains of yourself, attempt to strike a final balance, or defy me and attempt to sever our bond. Each path shapes your soul differently, and there is no coming back from this.\"[/color]",
+	"text": "[color=#ffbf00]\"This is the end of the line. Your caution has tempered our bond, for better or worse. We have become a new thing, Kael. You stand on the precipice of my final essence. We can **Transcend** completely and become an ascending deity. We can attempt to strike a final balance, sharing power. Or, you can defy me and attempt to sever our bond entirely. Choose carefully, for each path shapes our shared soul, and there is no coming back from this.\"[/color]",
 	"choices": [
 	  {
-		"text": "High Bond: Tentatively surrender.",
-		"effects": {"flags": {"high_bond_path": true, "chosen_tentative_surrender": true}},
+		"text": "Surrender to the Transcendence.",
+		"effects": {
+		  "flags": {
+			"high_bond_path": true,
+			"chosen_tentative_surrender": true
+		  }
+		},
 		"goto": "ascension_chamber_cautious"
 	  },
 	  {
-		"text": "High Bond: Merge carefully, sharing power.",
-		"effects": {"flags": {"high_bond_path": true, "chosen_careful_merge": true}},
+		"text": "Forge a balanced Union, sharing power.",
+		"effects": {
+		  "flags": {
+			"high_bond_path": true,
+			"chosen_careful_merge": true
+		  }
+		},
 		"goto": "ascension_chamber_cautious"
 	  },
 	  {
-		"text": "Low Bond: Attempt to kill the godling.",
-		"effects": {"flags": {"low_bond_path": true, "chosen_kill_godling": true}},
+		"text": "Attempt to kill the godling.",
+		"effects": {
+		  "flags": {
+			"low_bond_path": true,
+			"chosen_kill_godling": true
+		  }
+		},
 		"goto": "final_confrontation_entry_cautious"
 	  }
 	]
@@ -60,21 +75,36 @@
   {
 	"id": "high_low_fork_bold",
 	"speaker": "Godling",
-	"text": "[color=goldenrod]\"Boldness fuels you. You have stood against the gods, and now you stand before me, whole and ready. Will you fully surrender, share the merge, or strike against me? Your confidence demands a choice, and mine demands a final answer.\"[/color]",
+	"text": "[color=#ffbf00]\"Boldness fuels you. You have stood against the gods, and now you stand before me, whole and ready. The gods of this world fear us, Kael. They fear a new power that will not be tamed. Will you fully surrender, share the **Ascension**, or strike against me? Your confidence demands a choice, and mine demands a final answer. We will either become one, or we will become nothing. The end is now.\"[/color]",
 	"choices": [
 	  {
-		"text": "High Bond: Submit fully.",
-		"effects": {"flags": {"high_bond_path": true, "chosen_full_submission": true}},
+		"text": "Submit fully.",
+		"effects": {
+		  "flags": {
+			"high_bond_path": true,
+			"chosen_full_submission": true
+		  }
+		},
 		"goto": "ascension_chamber_bold"
 	  },
 	  {
-		"text": "High Bond: Merge equally.",
-		"effects": {"flags": {"high_bond_path": true, "chosen_equal_merge": true}},
+		"text": "Converge equally.",
+		"effects": {
+		  "flags": {
+			"high_bond_path": true,
+			"chosen_equal_merge": true
+		  }
+		},
 		"goto": "ascension_chamber_bold"
 	  },
 	  {
-		"text": "Low Bond: Reject or kill.",
-		"effects": {"flags": {"low_bond_path": true, "chosen_reject_kill": true}},
+		"text": "Reject or kill.",
+		"effects": {
+		  "flags": {
+			"low_bond_path": true,
+			"chosen_reject_kill": true
+		  }
+		},
 		"goto": "final_confrontation_entry_bold"
 	  }
 	]
@@ -82,21 +112,36 @@
   {
 	"id": "high_low_fork_dark",
 	"speaker": "Godling",
-	"text": "[color=goldenrod]\"Your merge runs deep, my vessel. The Womb-Below responds to your darkness as if it were its own. The final test awaits. Will you fully surrender, become one, or defy me entirely, and attempt to seize all power for yourself?\"[/color]",
+	"text": "[color=#ffbf00]\"Your binding runs deep, my vessel. The Ossuary of the Gods responds to your darkness as if it were its own. The final test awaits. The world outside is corrupt and frail. It is a broken thing, waiting for a true god to mend it, or to break it completely. Will you fully surrender, allow our essences to **converge**, or defy me entirely and attempt to seize all power for yourself? The only question that remains is who will wear the crown of the world.\"[/color]",
 	"choices": [
 	  {
-		"text": "High Bond: Full submission to darkness.",
-		"effects": {"flags": {"high_bond_path": true, "chosen_full_dark_submission": true}},
+		"text": "Full submission to darkness.",
+		"effects": {
+		  "flags": {
+			"high_bond_path": true,
+			"chosen_full_dark_submission": true
+		  }
+		},
 		"goto": "ascension_chamber_dark"
 	  },
 	  {
-		"text": "High Bond: Merge while retaining self.",
-		"effects": {"flags": {"high_bond_path": true, "chosen_dark_retaining_self": true}},
+		"text": "Converge while retaining self.",
+		"effects": {
+		  "flags": {
+			"high_bond_path": true,
+			"chosen_dark_retaining_self": true
+		  }
+		},
 		"goto": "ascension_chamber_dark"
 	  },
 	  {
-		"text": "Low Bond: Defy the godling completely.",
-		"effects": {"flags": {"low_bond_path": true, "chosen_dark_defiance": true}},
+		"text": "Defy the godling completely.",
+		"effects": {
+		  "flags": {
+			"low_bond_path": true,
+			"chosen_dark_defiance": true
+		  }
+		},
 		"goto": "final_confrontation_entry_dark"
 	  }
 	]
@@ -104,21 +149,33 @@
   {
 	"id": "ascension_chamber_cautious",
 	"speaker": "Narration",
-	"text": "[color=white]The chamber glows with a gentle pulse of divine energy. Light and shadow curl around you, not as a threat, but as a test of resolve and patience. You feel your body begin to change, to align with the raw energy. It's a serene but terrifying process. Will you let it take over?[/color]",
+	"text": "[color=white]The chamber glows with a gentle pulse of divine energy. Light and shadow curl around you, not as a threat, but as a test of resolve and patience. You feel your body begin to change, to align with the raw energy. The godling's voice is a soothing presence in your mind: [/color][color=#ffbf00]\"Let go, Kael. Let go of the fear. I have kept you alive. Let us become something eternal.\"[/color]",
 	"choices": [
 	  {
 		"text": "Submit fully to the godling's essence.",
-		"effects": {"flags": {"ascension_full_submission": true}},
+		"effects": {
+		  "flags": {
+			"ascension_full_submission": true
+		  }
+		},
 		"goto": "godling_ascension_cautious"
 	  },
 	  {
-		"text": "Merge carefully, retaining identity.",
-		"effects": {"flags": {"ascension_careful_merge": true}},
+		"text": "Forge a balanced Union, retaining identity.",
+		"effects": {
+		  "flags": {
+			"ascension_careful_merge": true
+		  }
+		},
 		"goto": "godling_ascension_cautious"
 	  },
 	  {
 		"text": "Observe chamber energies first.",
-		"effects": {"flags": {"ascension_hesitated": true}},
+		"effects": {
+		  "flags": {
+			"ascension_hesitated": true
+		  }
+		},
 		"goto": "ascension_chamber_trap_cautious"
 	  }
 	]
@@ -126,21 +183,33 @@
   {
 	"id": "ascension_chamber_bold",
 	"speaker": "Narration",
-	"text": "[color=white]Light and shadow writhe with intensity, beckoning you. The energies of the godling are a perfect storm, a swirling maelstrom of power that threatens to overwhelm you. Your boldness grants you opportunity, but the risks are great. You feel the thrill of the hunt, and you know this is the final chase.[/color]",
+	"text": "[color=white]Light and shadow writhe with intensity, beckoning you. The energies of the godling are a perfect storm, a swirling maelstrom of power that threatens to overwhelm you. Your boldness grants you opportunity, but the risks are great. You feel the thrill of the hunt, and you know this is the final chase. The godling's voice is a primal roar in your mind: [/color][color=#ffbf00]\"This is what you came for! This is what you craved! Take it! Take all of it!\"[/color]",
 	"choices": [
 	  {
 		"text": "Submit fully.",
-		"effects": {"flags": {"ascension_full_submission": true}},
+		"effects": {
+		  "flags": {
+			"ascension_full_submission": true
+		  }
+		},
 		"goto": "godling_ascension_bold"
 	  },
 	  {
-		"text": "Merge equally, retain self.",
-		"effects": {"flags": {"ascension_equal_merge": true}},
+		"text": "Converge equally, retain self.",
+		"effects": {
+		  "flags": {
+			"ascension_equal_merge": true
+		  }
+		},
 		"goto": "godling_ascension_bold"
 	  },
 	  {
 		"text": "Hesitate and study energies.",
-		"effects": {"flags": {"ascension_hesitated": true}},
+		"effects": {
+		  "flags": {
+			"ascension_hesitated": true
+		  }
+		},
 		"goto": "ascension_chamber_trap_bold"
 	  }
 	]
@@ -148,21 +217,33 @@
   {
 	"id": "ascension_chamber_dark",
 	"speaker": "Narration",
-	"text": "[color=white]The chamber resonates with your merged darkness, the very air thick with malevolent power. Power and corruption intertwine, each choice bending reality to your will. You feel the final, profound change coming, a complete assimilation of your human form into something terrible and grand. The choices are not about winning, but about how you will become a god.[/color]",
+	"text": "[color=white]The chamber resonates with our conjoined darkness, the very air thick with malevolent power. Power and corruption intertwine, each choice bending reality to your will. You feel the final, profound change coming, a complete assimilation of your human form into something terrible and grand. The choices are not about winning, but about how you will become a god. The godling's voice is an inseparable part of your thoughts: [/color][color=#ffbf00]\"Our will is now law. There is no other way. Take your place among the un-living gods.\"[/color]",
 	"choices": [
 	  {
 		"text": "Submit fully to the godling.",
-		"effects": {"flags": {"ascension_full_submission": true}},
+		"effects": {
+		  "flags": {
+			"ascension_full_submission": true
+		  }
+		},
 		"goto": "godling_ascension_dark"
 	  },
 	  {
-		"text": "Merge equally, retaining self-consciousness.",
-		"effects": {"flags": {"ascension_equal_merge": true}},
+		"text": "Converge equally, retaining self-consciousness.",
+		"effects": {
+		  "flags": {
+			"ascension_equal_merge": true
+		  }
+		},
 		"goto": "godling_ascension_dark"
 	  },
 	  {
 		"text": "Hesitate and observe.",
-		"effects": {"flags": {"ascension_hesitated": true}},
+		"effects": {
+		  "flags": {
+			"ascension_hesitated": true
+		  }
+		},
 		"goto": "ascension_chamber_trap_dark"
 	  }
 	]
@@ -170,16 +251,24 @@
   {
 	"id": "ascension_chamber_trap_cautious",
 	"speaker": "Narration",
-	"text": "[color=white]A surge of energy lashes out from the chamber's core. Your hesitation has triggered its defenses. Kael must respond quickly, or his form will be fragmented by the overwhelming power. It's too late for caution, only action remains.[/color]",
+	"text": "[color=white]A surge of energy lashes out from the chamber's core. Your hesitation has triggered its defenses. Kael must respond quickly, or his form will be fragmented by the overwhelming power. It's too late for caution, only action remains. The godling's voice is a panicked cry in your mind: [/color][color=#ffbf00]\"Do something, Kael! We are falling apart! Do not lose this chance!\"[/color]",
 	"choices": [
 	  {
 		"text": "Embrace the surge, risking self-loss.",
-		"effects": {"flags": {"trap_embrace_surge": true}},
+		"effects": {
+		  "flags": {
+			"trap_embrace_surge": true
+		  }
+		},
 		"goto": "godling_ascension_cautious"
 	  },
 	  {
 		"text": "Resist and stabilize.",
-		"effects": {"flags": {"trap_resist_stabilize": true}},
+		"effects": {
+		  "flags": {
+			"trap_resist_stabilize": true
+		  }
+		},
 		"goto": "godling_ascension_cautious"
 	  }
 	]
@@ -187,16 +276,24 @@
   {
 	"id": "ascension_chamber_trap_bold",
 	"speaker": "Narration",
-	"text": "[color=white]Energy lashes out violently, a physical manifestation of your struggle. Bold choices might seize power, but a single wrong move could crush you utterly. The godling screams in your mind, urging you on, demanding you take what is yours by force.[/color]",
+	"text": "[color=white]Energy lashes out violently, a physical manifestation of your struggle. Bold choices might seize power, but a single wrong move could crush you utterly. The godling screams in your mind, urging you on, demanding you take what is yours by force. [/color][color=#ffbf00]\"This is a test of will! Show me you are worthy!\"[/color]",
 	"choices": [
 	  {
 		"text": "Embrace surge.",
-		"effects": {"flags": {"trap_embrace_surge": true}},
+		"effects": {
+		  "flags": {
+			"trap_embrace_surge": true
+		  }
+		},
 		"goto": "godling_ascension_bold"
 	  },
 	  {
 		"text": "Resist.",
-		"effects": {"flags": {"trap_resist_stabilize": true}},
+		"effects": {
+		  "flags": {
+			"trap_resist_stabilize": true
+		  }
+		},
 		"goto": "godling_ascension_bold"
 	  }
 	]
@@ -204,16 +301,24 @@
   {
 	"id": "ascension_chamber_trap_dark",
 	"speaker": "Narration",
-	"text": "[color=white]The dark merge pulses, lashing through the chamber. To hesitate is to risk madness; to act is to risk total corruption. The energy doesn’t test you, it consumes you, and you must decide whether to become a part of the overwhelming darkness, or fight it. [/color]",
+	"text": "[color=white]The dark binding pulses, lashing through the chamber. To hesitate is to risk madness; to act is to risk total corruption. The energy doesn’t test you, it consumes you, and you must decide whether to become a part of the overwhelming darkness, or fight it. The godling's voice is a cruel mockery in your mind: [/color][color=#ffbf00]\"Struggle, mortal. It makes the final submission so much more entertaining.\"[/color]",
 	"choices": [
 	  {
 		"text": "Embrace fully.",
-		"effects": {"flags": {"trap_embrace_surge": true}},
+		"effects": {
+		  "flags": {
+			"trap_embrace_surge": true
+		  }
+		},
 		"goto": "godling_ascension_dark"
 	  },
 	  {
-		"text": "Resist partially.",
-		"effects": {"flags": {"trap_resist_stabilize": true}},
+		"text": "Hesitate to Resist",
+		"effects": {
+		  "flags": {
+			"trap_resist_stabilize": true
+		  }
+		},
 		"goto": "godling_ascension_dark"
 	  }
 	]
@@ -221,16 +326,24 @@
   {
 	"id": "godling_ascension_cautious",
 	"speaker": "Godling",
-	"text": "[color=goldenrod]\"The essence flows into you, reshaping mind and spirit. You are becoming a god, but your humanity remains as a faint echo. Power blooms within you, but it is tempered by your restraint. You are a new kind of deity, one born of cautious defiance.\"[/color]",
+	"text": "[color=white]\"The essence flows into you, reshaping mind and spirit. You are becoming a god, but your humanity remains as a faint echo. Power blooms within you, but it is tempered by your restraint. You are a new kind of deity, one born of cautious defiance.\"[/color]",
 	"choices": [
 	  {
 		"text": "Submissive surrender.",
-		"effects": {"flags": {"final_submissive_cautious": true}},
+		"effects": {
+		  "flags": {
+			"final_submissive_cautious": true
+		  }
+		},
 		"exit_to": "ending:predatory_cautious"
 	  },
 	  {
-		"text": "Equal merge.",
-		"effects": {"flags": {"final_equal_merge_cautious": true}},
+		"text": "Equal Convergence.",
+		"effects": {
+		  "flags": {
+			"final_equal_merge_cautious": true
+		  }
+		},
 		"exit_to": "ending:trickster_cautious"
 	  }
 	]
@@ -238,16 +351,24 @@
   {
 	"id": "godling_ascension_bold",
 	"speaker": "Godling",
-	"text": "[color=goldenrod]\"Essence surges into you, a perfect storm of power and presence. Your identity clings, but my influence is a powerful tide. You are a godling of storms and fury, a deity of pure, unbridled might, and the world will tremble before you.\"[/color]",
+	"text": "[color=#ffbf00]\"Essence surges into you, a perfect storm of power and presence. Your identity clings, but my influence is a powerful tide. You are a godling of storms and fury, a deity of pure, unbridled might, and the world will tremble before you.\"[/color]",
 	"choices": [
 	  {
 		"text": "Submissive surrender.",
-		"effects": {"flags": {"final_submissive_bold": true}},
+		"effects": {
+		  "flags": {
+			"final_submissive_bold": true
+		  }
+		},
 		"exit_to": "ending:predatory_bold"
 	  },
 	  {
-		"text": "Equal merge.",
-		"effects": {"flags": {"final_equal_merge_bold": true}},
+		"text": "Equal Convergence.",
+		"effects": {
+		  "flags": {
+			"final_equal_merge_bold": true
+		  }
+		},
 		"exit_to": "ending:trickster_bold"
 	  }
 	]
@@ -255,16 +376,24 @@
   {
 	"id": "godling_ascension_dark",
 	"speaker": "Godling",
-	"text": "[color=goldenrod]\"The godling’s essence floods through you, your mind, body, and soul bending to its will. You are not a godling, you are the god, the ultimate power. My essence is now yours. Power is unmatched, absolute. The cost is your humanity, but a god has no need for such frail things.\"[/color]",
+	"text": "[color=#ffbf00]\"The godling’s essence floods through you, your mind, body, and soul bending to its will. You are not a godling, you are the god, the ultimate power. My essence is now yours. Power is unmatched, absolute. The cost is your humanity, but a god has no need for such frail things.\"[/color]",
 	"choices": [
 	  {
 		"text": "Submissive surrender.",
-		"effects": {"flags": {"final_submissive_dark": true}},
+		"effects": {
+		  "flags": {
+			"final_submissive_dark": true
+		  }
+		},
 		"exit_to": "ending:predatory_dark"
 	  },
 	  {
-		"text": "Equal merge.",
-		"effects": {"flags": {"final_equal_merge_dark": true}},
+		"text": "Equal Convergence.",
+		"effects": {
+		  "flags": {
+			"final_equal_merge_dark": true
+		  }
+		},
 		"exit_to": "ending:trickster_dark"
 	  }
 	]
@@ -272,7 +401,7 @@
   {
 	"id": "final_confrontation_entry_cautious",
 	"speaker": "Narration",
-	"text": "[color=white]Rejecting the godling’s influence, you move alone into the Womb-Below. Shadows writhe with malevolent energies, predators circle, and the lost souls of those who came before cry for release. This is your final stand, not as a god, but as a man who chose his own destiny.[/color]",
+	"text": "[color=white]Rejecting the godling’s final offer, you move alone into the **Ossuary of the Gods**. But the godling is not so easily cast aside. Its voice, a cold, mournful echo, fills your mind: [/color][color=#ffbf00]\"You think you can sever what has been woven? You think you can survive on your own? Foolish mortal. I have kept you alive. Without me, you are a dying man once more.\"[/color]\n[color=white]The shadows writhe with malevolent energies, predators circle, and the lost souls of those who came before cry for release. This is your final stand, not as a god, but as a man who chose his own death.[/color]",
 	"choices": [
 	  {
 		"text": "Continue",
@@ -284,7 +413,7 @@
   {
 	"id": "final_confrontation_entry_bold",
 	"speaker": "Narration",
-	"text": "[color=white]You defy the godling, confident in your strength and the raw power you have accumulated. The Womb-Below seethes with anger, a tangible force pressing down on you. This is the final trial, a test of cunning, morality, and resolve. You will not be consumed; you will conquer.[/color]",
+	"text": "[color=white]You defy the godling, confident in your strength and the raw power you have accumulated. But the godling’s voice is a sudden, sharp, enraged cry in your mind: [/color][color=#ffbf00]\"You betray me? After all I have given you? You are nothing without me! And if I am to fall, I will drag you into the abyss with me!\"[/color]\n[color=white]The **Ossuary of the Gods** seethes with anger, a tangible force pressing down on you. This is the final trial, a test of cunning, morality, and resolve. You will not be consumed; you will conquer, or you will perish trying.[/color]",
 	"choices": [
 	  {
 		"text": "Continue",
@@ -296,7 +425,7 @@
   {
 	"id": "final_confrontation_entry_dark",
 	"speaker": "Narration",
-	"text": "[color=white]The merge with the godling darkens your path. There is no turning back, no final defiance. Predators and shadows anticipate your steps, a chorus of dark energy. The final trial is not about resistance, but about how you will wield the power you have taken. [/color]",
+	"text": "[color=white]The binding with the godling darkens your path. There is no turning back, no final defiance. The godling's voice is a cruel mockery, an inseparable part of your thoughts: [/color][color=#ffbf00]\"You think you can seize this power for yourself? You are too late, little mortal. I am in every part of you. If you destroy me, you destroy yourself. There is no escape. Only surrender.\"[/color]\n[color=white]Predators and shadows anticipate your steps, a chorus of dark energy. The final trial is not about resistance, but about how you will wield the power you have taken, and how you will meet your inevitable end.[/color]",
 	"choices": [
 	  {
 		"text": "Continue",
@@ -308,51 +437,75 @@
   {
 	"id": "final_confrontation_cautious",
 	"speaker": "Narration",
-	"text": "[color=white]The air crackles with pure, unfettered power as the Godling's raw essence manifests directly before you. It is a swirling storm of golden light and shadow, a terrifying echo of its true form. You must make a stand. The power you took and the life you chose will determine your final move.[/color]",
+	"text": "[color=white]The air crackles with pure, unfettered power as the Godling's raw essence manifests directly before you. It is a swirling storm of golden light and shadow, a terrifying echo of its true form. Its voice is full of pain, but its words are a final, chilling warning: [/color][color=#ffbf00]\"What you seek cannot be undone. We are one. To sever our connection is to rip your very soul from your body. This is our end, Kael. Why have you chosen this path?\"[/color]",
 	"choices": [
 	  {
 		"text": "Attempt to sever the connection.",
-		"effects": {"flags": {"attempted_sever_connection": true}},
-		"exit_to": "ending:godling_slain_cautious"
+		"effects": {
+		  "flags": {
+			"attempted_sever_connection": true
+		  }
+		},
+		"exit_to": "ending:cautious_mutual_destruction"
 	  },
 	  {
 		"text": "Plead for a peaceful separation.",
-		"effects": {"flags": {"pleaded_peaceful_separation": true}},
-		"exit_to": "ending:godling_negotiated_cautious"
+		"effects": {
+		  "flags": {
+			"pleaded_peaceful_separation": true
+		  }
+		},
+		"exit_to": "ending:cautious_mutual_destruction"
 	  }
 	]
   },
   {
 	"id": "final_confrontation_bold",
 	"speaker": "Narration",
-	"text": "[color=white]The Godling confronts you, a swirling vortex of raw energy that threatens to tear you apart. Your boldness demands a direct clash, a final test of strength against a god. The very walls of the Womb-Below shake with the power of your shared presence, and you know there is only one way this can end: in battle.[/color]",
+	"text": "[color=white]The Godling confronts you, a swirling vortex of raw energy that threatens to tear you apart. Your boldness demands a direct clash, a final test of strength against a god. The very walls of the **Ossuary of the Gods** shake with the power of your shared presence, and you know there is only one way this can end: in battle. The godling’s voice is a furious, heartbroken roar: [/color][color=#ffbf00]\"You believe yourself my equal? Then come! I will show you what true power is, and what a foolish thing it is to fight yourself!\"[/color]",
 	"choices": [
 	  {
 		"text": "Attack head-on with all your might.",
-		"effects": {"flags": {"attacked_head_on": true}},
-		"exit_to": "ending:godling_slain_bold"
+		"effects": {
+		  "flags": {
+			"attacked_head_on": true
+		  }
+		},
+		"exit_to": "ending:bold_mutual_destruction"
 	  },
 	  {
 		"text": "Try to force it into submission.",
-		"effects": {"flags": {"forced_submission": true}},
-		"exit_to": "ending:godling_dominated_bold"
+		"effects": {
+		  "flags": {
+			"forced_submission": true
+		  }
+		},
+		"exit_to": "ending:bold_mutual_destruction"
 	  }
 	]
   },
   {
 	"id": "final_confrontation_dark",
 	"speaker": "Narration",
-	"text": "[color=white]The Godling's true form erupts from the darkness, a terrifying reflection of your merged essence. This is not a choice, but a final, inevitable act. Power and corruption have brought you here, and there's no turning back from this ultimate power struggle. You must claim what is yours and ascend, or be destroyed.[/color]",
+	"text": "[color=white]The Godling's true form erupts from the darkness, a terrifying reflection of our conjoined essence. This is not a choice, but a final, inevitable act. Power and corruption have brought you here, and there's no turning back from this ultimate power struggle. You must claim what is yours and ascend, or be destroyed. The godling’s voice is a chilling, unified thought: [/color][color=#ffbf00]\"The only thing left to do now is see which of us will be the ultimate god. You have a choice, Kael. Die, or become me?\"[/color]",
 	"choices": [
 	  {
 		"text": "Assimilate the Godling entirely.",
-		"effects": {"flags": {"assimilated_godling": true}},
-		"exit_to": "ending:godling_absorbed_dark"
+		"effects": {
+		  "flags": {
+			"assimilated_godling": true
+		  }
+		},
+		"exit_to": "ending:dark_mutual_destruction"
 	  },
 	  {
 		"text": "Unleash all dark power to destroy it.",
-		"effects": {"flags": {"obliterated_godling": true}},
-		"exit_to": "ending:godling_obliterated_dark"
+		"effects": {
+		  "flags": {
+			"obliterated_godling": true
+		  }
+		},
+		"exit_to": "ending:dark_mutual_destruction"
 	  }
 	]
   }

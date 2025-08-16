@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bs0guwy62jwoc"]
+[gd_scene load_steps=4 format=3 uid="uid://bs0guwy62jwoc"]
 
 [ext_resource type="Script" uid="uid://fsui23n35kob" path="res://scripts/MainMenu.gd" id="1_yqorp"]
+[ext_resource type="AudioStream" uid="uid://dsjq38nqxasev" path="res://SFX/614091__szegvari__dark-atmo-vocal-myst-thriller-fantasy.wav" id="2_0ykhv"]
+[ext_resource type="AudioStream" uid="uid://unnx1awb1jkk" path="res://SFX/707041__vilkas_sound__vs-button-click-04.mp3" id="3_2wh52"]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_yqorp")
@@ -118,6 +120,14 @@ offset_bottom = 637.0
 text = "Version 1.0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AmbientMusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_0ykhv")
+volume_db = -3.0
+autoplay = true
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2wh52")
 
 [connection signal="pressed" from="Panel/MenuVBox/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/MenuVBox/Endings" to="." method="_on_endings_pressed"]

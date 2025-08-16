@@ -1,3 +1,4 @@
+AudioStreamPlayer2D
 CenterContainer
 Label
 HBoxContainer
@@ -11,5 +12,3 @@ Panel
 Node
 Node2D
 CanvasLayer
-ItemList
-TextureRect

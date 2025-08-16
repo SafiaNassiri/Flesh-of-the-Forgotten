@@ -1,12 +1,9 @@
 extends Node
 
-# The DialogueBox UI node
+@onready var AmbientPlayer := $"../AmbientPlayer"
 @onready var dialog_ui := $"../DialogBox"
-
-# Access your singleton script (GameState) from the root of the scene tree.
 @onready var GameState = get_node("/root/GameState")
 
-# Load the EndingDeterminer script since it's NOT an autoload.
 const EndingDeterminer = preload("res://scripts/EndingDeterminer.gd")
 
 var current_node_text := ""
@@ -22,9 +19,24 @@ var unlocked_endings := []
 var endings_data = {}
 var final_ending_descriptions = {}
 
+var act_ambient_sounds = {
+	"act1_shrine": {
+		"stream": preload("res://SFX/614092__szegvari__dark-atmo-sea-beach-sad-mood-myst-thriller-fantasy.wav"),
+		"volume_db": -3 
+	},
+	"act2_market": {
+		"stream": preload("res://SFX/581134__szegvari__dark-fantasy-forrest-atmo.wav"),
+		"volume_db": -5  
+	},
+	"act3_womb_below": {
+		"stream": preload("res://SFX/539813__szegvari__temple-fantasy-vocal-ambient.wav"),
+		"volume_db": -3 
+	}
+}
+
 func _ready():
-	_load_endings_json() # This loads endings.json into endings_data
-	_load_final_ending_descriptions() # You need to call this function to load endings_info.json
+	_load_endings_json()
+	_load_final_ending_descriptions()
 	_load_unlocked_endings()
 	DialogueRouter.game_ended.connect(_on_game_ended)
 	DialogueRouter.act_changed.connect(_on_act_changed)
@@ -48,15 +60,13 @@ func _load_endings_json():
 func _on_game_ended(ending_id: String):
 	print("Game ended with ID: ", ending_id)
 	
-	# Save the unlocked ending to the file.
 	_save_unlocked_ending(ending_id)
-	
-	# Now, load the final ending scene.
 	_load_final_ending_scene(ending_id)
 
 func _on_act_changed():
 	print("Act changed.")
 	in_ending = false
+	_change_ambient_sound()
 	_show_current_node()
 
 func _input(event):
@@ -182,7 +192,6 @@ func _save_unlocked_ending(key: String):
 func _load_final_ending_scene(key: String):
 	print("Loading final ending scene with key: ", key)
 	
-	# The rest of your function remains the same
 	var final_description = final_ending_descriptions.get(key)
 	
 	if final_description:
@@ -214,3 +223,16 @@ func _load_final_ending_descriptions():
 			print("Failed to parse endings_info.json: Not a valid dictionary")
 	else:
 		print("ERROR: Could not load endings_info.json.")
+
+func _change_ambient_sound():
+	var current_act_key = DialogueRouter.current_scene_key
+	if act_ambient_sounds.has(current_act_key):
+		var sound_info = act_ambient_sounds[current_act_key] 
+		
+		AmbientPlayer.stop()
+		AmbientPlayer.stream = sound_info["stream"]
+		AmbientPlayer.volume_db = sound_info["volume_db"]
+		
+		AmbientPlayer.play()
+	else:
+		print("No ambient sound found for act key: ", current_act_key)

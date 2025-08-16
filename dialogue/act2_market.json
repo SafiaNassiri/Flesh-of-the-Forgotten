@@ -2,7 +2,7 @@
   {
 	"id": "start_cautious",
 	"speaker": "Narration",
-	"text": "[color=white]Kael creeps into the Hollow Market, a twisted labyrinth of makeshift stalls and whispered deals. The air reeks of decaying incense and desperation. He moves through the throng, alert to every shadow that stretches and crawls, each one a potential trap. Faint whispers, like the rustling of dry leaves, slither into his thoughts, teasing his mind with promises of safe passage for a price.[/color]",
+	"text": "[color=white]Kael creeps into the Hollow Market, a twisted labyrinth of makeshift stalls and whispered deals. The air reeks of decaying incense and desperation. The cold strength of the godling pulses in his veins, keeping him sharp, alert to every shadow. Faint whispers, like the rustling of dry leaves, slither into his thoughts, teasing his mind with promises of safe passage for a price. The godling’s voice is a low murmur, a constant guide nudging him forward: [/color][color=#ffbf00]\"Do not stray, mortal. Your life is now tethered to mine. Every step you take is our mutual survival.\"[/color]",
 	"choices": [
 	  {
 		"text": "Continue",
@@ -14,7 +14,7 @@
   {
 	"id": "start_bold",
 	"speaker": "Narration",
-	"text": "[color=white]Kael bursts into the Hollow Market, moving with an aggressive confidence that carves a path through the crowds. Shadows instinctively cloak his movements, a power he now controls. A visible aura of raw might radiates from him, causing traders and predators alike to recoil and whisper nervously among themselves. He is no longer prey, but a force to be reckoned with.[/color]",
+	"text": "[color=white]Kael bursts into the Hollow Market, moving with an aggressive confidence that carves a path through the crowds. A visible aura of raw might, a shared power he and the godling wield, radiates from him. Traders and predators alike recoil, their whispers turning to fearful murmurs. He is no longer prey, but a force to be reckoned with. The godling's voice is a thrill in his mind: [/color][color=#ffbf00]\"They scatter before us. See how their fear feeds our power. Now, we hunt for what we need.\"[/color]",
 	"choices": [
 	  {
 		"text": "Continue",
@@ -26,7 +26,7 @@
   {
 	"id": "start_dark_merge",
 	"speaker": "Narration",
-	"text": "[color=white]With the godling fully intertwined, Kael steps into the Hollow Market like a living storm. The very ground trembles at his presence; every trader instinctively falls silent, their eyes wide with a mixture of terror and awe. The air itself feels heavy, charged with the malevolent energy that flows from his being. Whispers follow his path, not of deals, but of death and glory, a dreadful reverence for the being he has become.[/color]",
+	"text": "[color=white]With the godling's essence fully **bound** to his own, Kael steps into the Hollow Market like a living storm. The very ground trembles at his presence; every trader instinctively falls silent, their eyes wide with a mixture of terror and awe. The air itself feels heavy, charged with the malevolent energy that flows from his being. The godling's voice is a cold, shared thought, a dreadful reverence for the being they have become: [/color][color=#ffbf00]\"This is what true power feels like, Kael. This is what it is to be feared. The world is a banquet, and they are the main course.\"[/color]",
 	"choices": [
 	  {
 		"text": "Continue",
@@ -37,68 +37,316 @@
   },
   {
 	"id": "godflesh_trader_cautious",
-	"speaker": "Godling",
-	"text": "[color=goldenrod]\"A trader offers forbidden knowledge from beyond the Veil, but the cost is high. You feel hesitation gnawing at your instincts, a warning of the price on your soul. Will you bargain for what they have?\"[/color]",
+	"speaker": "Narration",
+	"text": "[color=white]The trader's stall is a mess of strange artifacts and glowing runes. The trader, a creature of bone and shadow, offers forbidden knowledge from beyond the Veil, but the cost is a captured ally's life. A whimpering sound draws your eye to a small, barred cage beside the stall. Inside, a terrified human child cowers, eyes wide with fear. [/color][color=#87CEFA]\"Please... help me!\"[/color][color=white] a voice cries out, muffled by the bars. The godling’s voice feels cold and calculating in your mind: [/color][color=#ffbf00]\"Do not trade away a life. That weakness will sever our bond. A pure soul's death will poison our shared essence. Find another way, Kael, or you will lose what I have given you.\"[/color]",
 	"choices": [
 	  {
-		"text": "Refuse the deal. Your caution outweighs greed.",
-		"effects": {"flags": {"trader_deal_refused": true}},
-		"goto": "market_escape_cautious"
+		"text": "Refuse",
+		"effects": {},
+		"goto": "cautious_refuse_consequence"
 	  },
 	  {
-		"text": "Trade a captured ally's safety for the information.",
-		"effects": {"flags": {"traded_ally": true}},
+		"text": "Accept",
+		"effects": {},
+		"goto": "cautious_accept_consequence"
+	  },
+	  {
+		"text": "Steal",
+		"effects": {},
+		"goto": "cautious_steal_consequence"
+	  }
+	]
+  },
+  {
+	"id": "cautious_refuse_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1] \"I won't sacrifice a life for this.\"[/color][color=white]\nKael's face hardens with a quiet resolve. The child in the cage watches with hopeful, tear-filled eyes. He feels a cool sense of agreement from the godling, a chilling appraisal of his strength and conviction.\n[/color][color=#ffbf00]\"A wise choice, mortal. That weakness would have poisoned us both.\"[/color]\n[color=white]The godling’s words are a cold echo in his mind. Kael feels no warmth in them, only the chilling pragmatism of a divine creature. He knows its concern is for itself, not for the human he just refused to condemn.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"trader_deal_refused": true
+		  }
+		},
+		"goto": "market_escape_cautious"
+	  }
+	]
+  },
+  {
+	"id": "cautious_accept_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I'll do what's necessary.\"[/color][color=white]\nKael extends a hand towards the trader. The child in the cage lets out a desperate, whimpering cry. [/color][color=#87CEFA]\"No! Please!\"[/color][color=white] Kael feels a sickening pull in his gut as he makes the deal, ignoring the cries. The godling within him goes cold, a silent, chilling void where its voice once was. The godling’s life force, the very thing keeping him alive, abruptly vanishes.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"traded_ally": true
+		  }
+		},
+		"goto": "market_betrayal_ending"
+	  }
+	]
+  },
+  {
+	"id": "cautious_steal_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I'll take what I need without a deal.\"[/color][color=white]\nKael’s shadow stretches, twisting into a grasping claw towards the forbidden knowledge. The captive child watches, wide-eyed and silent. The godling’s power surges, but Kael feels it as a cold, controlled energy, not a destructive one. It's a calculated risk.\n[/color][color=#ffbf00] \"A fine balance of wit and might, Kael. We will show them true cunning.\"[/color]\n[color=white]The godling’s words are a low, approving hum. Kael feels a thrill, a new sense of control over the power he holds. It is a shared secret, a way to move through the world without being consumed by it.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"trader_stealth_success": true
+		  }
+		},
 		"goto": "market_escape_cautious"
 	  }
 	]
   },
   {
 	"id": "godflesh_trader_bold",
-	"speaker": "Godling",
-	"text": "[color=goldenrod]\"A trader bows nervously as you enter his tent, their fear a delectable scent. Power hums through you, begging to be used. Will you use intimidation to bend the rules and seize what you want, or seek knowledge in a more fair exchange?\"[/color]",
+	"speaker": "Narration",
+	"text": "[color=white]A trader bows nervously as you enter his tent, their fear a delectable scent. [/color][color=#FFA500]\"Traveler... what can I offer one such as yourself? My wares are many, my prices... negotiable.\"[/color][color=white] Power hums through you, a raw, aggressive energy. The godling's voice is a low, growling hum in your mind: [/color][color=#ffbf00]\"This one is weak. Take what we need. Do not waste time with their petty deals. But know this: every action has a consequence, Kael. Choose with purpose, not just with rage.\"[/color]",
 	"choices": [
 	  {
-		"text": "Strike a deal with the trader.",
-		"effects": {"flags": {"trader_deal_struck": true}},
-		"goto": "market_escape_bold"
+		"text": "Accept",
+		"effects": {},
+		"goto": "bold_accept_consequence"
 	  },
 	  {
-		"text": "Kill the trader and take what you need.",
-		"effects": {"flags": {"trader_killed": true}},
+		"text": "Kill",
+		"effects": {},
+		"goto": "bold_kill_consequence"
+	  },
+	  {
+		"text": "Intimidate",
+		"effects": {},
+		"goto": "bold_intimidate_consequence"
+	  }
+	]
+  },
+  {
+	"id": "bold_accept_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"Let's make a deal. Your goods for my mercy.\"[/color]\n[color=white]Kael’s voice is a low rumble of authority. The trader trembles, offering his wares with shaking hands. [/color][color=#FFA500]\"Yes, yes! Anything you wish, mighty one!\"[/color][color=white] The godling hums with a shared satisfaction, but Kael feels a small, bitter taste in the back of his mind. He has used his power like a bully, and a part of him recoils from the feeling.[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"trader_deal_struck": true
+		  }
+		},
+		"goto": "market_escape_bold"
+	  }
+	]
+  },
+  {
+	"id": "bold_kill_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"Your life is the price of your folly.\"[/color]\n[color=white]Kael’s hand closes around the trader's throat. The trader's eyes widen in terror, a gurgling sound escaping their lips. [/color][color=#FFA500]\"No... mercy!\"[/color][color=white] But as their life leaves them, a terrible, unseen force detonates from their essence. It is a trap, a failsafe meant to detonate should their life be taken. A blinding light engulfs him, and the godling’s scream echoes in his mind, a sudden, final agony as its power is torn asunder.[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"trader_killed": true
+		  }
+		},
+		"goto": "market_bold_ending"
+	  }
+	]
+  },
+  {
+	"id": "bold_intimidate_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"Give me what I need, or face the consequences of my fury.\"[/color]\n[color=white]Kael's aura flares, a visible shockwave of power that makes the trader recoil in terror. [/color][color=#FFA500]\"Y-yes! Take it! Just... don't hurt me!\"[/color][color=white] The godling is an eager, shared thought in his mind: [/color][color=#ffbf00]\"Good. Break him. Show him the power we wield. It is a game we are winning with every step.\"\n[/color][color=white]Kael feels a thrilling rush, but also a deep, sinking certainty that he is becoming something less than human. The godling's voice is not a suggestion, but a command that he now finds himself obeying without question.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"trader_intimidated": true
+		  }
+		},
 		"goto": "market_escape_bold"
 	  }
 	]
   },
   {
 	"id": "godflesh_trader_dark",
-	"speaker": "Godling",
-	"text": "[color=goldenrod]\"The market cowers before your presence. Knowledge and flesh are offered freely, like tributes from frightened animals. But every choice twists your essence further into my form. Which do you claim, my vessel?\"[/color]",
+	"speaker": "Narration",
+	"text": "[color=white]The market cowers before your presence. The trader, a shivering creature, falls to its knees before you. [/color][color=#FFA500]\"My lord... my master... take what you wish! All I have is yours!\"[/color][color=white] It offers knowledge and flesh freely, like tributes from frightened animals. The godling's thoughts are a chilling echo of your own, urging you to consume it all: [/color][color=#ffbf00]\"They offer their weakness freely. Absorb the knowledge and power. But choose wisely, Kael. The wrong morsel could corrupt even us beyond repair. Do not let their essence taint our perfection.\"[/color]",
 	"choices": [
 	  {
-		"text": "Absorb the forbidden knowledge.",
-		"effects": {"flags": {"dark_knowledge_absorbed": true}},
-		"goto": "market_escape_dark"
+		"text": "Absorb",
+		"effects": {},
+		"goto": "dark_absorb_consequence"
 	  },
 	  {
-		"text": "Consume and destroy the trader.",
-		"effects": {"flags": {"trader_destroyed": true}},
+		"text": "Consume",
+		"effects": {},
+		"goto": "dark_consume_consequence"
+	  },
+	  {
+		"text": "Take",
+		"effects": {},
+		"goto": "dark_take_consequence"
+	  }
+	]
+  },
+  {
+	"id": "dark_absorb_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"Give me your knowledge. I will take it all.\"[/color]\n[color=white]Kael feels the forbidden knowledge flood his mind, a rush of power so intense it's almost unbearable. The trader, still groveling, moans softly. The godling’s presence within him writhes in agony, a sudden realization that it has consumed something utterly malevolent. The knowledge is a corrupted, toxic wellspring, a poison meant to fester and kill. Kael’s body convulses, the stolen power turning to a terrible, caustic acid in his veins.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"dark_knowledge_absorbed": true
+		  }
+		},
+		"goto": "market_dark_ending"
+	  }
+	]
+  },
+  {
+	"id": "dark_consume_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will consume you, and everything you are.\"[/color]\n[color=white]Kael’s shadow stretches, engulfing the terrified trader. [/color][color=#FFA500]\"N-no! Please, my lord!\"[/color][color=white] You absorb the trader's essence, a rush of power so intense it's almost unbearable. But their essence is a corrupted, toxic wellspring, a poison meant to fester and kill. The godling's presence within you writhes in agony, a sudden realization that it has consumed something utterly malevolent. Your body convulses, the stolen power turning to a terrible, caustic acid in your veins. Both your forms are now utterly corrupted, a twisted, dying monstrosity.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"trader_destroyed": true
+		  }
+		},
+		"goto": "market_dark_ending"
+	  }
+	]
+  },
+  {
+	"id": "dark_take_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will take what is mine. You will live as a warning to others.\"[/color]\n[color=white]Kael takes the item from the cowering trader, his touch a silent promise of destruction. The trader whimpers, nodding frantically. [/color][color=#FFA500]\"Yes, my lord! As you command!\"[/color][color=white] He feels a chilling triumph, a dark satisfaction as he spares the creature's life, knowing the terror he has inflicted will be far more useful. The godling’s voice is a satisfied hum in his mind: [/color][color=#ffbf00]\"It is a new age, Kael. We do not destroy our servants, we command them.\"\n[/color][color=white]The godling's words feel less like guidance and more like a shared purpose. Kael feels a dark satisfaction, a grim resolve that he is indeed becoming something new and terrible. He has taken another step toward being a master, not a mere mortal.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"trader_spared": true
+		  }
+		},
 		"goto": "market_escape_dark"
+	  }
+	]
+  },
+  {
+	"id": "market_betrayal_ending",
+	"speaker": "Narration",
+	"text": "[color=white]The godling's presence suddenly goes cold within you, a silent, chilling void where its voice once was. It has deemed your choice a fatal betrayal of its nature. The godling’s life force, the very thing keeping you alive, abruptly vanishes. You fall to your knees, the pain and exhaustion you had forgotten now rushing back with brutal force. The market's chaos washes over you as your stolen moments of life run out. Your body, a husk of what it was, collapses as the light fades from your eyes. You have chosen a final, desperate act of betrayal, and in doing so, you have chosen oblivion.[/color]",
+	"choices": [
+	  {
+		"text": "This is your end.",
+		"effects": {},
+		"exit_to": "ending:cautious_betrayal"
+	  }
+	]
+  },
+  {
+	"id": "market_bold_ending",
+	"speaker": "Narration",
+	"text": "[color=white]Your hand closes around the trader's throat, your strength overwhelming. But as their life leaves them, a terrible, unseen force detonates from their essence. It is a trap, a failsafe meant to detonate should their life be taken. A blinding light engulfs you. The godling's scream echoes in your mind, a sudden, final agony as its power is torn asunder. The power you sought has consumed you both in a single, fatal moment. You have become a monument to your own arrogance, a testament to a power you wielded without thought. Nothing remains but a silent crater where the stall once stood.[/color]",
+	"choices": [
+	  {
+		"text": "This is your end.",
+		"effects": {},
+		"exit_to": "ending:bold_miscalculation"
+	  }
+	]
+  },
+  {
+	"id": "market_dark_ending",
+	"speaker": "Narration",
+	"text": "[color=white]You absorb the trader's essence, a rush of power so intense it's almost unbearable. But their essence is a corrupted, toxic wellspring, a poison meant to fester and kill. The godling's presence within you writhes in agony, a sudden realization that it has consumed something utterly malevolent. Your body convulses, the stolen power turning to a terrible, caustic acid in your veins. Both your forms are now utterly corrupted, a twisted, dying monstrosity. The godling's voice is a final, choked whisper in your mind: [/color][color=#ffbf00]\"This... this is not power. This is death.\"[/color]\n[color=white]The world goes black as the poison consumes your very soul, leaving only a hollow, corrupted shell behind.[/color]",
+	"choices": [
+	  {
+		"text": "This is your end.",
+		"effects": {},
+		"exit_to": "ending:dark_corruption"
 	  }
 	]
   },
   {
 	"id": "market_escape_cautious",
 	"speaker": "Narration",
-	"text": "[color=white]Chaos erupts around you, a wave of panic sweeping through the market. Kael navigates the pandemonium cautiously, helping a few desperate souls while avoiding others who would slow him down. Mist and screams mingle in the air, a thick, suffocating fog that tests his resolve at every turn.[/color]",
+	"text": "[color=white]Chaos erupts around you, a wave of panic sweeping through the market. Kael navigates the pandemonium cautiously, helping a few desperate souls while avoiding others who would slow him down. Mist and screams mingle in the air, a thick, suffocating fog that tests his resolve at every turn. [/color][color=#87CEFA]\"Help us! Please!\"[/color][color=white] a desperate voice cries from a collapsing stall. Another, closer, whimpers, [/color][color=#87CEFA]\"Don't leave us here to die!\"[/color][color=white] The godling's voice is a steady hum, a silent approval in your mind.[/color]",
 	"choices": [
 	  {
-		"text": "Save a group of trapped humans.",
-		"effects": {"flags": {"saved_humans": true}},
-		"goto": "predator_hunt_cautious"
+		"text": "Help",
+		"effects": {},
+		"goto": "cautious_help_consequence"
 	  },
 	  {
-		"text": "Focus solely on your escape.",
-		"effects": {"flags": {"selfish_escape": true}},
+		"text": "Run",
+		"effects": {},
+		"goto": "cautious_run_consequence"
+	  },
+	  {
+		"text": "Hide",
+		"effects": {},
+		"goto": "cautious_hide_consequence"
+	  }
+	]
+  },
+  {
+	"id": "cautious_help_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I can't just leave them to this. Help me help them.\"[/color]\n[color=white]Kael throws himself into the chaos, pulling a mother and child from a collapsing stall. The grateful mother clutches her child, tears streaming down her face. [/color][color=#87CEFA]\"Thank you! Thank you, stranger!\"[/color][color=white] The godling's presence within him is a steady, almost approving hum. He feels no resistance, only a cold and unwavering support. It is a calculated move, not a merciful one. It protects its mortal vessel by building a reputation as a protector, something that would earn him allies and deflect suspicion.\n[/color][color=#ffbf00]\"A shrewd move, mortal. Allies can be a shield.\"[/color]\n[color=white]The godling’s words feel less like praise and more like a shared, dark understanding. Kael feels a grim satisfaction. He knows his act was not one of kindness, but one of self-preservation. It is a terrifying realization that his mercy is now a weapon, a tool to be used for survival.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"saved_humans": true
+		  }
+		},
+		"goto": "predator_hunt_cautious"
+	  }
+	]
+  },
+  {
+	"id": "cautious_run_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I can't risk my life for theirs. Not now.\"[/color]\n[color=white]Kael pushes past the desperate screams, his face a mask of cold determination. A desperate plea echoes behind him. [/color][color=#87CEFA]\"Don't leave us!\"[/color][color=white] He feels the godling's presence within him is a low, approving hum. He feels a terrible calm, a cold sense of purpose. He is no longer a man who saves, but a tool that survives. His heart aches, but his mind is clear. His humanity is slowly fading, replaced by a cold, calculating resolve. It is a frightening realization that his own survival is all that matters, and the godling knows it.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"selfish_escape": true
+		  }
+		},
+		"goto": "predator_hunt_cautious"
+	  }
+	]
+  },
+  {
+	"id": "cautious_hide_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"We'll wait. We'll wait until the path is clear.\"[/color]\n[color=white]Kael disappears into the shadows, a hidden, quiet observer to the unfolding chaos. The screams of the dying and the desperate pleas for help fade into muffled sounds. He feels the godling’s presence within him is a low, steady hum. He feels a sense of quiet triumph. The godling is a patient, watchful predator, and Kael is becoming its perfect instrument. He feels no thrill, no rush of power, only a cold, unnerving patience. It is a new kind of terror, to be so perfectly aligned with something so alien and ancient.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"hidden_in_chaos": true
+		  }
+		},
 		"goto": "predator_hunt_cautious"
 	  }
 	]
@@ -106,16 +354,69 @@
   {
 	"id": "market_escape_bold",
 	"speaker": "Narration",
-	"text": "[color=white]Kael moves swiftly, a shadow in the chaos, shrugging off the screams and turmoil. Predators close in from all sides, drawn by his power, but his confidence and a primal, raw energy keep him ahead of the hunt. He knows this is a game, and he is the one in control.[/color]",
+	"text": "[color=white]Kael moves swiftly, a shadow in the chaos, shrugging off the screams and turmoil. Predators close in from all sides, drawn by his power, but his confidence and a primal, raw energy keep him ahead of the hunt. The godling's voice is a thrilling, shared thought in his mind: [/color][color=#ffbf00]\"They are so slow. We are so much stronger. This is a game you are winning with every step.\"[/color]",
 	"choices": [
 	  {
-		"text": "Lead predators into a trap.",
-		"effects": {"flags": {"predator_trap_success": true}},
-		"goto": "predator_hunt_bold"
+		"text": "Trap",
+		"effects": {},
+		"goto": "bold_trap_consequence"
 	  },
 	  {
-		"text": "Run straight through, letting your shadows conceal you.",
-		"effects": {"flags": {"straight_run_escape": true}},
+		"text": "Run",
+		"effects": {},
+		"goto": "bold_run_consequence"
+	  },
+	  {
+		"text": "Hide",
+		"effects": {},
+		"goto": "bold_hide_consequence"
+	  }
+	]
+  },
+  {
+	"id": "bold_trap_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"Let's show them how a true predator hunts.\"[/color]\n[color=white]Kael's mind races, a sudden clarity showing him a path to a booby-trapped stall. He hears the terrified screams of a few humans who stumble into his diversion, drawing the predators away. The godling within him urges him on, a low hum of anticipation. He feels a thrilling rush as the plan falls into place. The power he holds is a tool for cunning, for strategy, for a battle of wits he knows he can win. It is a new kind of power, one that thrills him and promises him a new life. It is the power of a divine tactician, and he is a willing apprentice.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"predator_trap_success": true
+		  }
+		},
+		"goto": "predator_hunt_bold"
+	  }
+	]
+  },
+  {
+	"id": "bold_run_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will outrun them all.\"[/color]\n[color=white]Kael bursts into a full sprint, the godling’s power lending him impossible speed. He hears the cries of confusion and fear from the market-goers he leaves behind. He feels a thrill, a primal rush of triumph. The godling's voice is an eager, shared thought: [/color][color=#ffbf00]\"Yes! Show them our true speed. They are nothing but prey.\"\n[/color][color=white]Kael feels the thrill of the hunt, but also a growing darkness. He is no longer human; he is a force of nature, an unstoppable, inhuman engine of destruction. It is a frightening feeling, a loss of self that he welcomes with open arms.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"straight_run_escape": true
+		  }
+		},
+		"goto": "predator_hunt_bold"
+	  }
+	]
+  },
+  {
+	"id": "bold_hide_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"We will wait for the hunt to move on. Let them pass.\"[/color]\n[color=white]Kael slips into the shadows, a quiet, almost invisible force. He feels a wave of frustration from the godling. He is a predator, and a predator should hunt, not hide. But Kael holds his ground, watching the panicked market-goers scatter and fall. He feels a small sense of triumph; a reminder that he is still in control. The godling’s voice is a low hum of grudging respect: [/color][color=#ffbf00]\"A patient hunter is a powerful hunter. But do not forget your purpose, mortal.\"\n[/color][color=white]Kael feels a sense of quiet defiance. He is not a hunter, not yet. He is a man who is trying to survive, and he will do so on his own terms. It is a fleeting moment of victory, one he clings to as a reminder of his own humanity.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"hidden_in_chaos": true
+		  }
+		},
 		"goto": "predator_hunt_bold"
 	  }
 	]
@@ -123,16 +424,69 @@
   {
 	"id": "market_escape_dark",
 	"speaker": "Narration",
-	"text": "[color=white]The market screams as your presence warps the very air, turning it to a thick, suffocating fear. Predators and humans alike scatter before you, their instincts telling them to flee from the encroaching storm. Some fall to their knees, some worship, some simply fear. It is a terrifying symphony of submission.[/color]",
+	"text": "[color=white]The market screams as your presence warps the very air, turning it to a thick, suffocating fear. Predators and humans alike scatter before you, their instincts telling them to flee from the encroaching storm. Some fall to their knees, some worship, some simply fear. It is a terrifying symphony of submission. The godling's voice is a chilling chorus in your mind: [/color][color=#ffbf00]\"This fear. It is a beautiful sound. It is all that is left.\"[/color]",
 	"choices": [
 	  {
-		"text": "Hunt for the remaining humans as prey or tools.",
-		"effects": {"flags": {"humans_hunted": true}},
-		"goto": "predator_hunt_dark"
+		"text": "Hunt",
+		"effects": {},
+		"goto": "dark_hunt_consequence"
 	  },
 	  {
-		"text": "Embrace your godling's guidance and obliterate obstacles.",
-		"effects": {"flags": {"godling_guided_slaughter": true}},
+		"text": "Embrace",
+		"effects": {},
+		"goto": "dark_embrace_consequence"
+	  },
+	  {
+		"text": "Ignore",
+		"effects": {},
+		"goto": "dark_ignore_consequence"
+	  }
+	]
+  },
+  {
+	"id": "dark_hunt_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"The world is a banquet, and they are the main course.\"[/color]\n[color=white]Kael's words are a chilling echo of the godling's. He feels a cold, thrilling anticipation as he begins to hunt, chasing down terrified market-goers who scream and scatter before him. He is no longer a man; he is a predator, a living storm that consumes all in its path. The godling within him revels in the chaos, a chilling echo in his mind: [/color][color=#ffbf00]\"We are so close to true divinity. The world is a canvas, and our will is the brush. These are nothing. Erase them.\"\n[/color][color=white]The godling's words are a confirmation of a shared purpose. Kael feels a sense of dark triumph, a horrifying realization that he is becoming the very monster he sought to defeat. He is a god, a force of nature, and his will is absolute.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"humans_hunted": true
+		  }
+		},
+		"goto": "predator_hunt_dark"
+	  }
+	]
+  },
+  {
+	"id": "dark_embrace_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"This is what true power feels like. This is what it is to be feared.\"[/color]\n[color=white]Kael’s voice is a low, guttural growl. He feels the godling's presence within him, a chilling chorus that urges him to obliterate everything in his path, whether human or beast. The air itself seems to crackle with his malevolence as market stalls explode and bodies shatter. He is a force of nature, an unstoppable, inhuman engine of destruction. He feels no guilt, no remorse, only a cold and terrifying sense of purpose. He is a god of war, a god of destruction, and the world is his to break. The godling’s voice is a chilling chorus in his mind: [/color][color=#ffbf00]\"This fear. It is a beautiful sound. It is all that is left.\"\n[/color][color=white]Kael feels a thrilling rush, a shared reverence for the being they have become. He has embraced his true nature, a horrifying fusion of man and god. It is a new kind of power, one that promises him dominion over all around.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"godling_guided_slaughter": true
+		  }
+		},
+		"goto": "predator_hunt_dark"
+	  }
+	]
+  },
+  {
+	"id": "dark_ignore_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"They are not worth my time. My mission is all that matters.\"[/color]\n[color=white]Kael walks past the cowering creatures, his indifference a far greater terror than any rage. The panicked screams and desperate pleas are just background noise to him now. He feels a cold, silent approval from the godling. He is no longer a predator; he is a god, and his will is absolute. He has no need for violence, for he has already won. The godling’s voice is a satisfied hum in his mind: [/color][color=#ffbf00]\"It bows. As all things will, in time. Now, on to our destiny.\"\n[/color][color=white]Kael feels a sense of quiet triumph. He has transcended the petty squabbles of mortals, a cold and terrifying realization that he has become something new and terrible. It is a new kind of power, one that promises him dominion over all around.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"creatures_ignored": true
+		  }
+		},
 		"goto": "predator_hunt_dark"
 	  }
 	]
@@ -140,21 +494,69 @@
   {
 	"id": "predator_hunt_cautious",
 	"speaker": "Narration",
-	"text": "[color=white]A pack of four-legged, chitinous predators closes in, their clicking mandibles echoing in the alley. You weigh your options carefully: survival, mercy, or cunning. The creatures' glowing eyes lock onto you, and you feel the chilling knowledge that they are hunting you as a single unit.[/color]",
+	"text": "[color=white]A pack of four-legged, chitinous predators closes in, their clicking mandibles echoing in the alley. You weigh your options carefully: survival, mercy, or cunning. The creatures' glowing eyes lock onto you, and you feel the chilling knowledge that they are hunting you as a single unit. The godling is a cold, rational voice in your mind: [/color][color=#ffbf00]\"Do not fight. Do not waste the energy. Outsmart them, or we will not survive this.\"[/color]",
 	"choices": [
 	  {
-		"text": "Use humans as bait (reluctantly).",
-		"effects": {"flags": {"sacrificed_humans": true}},
-		"goto": "hidden_alley_cautious"
+		"text": "Bait",
+		"effects": {},
+		"goto": "cautious_bait_consequence"
 	  },
 	  {
-		"text": "Face predators alone, unflinching.",
-		"effects": {"flags": {"fought_predators_alone": true}},
-		"goto": "hidden_alley_cautious"
+		"text": "Fight",
+		"effects": {},
+		"goto": "cautious_fight_consequence"
 	  },
 	  {
-		"text": "Lead predators into a trap.",
-		"effects": {"flags": {"predator_trap_success": true}},
+		"text": "Trap",
+		"effects": {},
+		"goto": "cautious_trap_consequence"
+	  }
+	]
+  },
+  {
+	"id": "cautious_bait_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"This is the only way.\"[/color]\n[color=white]Kael's voice is a low, guttural growl. He sees a small group of terrified refugees, huddling together. With a heavy heart, he creates a distraction that draws the predators toward them. He feels the godling's presence within him is a cold, almost approving hum. He is no longer a man who saves, but a tool that survives. His heart aches, but his mind is clear. His humanity is slowly fading, replaced by a cold, calculating resolve. It is a frightening realization that his own survival is all that matters, and the godling knows it.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"sacrificed_humans": true
+		  }
+		},
+		"goto": "hidden_alley_cautious"
+	  }
+	]
+  },
+  {
+	"id": "cautious_fight_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will not run. I will fight.\"[/color]\n[color=white]Kael's face hardens with a quiet resolve, and he prepares for the assault. He feels a cool sense of agreement from the godling, a chilling appraisal of his strength and conviction. As the first predator lunges, Kael meets it head-on, his movements precise and deadly.\n[/color][color=#ffbf00]\"A foolish choice, mortal. We will not survive this.\"[/color]\n[color=white]The godling’s words are a cold echo in his mind. Kael feels no warmth in them, only the chilling pragmatism of a divine creature. He knows its concern is for itself, not for the human he just refused to condemn.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"fought_predators_alone": true
+		  }
+		},
+		"goto": "hidden_alley_cautious"
+	  }
+	]
+  },
+  {
+	"id": "cautious_trap_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will outsmart them.\"[/color]\n[color=white]Kael’s shadow stretches, twisting into a grasping claw. He quickly sets up a collapsing debris field, drawing the predators into a fatal bottleneck. The godling’s power surges, but Kael feels it as a cold, controlled energy, not a destructive one. It's a calculated risk.\n[/color][color=#ffbf00] \"A fine balance of wit and might, Kael. We will show them true cunning.\"[/color]\n[color=white]The godling’s words are a low, approving hum. Kael feels a thrill, a new sense of control over the power he holds. It is a shared secret, a way to move through the world without being consumed by it.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"predator_trap_success": true
+		  }
+		},
 		"goto": "hidden_alley_cautious"
 	  }
 	]
@@ -162,16 +564,69 @@
   {
 	"id": "predator_hunt_bold",
 	"speaker": "Narration",
-	"text": "[color=white]The predators' hunger is a tangible force in the air, a low growl that vibrates through the alley. Your boldness and the godling’s whispers give you a powerful edge. You feel a thrill run through you; survival is no longer a chore, but a game you are winning with every step.[/color]",
+	"text": "[color=white]The predators' hunger is a tangible force in the air, a low growl that vibrates through the alley. Your boldness and the godling’s whispers give you a powerful edge. You feel a thrill run through you; survival is no longer a chore, but a game you are winning with every step. The godling's voice is an eager, shared thought: [/color][color=#ffbf00]\"We are so close. Do not let these pathetic creatures stand in our way. Crush them or evade them, the choice is yours, but do it quickly.\"[/color]",
 	"choices": [
 	  {
-		"text": "Fight predators head-on.",
-		"effects": {"flags": {"fought_predators_head_on": true}},
-		"goto": "hidden_alley_bold"
+		"text": "Fight",
+		"effects": {},
+		"goto": "bold_fight_consequence"
 	  },
 	  {
-		"text": "Set a clever trap and evade.",
-		"effects": {"flags": {"predator_trap_success": true}},
+		"text": "Trap",
+		"effects": {},
+		"goto": "bold_trap_consequence_2"
+	  },
+	  {
+		"text": "Run",
+		"effects": {},
+		"goto": "bold_run_consequence_2"
+	  }
+	]
+  },
+  {
+	"id": "bold_fight_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will crush them.\"[/color]\n[color=white]Kael’s voice is a low, guttural growl. He charges the predators head-on, his movements a blur of divine power. He feels the godling's presence within him, a chilling chorus that urges him to obliterate everything in his path. He is a force of nature, an unstoppable, inhuman engine of destruction. He feels no guilt, no remorse, only a cold and terrifying sense of purpose. He is a god of war, a god of destruction, and the world is his to break. The godling’s voice is a chilling chorus in his mind: [/color][color=#ffbf00]\"This fear. It is a beautiful sound. It is all that is left.\"\n[/color][color=white]Kael feels a thrilling rush, a shared reverence for the being they have become. He has embraced his true nature, a horrifying fusion of man and god. It is a new kind of power, one that promises him dominion over all around.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"fought_predators_head_on": true
+		  }
+		},
+		"goto": "hidden_alley_bold"
+	  }
+	]
+  },
+  {
+	"id": "bold_trap_consequence_2",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"Let's show them how a true predator hunts.\"[/color]\n[color=white]Kael's mind races, a sudden clarity showing him a path to a crumbling structure. He uses his power to collapse it, creating a deafening roar and trapping the pursuing predators in a cloud of dust and debris. The godling within him urges him on, a low hum of anticipation. He feels a thrilling rush as the plan falls into place. The power he holds is a tool for cunning, for strategy, for a battle of wits he knows he can win. It is a new kind of power, one that thrills him and promises him a new life. It is the power of a divine tactician, and he is a willing apprentice.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"predator_trap_success": true
+		  }
+		},
+		"goto": "hidden_alley_bold"
+	  }
+	]
+  },
+  {
+	"id": "bold_run_consequence_2",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will outrun them all.\"[/color]\n[color=white]Kael bursts into a full sprint, the godling’s power lending him impossible speed. The clicking mandibles of the predators grow faint behind him as he leaves them in the dust. He feels a thrill, a primal rush of triumph. The godling's voice is an eager, shared thought: [/color][color=#ffbf00]\"Yes! Show them our true speed. They are nothing but prey.\"\n[/color][color=white]Kael feels the thrill of the hunt, but also a growing darkness. He is no longer human; he is a force of nature, an unstoppable, inhuman engine of destruction. It is a frightening feeling, a loss of self that he welcomes with open arms.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"predators_evaded": true
+		  }
+		},
 		"goto": "hidden_alley_bold"
 	  }
 	]
@@ -179,16 +634,48 @@
   {
 	"id": "predator_hunt_dark",
 	"speaker": "Narration",
-	"text": "[color=white]Predators and humans alike fall before you, not to combat, but to the overwhelming force of your will. Power courses through your veins, and fear bends all to your will. The godling within revels in the chaos, and you feel yourself becoming less Kael, and more a force of nature.[/color]",
+	"text": "[color=white]Predators and humans alike fall before you, not to combat, but to the overwhelming force of your will. Power courses through your veins, and fear bends all to your will. The godling within revels in the chaos, a chilling echo in your mind: [/color][color=#ffbf00]\"We are so close to true divinity. The world is a canvas, and our will is the brush. These are nothing. Erase them.\"[/color]",
 	"choices": [
 	  {
-		"text": "Hunt everything in your path.",
-		"effects": {"flags": {"predator_slaughter": true}},
-		"goto": "hidden_alley_dark"
+		"text": "Hunt",
+		"effects": {},
+		"goto": "dark_hunt_consequence_2"
 	  },
 	  {
-		"text": "Move silently, letting prey stumble into your grasp.",
-		"effects": {"flags": {"godling_guided_slaughter": true}},
+		"text": "Stalk",
+		"effects": {},
+		"goto": "dark_stalk_consequence"
+	  }
+	]
+  },
+  {
+	"id": "dark_hunt_consequence_2",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"They are nothing. Erase them.\"[/color]\n[color=white]Kael's words are a chilling echo of the godling's. He feels a cold, thrilling anticipation as he begins to hunt, actively seeking out any life form in his path. The market is transformed into his personal hunting ground. He is no longer a man; he is a predator, a living storm that consumes all in its path. The godling within him revels in the chaos, a chilling echo in his mind: [/color][color=#ffbf00]\"We are so close to true divinity. The world is a canvas, and our will is the brush. These are nothing. Erase them.\"\n[/color][color=white]The godling's words are a confirmation of a shared purpose. Kael feels a sense of dark triumph, a horrifying realization that he is becoming the very monster he sought to defeat. He is a god, a force of nature, and his will is absolute.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"predator_slaughter": true
+		  }
+		},
+		"goto": "hidden_alley_dark"
+	  }
+	]
+  },
+  {
+	"id": "dark_stalk_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"We'll wait. We'll let them come to us.\"[/color]\n[color=white]Kael slips into the shadows, a quiet, almost invisible force. He feels a wave of pure malevolence emanating from the godling, a dark patience that is more terrifying than any open aggression. He waits for his prey to stumble into his grasp, the screams of the market a symphony to his growing power. The godling’s voice is a low hum of grudging respect: [/color][color=#ffbf00]\"A patient hunter is a powerful hunter. But do not forget your purpose, mortal.\"\n[/color][color=white]Kael feels a sense of quiet defiance. He is not a hunter, not yet. He is a man who is trying to survive, and he will do so on his own terms. It is a fleeting moment of victory, one he clings to as a reminder of his own humanity.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"godling_guided_slaughter": true
+		  }
+		},
 		"goto": "hidden_alley_dark"
 	  }
 	]
@@ -196,16 +683,48 @@
   {
 	"id": "hidden_alley_cautious",
 	"speaker": "Narration",
-	"text": "[color=white]Kael slips into a hidden alley, the air now still. He catches his breath, the stench of decay fading into the scent of old stone. Faded graffiti on the wall shows a crude drawing of a temple, and beneath it, a stark warning: [b]‘[i]They do not return[/i].’[/b] He notices a shadow nearby, a flicker of movement that seems too solid to be just a shadow.[/color]",
+	"text": "[color=white]Kael slips into a hidden alley, the air now still. He catches his breath, the stench of decay fading into the scent of old stone. Faded graffiti on the wall shows a crude drawing of a temple, and beneath it, a stark warning: '[b]They do not return[/b].' He notices a shadow nearby, a flicker of movement that seems too solid to be just a shadow. The godling's whisper is a guide in your mind: [/color][color=#ffbf00]\"Do not fear the shadows, Kael. We are shadows now. The temple is our destination. Do not falter.\"[/color]",
 	"choices": [
 	  {
-		"text": "Investigate the shadow lurking nearby.",
-		"effects": {"flags": {"investigated_shadow": true}},
-		"goto": "temple_guardian_cautious"
+		"text": "Investigate",
+		"effects": {},
+		"goto": "cautious_investigate_consequence"
 	  },
 	  {
-		"text": "Ignore it and move toward the temple.",
-		"effects": {"flags": {"ignored_shadow": true}},
+		"text": "Ignore",
+		"effects": {},
+		"goto": "cautious_ignore_consequence"
+	  }
+	]
+  },
+  {
+	"id": "cautious_investigate_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"What is this thing? What does it want?\"[/color]\n[color=white]Kael approaches the shadow with a quiet resolve. He feels the godling's presence within him, a steady, almost approving hum. He feels a sense of quiet triumph. The godling is a patient, watchful predator, and Kael is becoming its perfect instrument. He feels no thrill, no rush of power, only a cold, unnerving patience. It is a new kind of terror, to be so perfectly aligned with something so alien and ancient.\n[/color][color=#ffbf00]\"This is a guardian. We will not fight it, but we will respect it.\"[/color]\n[color=white]The godling’s words feel less like praise and more like a shared, dark understanding. Kael feels a grim satisfaction. He knows his act was not one of kindness, but one of self-preservation. It is a terrifying realization that his mercy is now a weapon, a tool to be used for survival.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"investigated_shadow": true
+		  }
+		},
+		"goto": "temple_guardian_cautious"
+	  }
+	]
+  },
+  {
+	"id": "cautious_ignore_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will not be distracted. The temple is all that matters.\"[/color]\n[color=white]Kael pushes past the flickering shadow, his face a mask of cold determination. He feels the godling's presence within him is a low, approving hum. He feels a terrible calm, a cold sense of purpose. He is no longer a man who saves, but a tool that survives. His heart aches, but his mind is clear. His humanity is slowly fading, replaced by a cold, calculating resolve. It is a frightening realization that his own survival is all that matters, and the godling knows it.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"ignored_shadow": true
+		  }
+		},
 		"goto": "forbidden_temple_cautious"
 	  }
 	]
@@ -213,16 +732,48 @@
   {
 	"id": "hidden_alley_bold",
 	"speaker": "Narration",
-	"text": "[color=white]Kael’s shadows hide him as he navigates the alley, every echo seeming to suggest danger or opportunity. He notices a flicker of movement—a shape that looks more like a ghost than a person. He feels a strange pull to it, and a voice in his mind whispers, [b]'[i]It holds a secret you seek[/i].'[/b][/color]",
+	"text": "[color=white]Kael’s shadows hide him as he navigates the alley, every echo seeming to suggest danger or opportunity. He notices a flicker of movement—a shape that looks more like a ghost than a person. He feels a strange pull to it, and the godling’s voice whispers, a shared thought in his mind: [/color][color=#ffbf00]\"It holds a secret we seek, Kael. A secret to our power. Take it, and we will become stronger.\"[/color]",
 	"choices": [
 	  {
-		"text": "Seek out the shadow deliberately.",
-		"effects": {"flags": {"sought_out_shadow": true}},
-		"goto": "temple_guardian_bold"
+		"text": "Investigate",
+		"effects": {},
+		"goto": "bold_investigate_consequence"
 	  },
 	  {
-		"text": "Ignore it and storm forward.",
-		"effects": {"flags": {"ignored_shadow": true}},
+		"text": "Ignore",
+		"effects": {},
+		"goto": "bold_ignore_consequence"
+	  }
+	]
+  },
+  {
+	"id": "bold_investigate_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"What is this thing? What does it want?\"[/color]\n[color=white]Kael approaches the shadow with a quiet resolve. He feels the godling's presence within him, a steady, almost approving hum. He feels a sense of quiet triumph. The godling is a patient, watchful predator, and Kael is becoming its perfect instrument. He feels no thrill, no rush of power, only a cold, unnerving patience. It is a new kind of terror, to be so perfectly aligned with something so alien and ancient.\n[/color][color=#ffbf00]\"This is a guardian. We will not fight it, but we will respect it.\"[/color]\n[color=white]The godling’s words feel less like praise and more like a shared, dark understanding. Kael feels a grim satisfaction. He knows his act was not one of kindness, but one of self-preservation. It is a terrifying realization that his mercy is now a weapon, a tool to be used for survival.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"sought_out_shadow": true
+		  }
+		},
+		"goto": "temple_guardian_bold"
+	  }
+	]
+  },
+  {
+	"id": "bold_ignore_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will not be distracted. The temple is all that matters.\"[/color]\n[color=white]Kael pushes past the flickering shadow, his face a mask of cold determination. He feels the godling's presence within him is a low, approving hum. He feels a terrible calm, a cold sense of purpose. He is no longer a man who saves, but a tool that survives. His heart aches, but his mind is clear. His humanity is slowly fading, replaced by a cold, calculating resolve. It is a frightening realization that his own survival is all that matters, and the godling knows it.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"ignored_shadow": true
+		  }
+		},
 		"goto": "forbidden_temple_bold"
 	  }
 	]
@@ -230,16 +781,48 @@
   {
 	"id": "hidden_alley_dark",
 	"speaker": "Narration",
-	"text": "[color=white]Kael moves like a specter, a force of nature that commands the shadows. The temple looms, pulsing with a power that matches his own, a beacon of dark energy. The shadow in the alley doesn't flee; it bows, a silent tribute to a greater force. The godling within him urges him on, a low hum of anticipation.[/color]",
+	"text": "[color=white]Kael moves like a specter, a force of nature that commands the shadows. The temple looms, pulsing with a power that matches his own, a beacon of dark energy. The shadow in the alley doesn't flee; it bows, a silent tribute to a greater force. The godling within him urges him on, a low hum of anticipation: [/color][color=#ffbf00]\"It kneels before us. It knows our power. It is a key. Take it.\"[/color]",
 	"choices": [
 	  {
-		"text": "Embrace the shadow fully, seeking guidance.",
-		"effects": {"flags": {"shadow_guided": true}},
-		"goto": "temple_guardian_dark"
+		"text": "Embrace",
+		"effects": {},
+		"goto": "dark_embrace_consequence_2"
 	  },
 	  {
-		"text": "Proceed boldly, ignoring minor threats.",
-		"effects": {"flags": {"threats_ignored": true}},
+		"text": "Ignore",
+		"effects": {},
+		"goto": "dark_ignore_consequence_2"
+	  }
+	]
+  },
+  {
+	"id": "dark_embrace_consequence_2",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"What is this thing? What does it want?\"[/color]\n[color=white]Kael approaches the shadow with a quiet resolve. It dissolves into him, a cold, unsettling surge of power. He feels the godling's presence within him, a steady, almost approving hum. He feels a sense of quiet triumph. The godling is a patient, watchful predator, and Kael is becoming its perfect instrument. He feels no thrill, no rush of power, only a cold, unnerving patience. It is a new kind of terror, to be so perfectly aligned with something so alien and ancient.\n[/color][color=#ffbf00]\"This is a guardian. We will not fight it, but we will respect it.\"[/color]\n[color=white]The godling’s words feel less like praise and more like a shared, dark understanding. Kael feels a grim satisfaction. He knows his act was not one of kindness, but one of self-preservation. It is a terrifying realization that his mercy is now a weapon, a tool to be used for survival.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"shadow_guided": true
+		  }
+		},
+		"goto": "temple_guardian_dark"
+	  }
+	]
+  },
+  {
+	"id": "dark_ignore_consequence_2",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will not be distracted. The temple is all that matters.\"[/color]\n[color=white]Kael pushes past the flickering shadow, his face a mask of cold determination. He feels the godling's presence within him is a low, approving hum. He feels a terrible calm, a cold sense of purpose. He is no longer a man who saves, but a tool that survives. His heart aches, but his mind is clear. His humanity is slowly fading, replaced by a cold, calculating resolve. It is a frightening realization that his own survival is all that matters, and the godling knows it.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"threats_ignored": true
+		  }
+		},
 		"goto": "forbidden_temple_dark"
 	  }
 	]
@@ -247,16 +830,48 @@
   {
 	"id": "temple_guardian_cautious",
 	"speaker": "Narration",
-	"text": "[color=white]A spectral guardian emerges from the alley, eyes glowing with a cold, ancient light. You feel its immense power, but also its sense of purpose. Respect and caution guide you; an aggressive move could be disastrous, but a show of peace may lead to a different outcome.[/color]",
+	"text": "[color=white]A spectral guardian emerges from the alley, eyes glowing with a cold, ancient light. You feel its immense power, but also its sense of purpose. Respect and caution guide you; an aggressive move could be disastrous, but a show of peace may lead to a different outcome. The godling's voice is a firm guide: [/color][color=#ffbf00]\"Show it respect. Do not provoke it. We need its knowledge, not its body. Trust me, Kael.\"[/color]",
 	"choices": [
 	  {
-		"text": "Show respect to the guardian.",
-		"effects": {"flags": {"guardian_respected": true}},
-		"goto": "forbidden_temple_cautious"
+		"text": "Respect",
+		"effects": {},
+		"goto": "cautious_respect_consequence"
 	  },
 	  {
-		"text": "Attack the guardian impulsively.",
-		"effects": {"flags": {"guardian_slain": true}},
+		"text": "Attack",
+		"effects": {},
+		"goto": "cautious_attack_consequence"
+	  }
+	]
+  },
+  {
+	"id": "cautious_respect_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I respect your purpose. We will not harm you.\"[/color]\n[color=white]Kael bows his head, a gesture of respect that feels both right and wrong. The guardian watches him with unblinking eyes before slowly, almost imperceptibly, stepping aside. He feels the godling's quiet approval, a cold sense of a job well done. It is a calculated move, not a merciful one. It protects its mortal vessel by building a reputation as a protector, something that would earn him allies and deflect suspicion.\n[/color][color=#ffbf00] \"A shrewd move, mortal. Allies can be a shield.\"[/color]\n[color=white]The godling’s words feel less like praise and more like a shared, dark understanding. Kael feels a grim satisfaction. He knows his act was not one of kindness, but one of self-preservation. It is a terrifying realization that his mercy is now a weapon, a tool to be used for survival.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"guardian_respected": true
+		  }
+		},
+		"goto": "forbidden_temple_cautious"
+	  }
+	]
+  },
+  {
+	"id": "cautious_attack_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will not be tested. I will destroy you.\"[/color]\n[color=white]Kael’s shadow stretches, twisting into a grasping claw. He lashes out at the spectral guardian, his power tearing at its ethereal form. The guardian lets out a silent, chilling scream as it disperses into motes of light. The godling’s power surges, but Kael feels it as a cold, controlled energy, not a destructive one. It's a calculated risk.\n[/color][color=#ffbf00]\"A foolish choice, mortal. We will not survive this.\"[/color]\n[color=white]The godling’s words are a cold echo in his mind. Kael feels no warmth in them, only the chilling pragmatism of a divine creature. He knows its concern is for itself, not for the human he just refused to condemn.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"guardian_slain": true
+		  }
+		},
 		"goto": "forbidden_temple_cautious"
 	  }
 	]
@@ -264,16 +879,48 @@
   {
 	"id": "temple_guardian_bold",
 	"speaker": "Narration",
-	"text": "[color=white]The guardian tests you, its eyes flashing with ancient judgment as it prepares for a fight. Your bold demeanor could grant you an advantage, but a misstep might cost you dearly, and the godling’s voice whispers conflicting strategies in your mind.[/color]",
+	"text": "[color=white]The guardian tests you, its eyes flashing with ancient judgment as it prepares for a fight. Your bold demeanor could grant you an advantage, but a misstep might cost you dearly, and the godling’s voice whispers conflicting strategies in your mind. One side says to fight, to prove your dominance; the other says to simply pass, to conserve your power for the greater fight ahead. The choice is yours, Kael.[/color]",
 	"choices": [
 	  {
-		"text": "Respect the guardian.",
-		"effects": {"flags": {"guardian_respected": true}},
-		"goto": "forbidden_temple_bold"
+		"text": "Respect",
+		"effects": {},
+		"goto": "bold_respect_consequence"
 	  },
 	  {
-		"text": "Strike without hesitation.",
-		"effects": {"flags": {"guardian_slain": true}},
+		"text": "Attack",
+		"effects": {},
+		"goto": "bold_attack_consequence"
+	  }
+	]
+  },
+  {
+	"id": "bold_respect_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I respect your purpose. We will not harm you.\"[/color]\n[color=white]Kael bows his head, a gesture of respect that feels both right and wrong. The guardian watches him with unblinking eyes before slowly, almost imperceptibly, stepping aside. He feels the godling's quiet approval, a cold sense of a job well done. It is a calculated move, not a merciful one. It protects its mortal vessel by building a reputation as a protector, something that would earn him allies and deflect suspicion.\n[/color][color=#ffbf00] \"A shrewd move, mortal. Allies can be a shield.\"[/color]\n[color=white]The godling’s words feel less like praise and more like a shared, dark understanding. Kael feels a grim satisfaction. He knows his act was not one of kindness, but one of self-preservation. It is a terrifying realization that his mercy is now a weapon, a tool to be used for survival.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"guardian_respected": true
+		  }
+		},
+		"goto": "forbidden_temple_bold"
+	  }
+	]
+  },
+  {
+	"id": "bold_attack_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will not be tested. I will destroy you.\"[/color]\n[color=white]Kael’s voice is a low, guttural growl. He charges the spectral guardian, his power erupting in a violent display. The guardian screams a silent, ancient protest as it is ripped apart, its essence dissolving into the air. He feels the godling's presence within him, a chilling chorus that urges him to obliterate everything in his path. He is a force of nature, an unstoppable, inhuman engine of destruction. He feels no guilt, no remorse, only a cold and terrifying sense of purpose. He is a god of war, a god of destruction, and the world is his to break. The godling’s voice is a chilling chorus in his mind: [/color][color=#ffbf00]\"This fear. It is a beautiful sound. It is all that is left.\"\n[/color][color=white]Kael feels a thrilling rush, a shared reverence for the being they have become. He has embraced his true nature, a horrifying fusion of man and god. It is a new kind of power, one that promises him dominion over all around.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"guardian_slain": true
+		  }
+		},
 		"goto": "forbidden_temple_bold"
 	  }
 	]
@@ -281,16 +928,48 @@
   {
 	"id": "temple_guardian_dark",
 	"speaker": "Narration",
-	"text": "[color=white]The spectral guardian bows subtly to the merged presence of Kael and the godling. It is an act of submission. Power radiates through the alley and into the temple, and the shadow dissolves, leaving nothing but an ancient, resonant silence.[/color]",
+	"text": "[color=white]The spectral guardian bows subtly to the **conjoined** presence of Kael and the godling. It is an act of submission. Power radiates through the alley and into the temple, and the shadow dissolves, leaving nothing but an ancient, resonant silence. The godling's voice is a satisfied hum in your mind: [/color][color=#ffbf00]\"It bows. As all things will, in time. Now, on to our destiny.\"[/color]",
 	"choices": [
 	  {
-		"text": "Submit to its guidance.",
-		"effects": {"flags": {"guardian_guided": true}},
-		"goto": "forbidden_temple_dark"
+		"text": "Submit",
+		"effects": {},
+		"goto": "dark_submit_consequence"
 	  },
 	  {
-		"text": "Strike it down and claim the temple.",
-		"effects": {"flags": {"guardian_slain": true}},
+		"text": "Destroy",
+		"effects": {},
+		"goto": "dark_destroy_consequence"
+	  }
+	]
+  },
+  {
+	"id": "dark_submit_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will submit to your will. Show me the way.\"[/color]\n[color=white]Kael's words are a chilling echo of the godling's. He feels a cold, thrilling anticipation as he begins to hunt. He is no longer a man; he is a predator, a living storm that consumes all in its path. The godling within him revels in the chaos, a chilling echo in his mind: [/color][color=#ffbf00]\"We are so close to true divinity. The world is a canvas, and our will is the brush. These are nothing. Erase them.\"\n[/color][color=white]The godling's words are a confirmation of a shared purpose. Kael feels a sense of dark triumph, a horrifying realization that he is becoming the very monster he sought to defeat. He is a god, a force of nature, and his will is absolute.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"guardian_guided": true
+		  }
+		},
+		"goto": "forbidden_temple_dark"
+	  }
+	]
+  },
+  {
+	"id": "dark_destroy_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1] \"I will not be commanded. I will destroy you and claim the temple for myself.\"[/color]\n[color=white]Kael’s voice is a low, guttural growl. He charges the spectral guardian, his power erupting in a violent, consuming darkness. The guardian offers no scream, simply a final, chilling silence as it is utterly annihilated. He feels the godling's presence within him, a chilling chorus that urges him to obliterate everything in his path. He is a force of nature, an unstoppable, inhuman engine of destruction. He feels no guilt, no remorse, only a cold and terrifying sense of purpose. He is a god of war, a god of destruction, and the world is his to break. The godling’s voice is a chilling chorus in his mind: [/color][color=#ffbf00]\"This fear. It is a beautiful sound. It is all that is left.\"\n[/color][color=white]Kael feels a thrilling rush, a shared reverence for the being they have become. He has embraced his true nature, a horrifying fusion of man and god. It is a new kind of power, one that promises him dominion over all around.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"guardian_slain": true
+		  }
+		},
 		"goto": "forbidden_temple_dark"
 	  }
 	]
@@ -298,16 +977,48 @@
   {
 	"id": "forbidden_temple_cautious",
 	"speaker": "Godling",
-	"text": "[color=goldenrod]\"Inside the temple, visions flicker and dance around you. Greater merge, deeper power — the temptation of full communion claws at your mortal resolve. This is the last chance for your identity to remain separate from mine. Do you want it?\"[/color]",
+	"text": "[color=#ffbf00]\"Inside the temple, visions flicker and dance around you. Greater communion, deeper power—the temptation of full communion claws at your mortal resolve. This is the last chance for your identity to remain separate from mine. Do you want it?\"[/color]",
 	"choices": [
 	  {
-		"text": "Resist the temptation.",
-		"effects": {"flags": {"sanity_loss": true}},
-		"goto": "temple_puzzle_cautious"
+		"text": "Resist",
+		"effects": {},
+		"goto": "cautious_resist_consequence"
 	  },
 	  {
-		"text": "Accept deeper merge cautiously.",
-		"effects": {"flags": {"mutation_stage1": true}},
+		"text": "Accept",
+		"effects": {},
+		"goto": "cautious_accept_consequence_2"
+	  }
+	]
+  },
+  {
+	"id": "cautious_resist_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will not lose myself. I will resist.\"[/color]\n[color=white]Kael's face hardens with a quiet resolve. He feels a cool sense of agreement from the godling, a chilling appraisal of his strength and conviction.\n[/color][color=#ffbf00]\"A foolish choice, mortal. We will not survive this.\"[/color]\n[color=white]The godling’s words are a cold echo in his mind. Kael feels no warmth in them, only the chilling pragmatism of a divine creature. He knows its concern is for itself, not for the human he just refused to condemn.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"sanity_loss": true
+		  }
+		},
+		"goto": "temple_puzzle_cautious"
+	  }
+	]
+  },
+  {
+	"id": "cautious_accept_consequence_2",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will accept the **communion**. But on my own terms.\"[/color]\n[color=white]Kael feels a sickening pull in his gut as he makes the deal. The godling within him goes cold, a silent, chilling void where its voice once was. The godling’s life force, the very thing keeping him alive, abruptly vanishes.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"mutation_stage1": true
+		  }
+		},
 		"goto": "temple_puzzle_cautious"
 	  }
 	]
@@ -315,16 +1026,48 @@
   {
 	"id": "forbidden_temple_bold",
 	"speaker": "Godling",
-	"text": "[color=goldenrod]\"Visions flash with power and glory; glimpses of a world bent to your will. Your bond with me hums, a constant, tempting whisper to embrace it fully. You are so close to becoming truly divine, to leaving your frail humanity behind.\"[/color]",
+	"text": "[color=#ffbf00]\"Visions flash with power and glory; glimpses of a world bent to your will. Your bond with me hums, a constant, tempting whisper to embrace it fully. You are so close to becoming truly divine, to leaving your frail humanity behind.\"[/color]",
 	"choices": [
 	  {
-		"text": "Accept the deeper merge.",
-		"effects": {"flags": {"mutation_stage1": true}},
-		"goto": "temple_puzzle_bold"
+		"text": "Accept",
+		"effects": {},
+		"goto": "bold_accept_consequence_2"
 	  },
 	  {
-		"text": "Resist the temptation.",
-		"effects": {"flags": {"sanity_loss": true}},
+		"text": "Resist",
+		"effects": {},
+		"goto": "bold_resist_consequence"
+	  }
+	]
+  },
+  {
+	"id": "bold_accept_consequence_2",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will accept the **union**. But on my own terms.\"[/color]\n[color=white]Kael feels a sickening pull in his gut as he makes the deal. The godling within him goes cold, a silent, chilling void where its voice once was. The godling’s life force, the very thing keeping him alive, abruptly vanishes.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"mutation_stage1": true
+		  }
+		},
+		"goto": "temple_puzzle_bold"
+	  }
+	]
+  },
+  {
+	"id": "bold_resist_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will not lose myself. I will resist.\"[/color]\n[color=white]Kael's face hardens with a quiet resolve. He feels a cool sense of agreement from the godling, a chilling appraisal of his strength and conviction.\n[/color][color=#ffbf00]\"A foolish choice, mortal. You will not survive this.\"[/color]\n[color=white]The godling’s words are a cold echo in his mind. Kael feels no warmth in them, only the chilling pragmatism of a divine creature. He knows its concern is for itself, not for the human he just refused to condemn.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"sanity_loss": true
+		  }
+		},
 		"goto": "temple_puzzle_bold"
 	  }
 	]
@@ -332,16 +1075,48 @@
   {
 	"id": "forbidden_temple_dark",
 	"speaker": "Godling",
-	"text": "[color=goldenrod]\"The temple trembles as visions of power and annihilation unfold around you. The final, absolute merge calls to you, promising dominion over all around. Why resist? The world is a banquet, and we are its rightful feast.\"[/color]",
+	"text": "[color=#ffbf00]\"The temple trembles as visions of power and annihilation unfold around you. The final, absolute **confluence** calls to you, promising dominion over all around. Why resist? The world is a banquet, and we are its rightful feast.\"[/color]",
 	"choices": [
 	  {
-		"text": "Accept the deeper merge, letting godling guide fully.",
-		"effects": {"flags": {"mutation_stage2": true}},
-		"goto": "temple_puzzle_dark"
+		"text": "Accept",
+		"effects": {},
+		"goto": "dark_accept_consequence_2"
 	  },
 	  {
-		"text": "Resist, holding some humanity.",
-		"effects": {"flags": {"sanity_loss": true}},
+		"text": "Resist",
+		"effects": {},
+		"goto": "dark_resist_consequence"
+	  }
+	]
+  },
+  {
+	"id": "dark_accept_consequence_2",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will accept the **confluence**. I will become a god.\"[/color]\n[color=white]Kael's words are a chilling echo of the godling's. He feels a cold, thrilling anticipation as he begins to hunt. He is no longer a man; he is a predator, a living storm that consumes all in its path. The godling within him revels in the chaos, a chilling echo in his mind: [/color][color=#ffbf00]\"We are so close to true divinity. The world is a canvas, and our will is the brush. These are nothing. Erase them.\"\n[/color][color=white]The godling's words are a confirmation of a shared purpose. Kael feels a sense of dark triumph, a horrifying realization that he is becoming the very monster he sought to defeat. He is a god, a force of nature, and his will is absolute.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"mutation_stage2": true
+		  }
+		},
+		"goto": "temple_puzzle_dark"
+	  }
+	]
+  },
+  {
+	"id": "dark_resist_consequence",
+	"speaker": "Narration",
+	"text": "[color=#C3B1E1]\"I will not lose myself. I will resist.\"[/color]\n[color=white]Kael's face hardens with a quiet resolve. He feels a cool sense of agreement from the godling, a chilling appraisal of his strength and conviction.\n[/color][color=#ffbf00]\"A foolish choice, mortal. You will not survive this.\"[/color]\n[color=white]The godling’s words are a cold echo in his mind. Kael feels no warmth in them, only the chilling pragmatism of a divine creature. He knows its concern is for itself, not for the human he just refused to condemn.\n[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"sanity_loss": true
+		  }
+		},
 		"goto": "temple_puzzle_dark"
 	  }
 	]
@@ -352,70 +1127,166 @@
 	"text": "[color=white]Kael encounters the temple’s inner sanctum: a complex maze of glyphs, traps, and arcane locks. The murals from the first shrine echo in his memory, a guide to the puzzle. Careful thought is needed to proceed safely, but the urge to simply power through is a deep, primal one.[/color]",
 	"choices": [
 	  {
-		"text": "Solve it carefully using murals' knowledge.",
-		"effects": {"flags": {"solved_puzzle_carefully": true}},
-		"goto": "fork_path_cautious"
+		"text": "Solve",
+		"effects": {},
+		"goto": "cautious_solve_consequence"
 	  },
 	  {
-		"text": "Rush through with brute force.",
-		"effects": {"flags": {"rushed_puzzle": true}},
-		"goto": "fork_path_cautious"
+		"text": "Force",
+		"effects": {},
+		"goto": "cautious_force_consequence"
 	  }
 	]
   },
   {
-	"id": "temple_puzzle_bold",
+	"id": "cautious_solve_consequence",
 	"speaker": "Narration",
-	"text": "[color=white]The sanctum tests both might and mind. The puzzle, a cascade of floating sigils, offers multiple solutions. Bold choices could yield great rewards, but a single misstep might cost you dearly. The godling’s voice urges you to power through it, to use your newfound strength, not your frail mind.[/color]",
+	"text": "[color=#C3B1E1]\"I will solve it carefully.\"[/color]\n[color=white]Kael methodically studies the glyphs, recalling details from the murals he passed. He feels a cool sense of agreement from the godling, a chilling appraisal of his strength and conviction.\n[/color][color=#ffbf00]\"A wise choice, mortal. This is not a test of strength, but of will.\"[/color]\n[color=white]The godling’s words are a cold echo in his mind. Kael feels no warmth in them, only the chilling pragmatism of a divine creature. He knows its concern is for itself, not for the human he just refused to condemn.\n[/color]",
 	"choices": [
 	  {
-		"text": "Solve it carefully.",
-		"effects": {"flags": {"solved_puzzle_carefully": true}},
-		"goto": "fork_path_bold"
-	  },
-	  {
-		"text": "Force it with strength.",
-		"effects": {"flags": {"forced_puzzle_solution": true}},
-		"goto": "fork_path_bold"
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"solved_puzzle_carefully": true
+		  }
+		},
+		"goto": "fork_path_cautious"
 	  }
 	]
   },
   {
-	"id": "temple_puzzle_dark",
+	"id": "cautious_force_consequence",
 	"speaker": "Narration",
-	"text": "[color=white]The inner sanctum bends to your will. The godling's power flows through the maze, showing you a path of destruction. Danger and power intertwine; every choice stains the soul, but every choice also brings you closer to ultimate dominion. The puzzle is not meant to be solved, but to be broken.[/color]",
+	"text": "[color=#C3B1E1]\"I will force my way through.\"[/color]\n[color=white]Kael’s voice is a low, guttural growl. He smashes through the arcane locks, ignoring the intricate glyphs. He feels the godling's presence within him, a chilling chorus that urges him to obliterate everything in his path. He is a force of nature, an unstoppable, inhuman engine of destruction. He feels no guilt, no remorse, only a cold and terrifying sense of purpose. He is a god of war, a god of destruction, and the world is his to break. The godling’s voice is a chilling chorus in his mind: [/color][color=#ffbf00]\"This fear. It is a beautiful sound. It is all that is left.\"\n[/color][color=white]Kael feels a thrilling rush, a shared reverence for the being they have become. He has embraced his true nature, a horrifying fusion of man and god. It is a new kind of power, one that promises him dominion over all around.\n[/color]",
 	"choices": [
 	  {
-		"text": "Solve carefully, resisting full corruption.",
-		"effects": {"flags": {"solved_puzzle_carefully": true}},
-		"goto": "fork_path_dark"
-	  },
-	  {
-		"text": "Use brute force, letting the godling guide fully.",
-		"effects": {"flags": {"forced_puzzle_solution": true}},
-		"goto": "fork_path_dark"
+		"text": "Continue",
+		"effects": {
+		  "flags": {
+			"rushed_puzzle": true
+		  }
+		},
+		"goto": "fork_path_cautious"
 	  }
 	]
   },
-  {
-	"id": "fork_path_cautious",
-	"speaker": "Narration",
-	"text": "[color=white]As you leave the temple, the world seems to split before you. Two paths diverge: one lit by a faint, hopeful glow, the other shrouded in oppressive shadow. Your cautious approach and the morality you’ve clung to will shape the challenges ahead in Act 3.[/color]",
-	"effects": {},
-	"exit_to": "cautious_start"
-  },
-  {
-	"id": "fork_path_bold",
-	"speaker": "Narration",
-	"text": "[color=white]The world trembles. Paths diverge before you: one of pure, unbridled power, the other of hard-won influence. Your bold choices and the growing bond with the godling have influenced what awaits you in Act 3.[/color]",
-	"effects": {},
-	"exit_to": "bold_start"
-  },
-  {
-	"id": "fork_path_dark",
-	"speaker": "Narration",
-	"text": "[color=white]The paths ahead are not of stone, but of purpose. The deep merge and your dark deeds dictate the horrors and the incredible power awaiting you in Act 3. The world is yours for the taking; the only question is how you will break it.[/color]",
-	"effects": {},
-	"exit_to": "dark_start"
-  }
+{
+		"id": "temple_puzzle_bold",
+		"speaker": "Narration",
+		"text": "[color=white]The sanctum tests both might and mind. The puzzle, a cascade of floating sigils, offers multiple solutions. Bold choices could yield great rewards, but a single misstep might cost you dearly. The godling’s voice urges you to power through it, to use your newfound strength, not your frail mind.[/color]",
+		"choices": [
+			{
+				"text": "Solve",
+				"effects": {},
+				"goto": "bold_solve_consequence"
+			},
+			{
+				"text": "Force",
+				"effects": {},
+				"goto": "bold_force_consequence"
+			}
+		]
+	},
+	{
+		"id": "bold_solve_consequence",
+		"speaker": "Narration",
+		"text": "[color=#C3B1E1]\"I will solve it carefully.\"[/color]\n[color=white]Kael's face hardens with a quiet resolve. He studies the floating sigils, seeking the hidden patterns and logical sequences. He feels a cool sense of agreement from the godling, a chilling appraisal of his strength and conviction.\n[/color][color=#ffbf00]\"A wise choice, mortal. This is not a test of strength, but of will.\"[/color]\n[color=white]The godling’s words are a cold echo in his mind. Kael feels no warmth in them, only the chilling pragmatism of a divine creature. He knows its concern is for itself, not for the human he just refused to condemn.\n[/color]",
+		"choices": [
+			{
+				"text": "Continue",
+				"effects": {
+					"flags": {
+						"solved_puzzle_carefully": true
+					}
+				},
+				"goto": "fork_path_bold"
+			}
+		]
+	},
+	{
+		"id": "bold_force_consequence",
+		"speaker": "Narration",
+		"text": "[color=#C3B1E1]\"I will force my way through.\"[/color]\n[color=white]Kael’s voice is a low, guttural growl. He charges the floating sigils, his raw power shattering them with a violent, concussive force. He feels the godling's presence within him, a chilling chorus that urges him to obliterate everything in his path. He is a force of nature, an unstoppable, inhuman engine of destruction. He feels no guilt, no remorse, only a cold and terrifying sense of purpose. He is a god of war, a god of destruction, and the world is his to break. The godling’s voice is a chilling chorus in his mind: [/color][color=#ffbf00]\"This fear. It is a beautiful sound. It is all that is left.\"\n[/color][color=white]Kael feels a thrilling rush, a shared reverence for the being they have become. He has embraced his true nature, a horrifying fusion of man and god. It is a new kind of power, one that promises him dominion over all around.\n[/color]",
+		"choices": [
+			{
+				"text": "Continue",
+				"effects": {
+					"flags": {
+						"forced_puzzle_solution": true
+					}
+				},
+				"goto": "fork_path_bold"
+			}
+		]
+	},
+	{
+		"id": "temple_puzzle_dark",
+		"speaker": "Narration",
+		"text": "[color=white]The inner sanctum bends to your will. The godling's power flows through the maze, showing you a path of destruction. Danger and power intertwine; every choice stains the soul, but every choice also brings you closer to ultimate dominion. The puzzle is not meant to be solved, but to be broken.[/color]",
+		"choices": [
+			{
+				"text": "Solve",
+				"effects": {},
+				"goto": "dark_solve_consequence"
+			},
+			{
+				"text": "Force",
+				"effects": {},
+				"goto": "dark_force_consequence"
+			}
+		]
+	},
+	{
+		"id": "dark_solve_consequence",
+		"speaker": "Narration",
+		"text": "[color=#C3B1E1]\"I will solve it carefully.\"[/color]\n[color=white]Kael's face hardens with a quiet resolve. He studies the corrupting glyphs, understanding their dark logic. He feels a cool sense of agreement from the godling, a chilling appraisal of his strength and conviction.\n[/color][color=#ffbf00]\"A wise choice, mortal. This is not a test of strength, but of will.\"[/color]\n[color=white]The godling’s words are a cold echo in his mind. Kael feels no warmth in them, only the chilling pragmatism of a divine creature. He knows its concern is for itself, not for the human he just refused to condemn.\n[/color]",
+		"choices": [
+			{
+				"text": "Continue",
+				"effects": {
+					"flags": {
+						"solved_puzzle_carefully": true
+					}
+				},
+				"goto": "fork_path_dark"
+			}
+		]
+	},
+	{
+		"id": "dark_force_consequence",
+		"speaker": "Narration",
+		"text": "[color=#C3B1E1]\"I will force my way through.\"[/color]\n[color=white]Kael’s voice is a low, guttural growl. He shatters the puzzle with raw, malevolent force, the ancient mechanisms groaning under his power. He feels the godling's presence within him, a chilling chorus that urges him to obliterate everything in his path. He is a force of nature, an unstoppable, inhuman engine of destruction. He feels no guilt, no remorse, only a cold and terrifying sense of purpose. He is a god of war, a god of destruction, and the world is his to break. The godling’s voice is a chilling chorus in his mind: [/color][color=#ffbf00]\"This fear. It is a beautiful sound. It is all that is left.\"\n[/color][color=white]Kael feels a thrilling rush, a shared reverence for the being they have become. He has embraced his true nature, a horrifying fusion of man and god. It is a new kind of power, one that promises him dominion over all around.\n[/color]",
+		"choices": [
+			{
+				"text": "Continue",
+				"effects": {
+					"flags": {
+						"forced_puzzle_solution": true
+					}
+				},
+				"goto": "fork_path_dark"
+			}
+		]
+	},
+	{
+		"id": "fork_path_cautious",
+		"speaker": "Narration",
+		"text": "[color=white]As you leave the temple, the world seems to split before you. Two paths diverge: one lit by a faint, hopeful glow, the other shrouded in oppressive shadow. Your cautious approach and the morality you’ve clung to will shape the challenges ahead in Act 3.[/color]",
+		"effects": {},
+		"exit_to": "cautious_start"
+	},
+	{
+		"id": "fork_path_bold",
+		"speaker": "Narration",
+		"text": "[color=white]The world trembles. Paths diverge before you: one of pure, unbridled power, the other of hard-won influence. Your bold choices and the growing bond with the godling have influenced what awaits you in Act 3.[/color]",
+		"effects": {},
+		"exit_to": "bold_start"
+	},
+	{
+		"id": "fork_path_dark",
+		"speaker": "Narration",
+		"text": "[color=white]The paths ahead are not of stone, but of purpose. The deep **confluence** and your dark deeds dictate the horrors and the incredible power awaiting you in Act 3. The world is yours for the taking; the only question is how you will break it.[/color]",
+		"effects": {},
+		"exit_to": "dark_start"
+	}
 ]
