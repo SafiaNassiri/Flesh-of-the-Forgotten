@@ -2,38 +2,121 @@
   {
 	"id": "start",
 	"speaker": "Narration",
-	"text": "Kael drags himself through the roots of the decaying shrine. A faint warmth pulses beneath the stone floor, whispering promises of power and danger.",
+	"text": "[color=white]Kael drags himself through the gnarled roots of the decaying shrine, each step scraping against stone slick with moss. The air tastes of copper and forgotten prayers, a metallic tang that clings to his tongue. Somewhere beneath the warped stone, a heartbeat that is not his own thrumss—deep, ancient, unyielding.[/color]\n\n[color=white]A voice—clear, ageless, and impossible—slips into his thoughts: [/color][color=goldenrod]\"Mortal... I have been waiting.\" [/color][color=white]The hairs on Kael’s arms rise as the voice coils around his mind like smoke, curling into every fear, every desire, every question he has never dared to speak aloud.[/color]",
 	"choices": [
 	  {
-		"text": "Accept the godling's offer eagerly.",
-		"effects": {"morality": 20, "bond": 15},
-		"goto": "shrine_chamber"
+		"text": "Accept",
+		"effects": {},
+		"goto": "godling_intro_accept"
 	  },
 	  {
-		"text": "Reluctantly agree to the merge.",
-		"effects": {"morality": 10, "bond": 10},
-		"goto": "shrine_chamber"
+		"text": "Hesitate",
+		"effects": {},
+		"goto": "godling_intro_hesitate"
 	  },
 	  {
-		"text": "Refuse the godling's offer.",
-		"effects": {"morality": -20, "bond": -10, "flags": {"forced_merge": true}},
-		"goto": "shrine_chamber"
+		"text": "Refuse",
+		"effects": {"flags": {"initial_refusal": true}},
+		"goto": "godling_intro_refuse"
 	  }
 	]
   },
   {
-	"id": "shrine_chamber",
-	"speaker": "Narration",
-	"text": "The shrine's inner chamber stretches into darkness. Faded murals show the ancient wars of gods and mortals. The godling's light coils around Kael's hand, tempting him.",
+	"id": "godling_intro_accept",
+	"speaker": "Kael",
+	"text": "[color=purple]\"Take me. Make me more.\"[/color]\n[color=white][b]Narration:[/b] Kael’s whisper is a fierce hunger he hadn't known he possessed. An exhilarating thrill pulses through him, the promise of power wrapping around him like a coveted cloak. His eyes, usually guarded, now shine with an almost manic gleam, reflecting the ancient, eager energy that fills the shrine.[/color]",
 	"choices": [
 	  {
-		"text": "Focus on the murals and learn from them.",
-		"effects": {"morality": 15, "bond": 10},
-		"goto": "merge_ceremony"
+		"text": "Continue",
+		"goto": "godling_intro_dialogue"
+	  }
+	]
+  },
+  {
+	"id": "godling_intro_hesitate",
+	"speaker": "Kael",
+	"text": "[color=purple]\"If I must… then let it be so.\"[/color]\n[color=white][b]Narration:[/b]Kael's words are heavy with resignation, a reluctant acceptance hanging in the air. He senses the inherent danger lurking within the godling's words, a subtle chill that traces paths down his spine, yet a deeper, unspoken compulsion forces his compliance. His shoulders slump ever so slightly, a silent acknowledgement of a path he feels was chosen for him rather than by him.[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"goto": "godling_intro_dialogue"
+	  }
+	]
+  },
+  {
+	"id": "godling_intro_refuse",
+	"speaker": "Kael",
+	"text": "[color=purple]\"Stay out of my head, spirit.\"[/color]\n[color=white][b]Narration:[/b]Kael's defiance is a raw, visceral thing, his voice a low growl of resistance. His pulse hammers a frantic rhythm against his ribs, a desperate drumbeat against the invasion of his mind. He thrusts out a hand, as if to physically ward off the ethereal presence, his brow furrowed in a mask of anger and fear, a desperate refusal written across every tense line of his body.[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"goto": "godling_intro_dialogue"
+	  }
+	]
+  },
+  {
+	"id": "godling_intro_dialogue",
+	"speaker": "Godling",
+	"text": "[color=goldenrod]\"Names are fragile things. Mine has been stolen by centuries, forgotten by those who should have known me. But you may call me what you wish.\"[/color]\n[color=white][b]Narration:[/b] The godling's voice resonates with the sound of wind threading through a graveyard, ancient and mournful, yet possessing an undeniable power that makes the very chamber quiver. Shadows flicker along the walls as though alive, dancing to the rhythm of its words. Kael feels a strange mix of awe and trepidation, a chilling sense of something vast and unknowable reaching out to him. His breath hitchs in his throat, a silent acknowledgement of the immense power before him.[/color]",
+	"choices": [
+	  {
+		"text": "Embrace the offer completely.",
+		"effects": {"flags": {"embrace_godling_offer": true}},
+		"goto": "shrine_chamber_embrace"
 	  },
 	  {
-		"text": "Ignore the history and feel the godling's power.",
-		"effects": {"morality": -15, "bond": 15},
+		"text": "Resist the seduction of control.",
+		"effects": {"flags": {"resist_godling_control": true}},
+		"goto": "shrine_chamber_resist"
+	  }
+	]
+  },
+  {
+	"id": "shrine_chamber_embrace",
+	"speaker": "Kael",
+	"text": "[color=purple]\"Then root deep. I want no half-measures.\"[/color]\n[color=white][b]Narration:[/b]Kael’s voice is unwavering, his words a defiant challenge to the godling's query. A strange warmth spreads through him, not entirely his own, but a deep, satisfying hum that resonates with the godling's presence. His posture straightens, a new sense of purpose settling upon him as if the very air has shifted to accommodate his decision.[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"goto": "shrine_chamber_narration"
+	  }
+	]
+  },
+  {
+	"id": "shrine_chamber_resist",
+	"speaker": "Kael",
+	"text": "[color=purple]\"I will not be controlled.\"[/color]\n[color=white][b]Narration:[/b]Kael's voice is firm, a defiant refusal etched into his expression. He feels a surge of adrenaline, a primal need to protect his autonomy from the godling's insidious offer. His jaw is set, his gaze unyielding, a silent vow that despite the power being offered, his will would remain his own.[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"goto": "shrine_chamber_narration"
+	  }
+	]
+  },
+  {
+	"id": "shrine_chamber_narration",
+	"speaker": "Narration",
+	"text": "[color=white]The shrine’s inner chamber stretches into darkness, tall and cavernous, echoing with forgotten prayers. Faded murals crawl across the walls—ancient wars painted in strokes of light and fire, gods clashing with mortals, oceans splitting open under divine wrath. Dust motes drift in the shafts of light from cracks in the ceiling, swirling like tiny spirits.[/color]\n\n[color=white]The godling’s presence coils warm and steady in Kael’s palm, a pulse that mirrors his own heartbeat. [/color][color=goldenrod]\"They painted me here once,\" [/color][color=white]it whispers, a tremor in its tone. [/color][color=goldenrod]\"Before they learned to fear me.\"[/color]",
+	"choices": [
+	  {
+		"text": "Study the murals.",
+		"effects": {"flags": {"studied_murals": true}},
+		"goto": "godling_argument"
+	  },
+	  {
+		"text": "Ignore the murals.",
+		"effects": {"flags": {"ignored_murals": true}},
+		"goto": "godling_argument"
+	  }
+	]
+  },
+  {
+	"id": "godling_argument",
+	"speaker": "Narration",
+	"text": "[color=white]Kael's eyes search the faded murals, a silent question forming in his mind. The godling’s presence grows sharp, impatient. The silent question is no longer silent.[/color]\n\n[color=purple]Kael: \"Who were you, before the fear? What did you do to earn it?\"[/color]\n\n[color=goldenrod]Godling: \"The mortal mind cannot grasp the full weight of a godling’s deeds. Your world is a tapestry of fleeting moments. Mine is an eternity of cause and consequence.\"[/color]\n\n[color=white]A flicker of resentment stirs in Kael's gut. He feels dismissed, belittled by a being that wants to become a part of him.[/color]\n\n[color=purple]Kael: \"I’m not some fleeting moment. I’m the one you need now. And if we're to be bound, I deserve to know what I’m getting myself into.\"[/color]\n\n[color=white]The air in the chamber grows heavy, thick with the godling's annoyance. The very stones seem to shiver with its power, yet it relents, its voice a low rumble in his mind.[/color]\n\n[color=goldenrod]Godling: \"I split the sky in two to call down rain. They called it a blessing. Later, they called it a flood. My truth is not so easily confined to your histories.\"[/color]\n\n[color=white]Kael feels a sudden rush of understanding, a flash of ancient destruction and the raw, untamed power that caused it. The godling’s words don’t just convey information—they bring a fragment of that terrible, glorious past into his mind. He stands in the silent shrine, no longer just a mortal, but a witness to a divine catastrophe.[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
 		"goto": "merge_ceremony"
 	  }
 	]
@@ -41,115 +124,59 @@
   {
 	"id": "merge_ceremony",
 	"speaker": "Godling",
-	"text": "The merge is irreversible. Your body, your mind, your essence… intertwined with mine. Are you ready?",
+	"text": "[color=goldenrod]\"The merge is irreversible. Your body, your mind, your essence—woven into mine. I will know your every thought, and you, mine. Are you ready for that?\"[/color]\n[color=white][b]Narration:[/b]The godling’s tone turns grave, echoing through Kael’s skull. The air thickens with the weight of inevitability, each second a drumbeat of dread and possibility. Kael feels a profound chill at the words, a sensation akin to watching his very self unravel. His heart pounds, caught between the terrifying promise of power and the absolute surrender it demands.[/color]",
 	"choices": [
 	  {
 		"text": "Proceed without hesitation.",
-		"effects": {"morality": 0, "bond": 20},
-		"goto": "time_skip"
+		"effects": {"flags": {"chosen_bold_merge_start": true}},
+		"goto": "time_skip_proceed"
 	  },
 	  {
-		"text": "Hesitate, but eventually comply.",
-		"effects": {"morality": 5, "bond": 15},
-		"goto": "time_skip"
+		"text": "Hesitate, then nod.",
+		"effects": {"flags": {"chosen_cautious_merge_start": true}},
+		"goto": "time_skip_hesitate"
 	  },
 	  {
-		"text": "Resist with all your might.",
-		"effects": {"morality": 30, "bond": -15, "flags": {"resisted_merge": true}},
-		"goto": "time_skip"
+		"text": "Resist fiercely.",
+		"effects": {"flags": {"chosen_dark_merge_start": true}},
+		"goto": "time_skip_resist"
 	  }
 	]
   },
   {
-	"id": "time_skip",
-	"speaker": "Narration",
-	"text": "Time stretches and twists; centuries pass in a breath. When Kael awakens, the bone marsh awaits, thick mist curling above stagnant waters.",
-	"effects": {},
-	"goto": "bone_marsh"
-  },
-  {
-	"id": "bone_marsh",
-	"speaker": "Narration",
-	"text": "Black water laps around rotting skeletons. A wounded scavenger cries out, trapped in the muck. Strange shapes move beneath the surface.",
+	"id": "time_skip_proceed",
+	"speaker": "Kael",
+	"text": "[color=purple]\"I was born ready.\"[/color]\n[color=white][b]Narration:[/b]Kael’s voice is unwavering, his words a defiant challenge to the godling's question. A surge of destiny pulses through him, a feeling that this moment is not merely a choice, but an inevitable culmination. He meets the godling's gaze with unshakeable conviction, ready to embrace whatever lies beyond.[/color]",
 	"choices": [
 	  {
-		"text": "Help the scavenger.",
-		"effects": {"morality": 30, "bond": 10, "flags": {"helped_scavenger": true}},
-		"goto": "marsh_creature"
-	  },
-	  {
-		"text": "Kill the scavenger.",
-		"effects": {"morality": -30, "bond": 15},
-		"goto": "marsh_creature"
-	  },
-	  {
-		"text": "Leave them be.",
-		"effects": {"morality": -10, "bond": 0},
-		"goto": "marsh_creature"
+		"text": "Continue",
+		"effects": {"flags": {"start_bold": true}},
+		"exit_to": "start_bold"
 	  }
 	]
   },
   {
-	"id": "marsh_creature",
-	"speaker": "Narration",
-	"text": "Something stirs beneath the murky water. A long, sinuous shape rises, eyes glowing red. Kael feels the godling’s presence urging him to act.",
+	"id": "time_skip_hesitate",
+	"speaker": "Kael",
+	"text": "[color=purple]\"I… suppose I have no choice.\"[/color]\n[color=white][b]Narration:[/b]Kael's words are tinged with a reluctant acceptance, his voice barely a whisper. The uncertainty of the future tangles with a deep-seated fear, painting a grim canvas across his features. He nods, but the gesture is slow, heavy with the knowledge that he is stepping into the unknown, propelled more by circumstance than desire.[/color]",
 	"choices": [
 	  {
-		"text": "Strike first using godling's power.",
-		"effects": {"morality": -10, "bond": 20, "flags": {"power_used": true}},
-		"goto": "predator_encounter"
-	  },
-	  {
-		"text": "Try to reason with the creature.",
-		"effects": {"morality": 20, "bond": 10},
-		"goto": "predator_encounter"
-	  },
-	  {
-		"text": "Run and hide in the marsh reeds.",
-		"effects": {"morality": -10, "bond": -5},
-		"goto": "predator_encounter"
+		"text": "Continue",
+		"effects": {"flags": {"start_cautious": true}},
+		"exit_to": "start_cautious"
 	  }
 	]
   },
   {
-	"id": "predator_encounter",
-	"speaker": "Godling",
-	"text": "A predator prowls nearby. Do you dare show my power, or fight with your own strength?",
+	"id": "time_skip_resist",
+	"speaker": "Kael",
+	"text": "[color=purple]\"You will not take me!\"[/color]\n[color=white][b]Narration:[/b]Kael's protest is a fierce, guttural scream that echoes through the chamber, a desperate, defiant cry against the impending violation. His body tenses, every muscle coiled in resistance, as if he could physically repel the godling's influence. His eyes blaze with a raw, desperate fury, tears of frustration and fear blurring his vision, as he fights against an inevitability he is powerless to stop.[/color]",
 	"choices": [
 	  {
-		"text": "Use the godling's power openly.",
-		"effects": {"morality": -5, "bond": 20, "flags": {"power_used_again": true}},
-		"goto": "marsh_escape"
-	  },
-	  {
-		"text": "Fight without godling's power.",
-		"effects": {"morality": 5, "bond": -5, "flags": {"human_allies_gained": true}},
-		"goto": "marsh_escape"
+		"text": "Continue",
+		"effects": {"flags": {"start_dark_merge": true}},
+		"exit_to": "start_dark_merge"
 	  }
 	]
-  },
-  {
-	"id": "marsh_escape",
-	"speaker": "Narration",
-	"text": "Kael pushes through the fetid waters and reaches higher ground. The drowned city looms ahead, fog wrapping around its broken towers.",
-	"choices": [
-	  {
-		"text": "Scout the ruins cautiously.",
-		"effects": {"morality": 10, "bond": 0},
-		"goto": "outskirts"
-	  },
-	  {
-		"text": "Rush in boldly, letting shadows hide you.",
-		"effects": {"morality": 0, "bond": 10},
-		"goto": "outskirts"
-	  }
-	]
-  },
-  {
-	"id": "outskirts",
-	"speaker": "Narration",
-	"text": "Kael reaches the outskirts of the drowned city. Shadows shift and the air hums with unseen eyes. Every ruined building whispers secrets of the past.",
-	"effects": {},
-	"exit_to": "act2_market"
   }
 ]

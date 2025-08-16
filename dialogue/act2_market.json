@@ -1,150 +1,421 @@
 [
   {
-	"id": "start",
+	"id": "start_cautious",
 	"speaker": "Narration",
-	"text": "Kael enters the Hollow Market. The stench of god-flesh traders fills the air. Shadows move unnaturally, and whispers claw at your mind.",
-	"effects": {},
-	"goto": "godflesh_trader"
-  },
-  {
-	"id": "godflesh_trader",
-	"speaker": "Godling",
-	"text": "A trader offers forbidden knowledge... but at a terrible cost. Will you bargain?",
+	"text": "[color=white]Kael creeps into the Hollow Market, a twisted labyrinth of makeshift stalls and whispered deals. The air reeks of decaying incense and desperation. He moves through the throng, alert to every shadow that stretches and crawls, each one a potential trap. Faint whispers, like the rustling of dry leaves, slither into his thoughts, teasing his mind with promises of safe passage for a price.[/color]",
 	"choices": [
 	  {
-		"text": "Trade ally’s safety for info.",
-		"effects": {"morality": -30, "bond": 20, "flags": {"traded_ally": true}},
-		"goto": "market_escape"
-	  },
-	  {
-		"text": "Refuse the deal.",
-		"effects": {"morality": 30, "bond": -10},
-		"goto": "market_escape"
-	  },
-	  {
-		"text": "Kill the trader.",
-		"effects": {"morality": -20, "bond": 25, "flags": {"trader_killed": true}},
-		"goto": "market_escape"
+		"text": "Continue",
+		"effects": {},
+		"goto": "godflesh_trader_cautious"
 	  }
 	]
   },
   {
-	"id": "market_escape",
+	"id": "start_bold",
 	"speaker": "Narration",
-	"text": "Chaos erupts as guards and predators swarm the market. Kael must navigate the carnage, deciding whom to save and whom to abandon.",
+	"text": "[color=white]Kael bursts into the Hollow Market, moving with an aggressive confidence that carves a path through the crowds. Shadows instinctively cloak his movements, a power he now controls. A visible aura of raw might radiates from him, causing traders and predators alike to recoil and whisper nervously among themselves. He is no longer prey, but a force to be reckoned with.[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {},
+		"goto": "godflesh_trader_bold"
+	  }
+	]
+  },
+  {
+	"id": "start_dark_merge",
+	"speaker": "Narration",
+	"text": "[color=white]With the godling fully intertwined, Kael steps into the Hollow Market like a living storm. The very ground trembles at his presence; every trader instinctively falls silent, their eyes wide with a mixture of terror and awe. The air itself feels heavy, charged with the malevolent energy that flows from his being. Whispers follow his path, not of deals, but of death and glory, a dreadful reverence for the being he has become.[/color]",
+	"choices": [
+	  {
+		"text": "Continue",
+		"effects": {},
+		"goto": "godflesh_trader_dark"
+	  }
+	]
+  },
+  {
+	"id": "godflesh_trader_cautious",
+	"speaker": "Godling",
+	"text": "[color=goldenrod]\"A trader offers forbidden knowledge from beyond the Veil, but the cost is high. You feel hesitation gnawing at your instincts, a warning of the price on your soul. Will you bargain for what they have?\"[/color]",
+	"choices": [
+	  {
+		"text": "Refuse the deal. Your caution outweighs greed.",
+		"effects": {"flags": {"trader_deal_refused": true}},
+		"goto": "market_escape_cautious"
+	  },
+	  {
+		"text": "Trade a captured ally's safety for the information.",
+		"effects": {"flags": {"traded_ally": true}},
+		"goto": "market_escape_cautious"
+	  }
+	]
+  },
+  {
+	"id": "godflesh_trader_bold",
+	"speaker": "Godling",
+	"text": "[color=goldenrod]\"A trader bows nervously as you enter his tent, their fear a delectable scent. Power hums through you, begging to be used. Will you use intimidation to bend the rules and seize what you want, or seek knowledge in a more fair exchange?\"[/color]",
+	"choices": [
+	  {
+		"text": "Strike a deal with the trader.",
+		"effects": {"flags": {"trader_deal_struck": true}},
+		"goto": "market_escape_bold"
+	  },
+	  {
+		"text": "Kill the trader and take what you need.",
+		"effects": {"flags": {"trader_killed": true}},
+		"goto": "market_escape_bold"
+	  }
+	]
+  },
+  {
+	"id": "godflesh_trader_dark",
+	"speaker": "Godling",
+	"text": "[color=goldenrod]\"The market cowers before your presence. Knowledge and flesh are offered freely, like tributes from frightened animals. But every choice twists your essence further into my form. Which do you claim, my vessel?\"[/color]",
+	"choices": [
+	  {
+		"text": "Absorb the forbidden knowledge.",
+		"effects": {"flags": {"dark_knowledge_absorbed": true}},
+		"goto": "market_escape_dark"
+	  },
+	  {
+		"text": "Consume and destroy the trader.",
+		"effects": {"flags": {"trader_destroyed": true}},
+		"goto": "market_escape_dark"
+	  }
+	]
+  },
+  {
+	"id": "market_escape_cautious",
+	"speaker": "Narration",
+	"text": "[color=white]Chaos erupts around you, a wave of panic sweeping through the market. Kael navigates the pandemonium cautiously, helping a few desperate souls while avoiding others who would slow him down. Mist and screams mingle in the air, a thick, suffocating fog that tests his resolve at every turn.[/color]",
 	"choices": [
 	  {
 		"text": "Save a group of trapped humans.",
-		"effects": {"morality": 40, "bond": -15, "flags": {"saved_humans": true}},
-		"goto": "predator_hunt"
+		"effects": {"flags": {"saved_humans": true}},
+		"goto": "predator_hunt_cautious"
 	  },
 	  {
-		"text": "Focus solely on your own escape.",
-		"effects": {"morality": -20, "bond": 20},
-		"goto": "predator_hunt"
-	  },
-	  {
-		"text": "Set a trap for the predators.",
-		"effects": {"morality": 0, "bond": 40, "flags": {"predator_trap_set": true}},
-		"goto": "predator_hunt"
+		"text": "Focus solely on your escape.",
+		"effects": {"flags": {"selfish_escape": true}},
+		"goto": "predator_hunt_cautious"
 	  }
 	]
   },
   {
-	"id": "predator_hunt",
+	"id": "market_escape_bold",
 	"speaker": "Narration",
-	"text": "A pack of predators closes in. Humans scatter — will you use others as bait, fight alone, or manipulate the predators?",
+	"text": "[color=white]Kael moves swiftly, a shadow in the chaos, shrugging off the screams and turmoil. Predators close in from all sides, drawn by his power, but his confidence and a primal, raw energy keep him ahead of the hunt. He knows this is a game, and he is the one in control.[/color]",
 	"choices": [
 	  {
-		"text": "Bait another human.",
-		"effects": {"morality": -40, "bond": 20},
-		"goto": "hidden_alley"
+		"text": "Lead predators into a trap.",
+		"effects": {"flags": {"predator_trap_success": true}},
+		"goto": "predator_hunt_bold"
 	  },
 	  {
-		"text": "Hunt alone.",
-		"effects": {"morality": 0, "bond": -20},
-		"goto": "hidden_alley"
+		"text": "Run straight through, letting your shadows conceal you.",
+		"effects": {"flags": {"straight_run_escape": true}},
+		"goto": "predator_hunt_bold"
+	  }
+	]
+  },
+  {
+	"id": "market_escape_dark",
+	"speaker": "Narration",
+	"text": "[color=white]The market screams as your presence warps the very air, turning it to a thick, suffocating fear. Predators and humans alike scatter before you, their instincts telling them to flee from the encroaching storm. Some fall to their knees, some worship, some simply fear. It is a terrifying symphony of submission.[/color]",
+	"choices": [
+	  {
+		"text": "Hunt for the remaining humans as prey or tools.",
+		"effects": {"flags": {"humans_hunted": true}},
+		"goto": "predator_hunt_dark"
+	  },
+	  {
+		"text": "Embrace your godling's guidance and obliterate obstacles.",
+		"effects": {"flags": {"godling_guided_slaughter": true}},
+		"goto": "predator_hunt_dark"
+	  }
+	]
+  },
+  {
+	"id": "predator_hunt_cautious",
+	"speaker": "Narration",
+	"text": "[color=white]A pack of four-legged, chitinous predators closes in, their clicking mandibles echoing in the alley. You weigh your options carefully: survival, mercy, or cunning. The creatures' glowing eyes lock onto you, and you feel the chilling knowledge that they are hunting you as a single unit.[/color]",
+	"choices": [
+	  {
+		"text": "Use humans as bait (reluctantly).",
+		"effects": {"flags": {"sacrificed_humans": true}},
+		"goto": "hidden_alley_cautious"
+	  },
+	  {
+		"text": "Face predators alone, unflinching.",
+		"effects": {"flags": {"fought_predators_alone": true}},
+		"goto": "hidden_alley_cautious"
 	  },
 	  {
 		"text": "Lead predators into a trap.",
-		"effects": {"morality": 30, "bond": 20, "flags": {"predator_trap_success": true}},
-		"goto": "hidden_alley"
+		"effects": {"flags": {"predator_trap_success": true}},
+		"goto": "hidden_alley_cautious"
 	  }
 	]
   },
   {
-	"id": "hidden_alley",
+	"id": "predator_hunt_bold",
 	"speaker": "Narration",
-	"text": "Kael slips into a hidden alley, breathing hard. Graffiti marks warn of the temple ahead and those who entered never returned. A shadow seems to watch him.",
+	"text": "[color=white]The predators' hunger is a tangible force in the air, a low growl that vibrates through the alley. Your boldness and the godling’s whispers give you a powerful edge. You feel a thrill run through you; survival is no longer a chore, but a game you are winning with every step.[/color]",
 	"choices": [
 	  {
-		"text": "Investigate the shadow.",
-		"effects": {"morality": 10, "bond": 30},
-		"goto": "temple_guardian"
+		"text": "Fight predators head-on.",
+		"effects": {"flags": {"fought_predators_head_on": true}},
+		"goto": "hidden_alley_bold"
 	  },
 	  {
-		"text": "Ignore it and move on.",
-		"effects": {"morality": -10, "bond": 0},
-		"goto": "forbidden_temple"
+		"text": "Set a clever trap and evade.",
+		"effects": {"flags": {"predator_trap_success": true}},
+		"goto": "hidden_alley_bold"
 	  }
 	]
   },
   {
-	"id": "temple_guardian",
+	"id": "predator_hunt_dark",
 	"speaker": "Narration",
-	"text": "A spectral guardian emerges, eyes glowing. It tests Kael’s strength and will. Respect earns guidance; aggression brings injury.",
+	"text": "[color=white]Predators and humans alike fall before you, not to combat, but to the overwhelming force of your will. Power courses through your veins, and fear bends all to your will. The godling within revels in the chaos, and you feel yourself becoming less Kael, and more a force of nature.[/color]",
+	"choices": [
+	  {
+		"text": "Hunt everything in your path.",
+		"effects": {"flags": {"predator_slaughter": true}},
+		"goto": "hidden_alley_dark"
+	  },
+	  {
+		"text": "Move silently, letting prey stumble into your grasp.",
+		"effects": {"flags": {"godling_guided_slaughter": true}},
+		"goto": "hidden_alley_dark"
+	  }
+	]
+  },
+  {
+	"id": "hidden_alley_cautious",
+	"speaker": "Narration",
+	"text": "[color=white]Kael slips into a hidden alley, the air now still. He catches his breath, the stench of decay fading into the scent of old stone. Faded graffiti on the wall shows a crude drawing of a temple, and beneath it, a stark warning: [b]‘[i]They do not return[/i].’[/b] He notices a shadow nearby, a flicker of movement that seems too solid to be just a shadow.[/color]",
+	"choices": [
+	  {
+		"text": "Investigate the shadow lurking nearby.",
+		"effects": {"flags": {"investigated_shadow": true}},
+		"goto": "temple_guardian_cautious"
+	  },
+	  {
+		"text": "Ignore it and move toward the temple.",
+		"effects": {"flags": {"ignored_shadow": true}},
+		"goto": "forbidden_temple_cautious"
+	  }
+	]
+  },
+  {
+	"id": "hidden_alley_bold",
+	"speaker": "Narration",
+	"text": "[color=white]Kael’s shadows hide him as he navigates the alley, every echo seeming to suggest danger or opportunity. He notices a flicker of movement—a shape that looks more like a ghost than a person. He feels a strange pull to it, and a voice in his mind whispers, [b]'[i]It holds a secret you seek[/i].'[/b][/color]",
+	"choices": [
+	  {
+		"text": "Seek out the shadow deliberately.",
+		"effects": {"flags": {"sought_out_shadow": true}},
+		"goto": "temple_guardian_bold"
+	  },
+	  {
+		"text": "Ignore it and storm forward.",
+		"effects": {"flags": {"ignored_shadow": true}},
+		"goto": "forbidden_temple_bold"
+	  }
+	]
+  },
+  {
+	"id": "hidden_alley_dark",
+	"speaker": "Narration",
+	"text": "[color=white]Kael moves like a specter, a force of nature that commands the shadows. The temple looms, pulsing with a power that matches his own, a beacon of dark energy. The shadow in the alley doesn't flee; it bows, a silent tribute to a greater force. The godling within him urges him on, a low hum of anticipation.[/color]",
+	"choices": [
+	  {
+		"text": "Embrace the shadow fully, seeking guidance.",
+		"effects": {"flags": {"shadow_guided": true}},
+		"goto": "temple_guardian_dark"
+	  },
+	  {
+		"text": "Proceed boldly, ignoring minor threats.",
+		"effects": {"flags": {"threats_ignored": true}},
+		"goto": "forbidden_temple_dark"
+	  }
+	]
+  },
+  {
+	"id": "temple_guardian_cautious",
+	"speaker": "Narration",
+	"text": "[color=white]A spectral guardian emerges from the alley, eyes glowing with a cold, ancient light. You feel its immense power, but also its sense of purpose. Respect and caution guide you; an aggressive move could be disastrous, but a show of peace may lead to a different outcome.[/color]",
+	"choices": [
+	  {
+		"text": "Show respect to the guardian.",
+		"effects": {"flags": {"guardian_respected": true}},
+		"goto": "forbidden_temple_cautious"
+	  },
+	  {
+		"text": "Attack the guardian impulsively.",
+		"effects": {"flags": {"guardian_slain": true}},
+		"goto": "forbidden_temple_cautious"
+	  }
+	]
+  },
+  {
+	"id": "temple_guardian_bold",
+	"speaker": "Narration",
+	"text": "[color=white]The guardian tests you, its eyes flashing with ancient judgment as it prepares for a fight. Your bold demeanor could grant you an advantage, but a misstep might cost you dearly, and the godling’s voice whispers conflicting strategies in your mind.[/color]",
 	"choices": [
 	  {
 		"text": "Respect the guardian.",
-		"effects": {"morality": 30, "bond": 15, "flags": {"guardian_respected": true}},
-		"goto": "forbidden_temple"
+		"effects": {"flags": {"guardian_respected": true}},
+		"goto": "forbidden_temple_bold"
 	  },
 	  {
-		"text": "Attack the guardian.",
-		"effects": {"morality": -30, "bond": 30, "flags": {"guardian_slain": true}},
-		"goto": "forbidden_temple"
+		"text": "Strike without hesitation.",
+		"effects": {"flags": {"guardian_slain": true}},
+		"goto": "forbidden_temple_bold"
 	  }
 	]
   },
   {
-	"id": "forbidden_temple",
-	"speaker": "Godling",
-	"text": "A vision in the forbidden temple tempts you: deeper merge, greater power, but risk of losing yourself.",
-	"choices": [
-	  {
-		"text": "Accept deeper merge.",
-		"effects": {"morality": 0, "bond": 30, "flags": {"mutation_stage1": true}},
-		"goto": "temple_puzzle"
-	  },
-	  {
-		"text": "Resist temptation.",
-		"effects": {"morality": 0, "bond": -20, "flags": {"sanity_loss": true}},
-		"goto": "temple_puzzle"
-	  }
-	]
-  },
-  {
-	"id": "temple_puzzle",
+	"id": "temple_guardian_dark",
 	"speaker": "Narration",
-	"text": "Kael encounters the temple’s inner sanctum: a series of intricate glyphs and traps. He must solve the puzzle to proceed, risking injury or madness.",
+	"text": "[color=white]The spectral guardian bows subtly to the merged presence of Kael and the godling. It is an act of submission. Power radiates through the alley and into the temple, and the shadow dissolves, leaving nothing but an ancient, resonant silence.[/color]",
 	"choices": [
 	  {
-		"text": "Solve it carefully using knowledge from murals.",
-		"effects": {"morality": 20, "bond": 15},
-		"goto": "fork_path"
+		"text": "Submit to its guidance.",
+		"effects": {"flags": {"guardian_guided": true}},
+		"goto": "forbidden_temple_dark"
+	  },
+	  {
+		"text": "Strike it down and claim the temple.",
+		"effects": {"flags": {"guardian_slain": true}},
+		"goto": "forbidden_temple_dark"
+	  }
+	]
+  },
+  {
+	"id": "forbidden_temple_cautious",
+	"speaker": "Godling",
+	"text": "[color=goldenrod]\"Inside the temple, visions flicker and dance around you. Greater merge, deeper power — the temptation of full communion claws at your mortal resolve. This is the last chance for your identity to remain separate from mine. Do you want it?\"[/color]",
+	"choices": [
+	  {
+		"text": "Resist the temptation.",
+		"effects": {"flags": {"sanity_loss": true}},
+		"goto": "temple_puzzle_cautious"
+	  },
+	  {
+		"text": "Accept deeper merge cautiously.",
+		"effects": {"flags": {"mutation_stage1": true}},
+		"goto": "temple_puzzle_cautious"
+	  }
+	]
+  },
+  {
+	"id": "forbidden_temple_bold",
+	"speaker": "Godling",
+	"text": "[color=goldenrod]\"Visions flash with power and glory; glimpses of a world bent to your will. Your bond with me hums, a constant, tempting whisper to embrace it fully. You are so close to becoming truly divine, to leaving your frail humanity behind.\"[/color]",
+	"choices": [
+	  {
+		"text": "Accept the deeper merge.",
+		"effects": {"flags": {"mutation_stage1": true}},
+		"goto": "temple_puzzle_bold"
+	  },
+	  {
+		"text": "Resist the temptation.",
+		"effects": {"flags": {"sanity_loss": true}},
+		"goto": "temple_puzzle_bold"
+	  }
+	]
+  },
+  {
+	"id": "forbidden_temple_dark",
+	"speaker": "Godling",
+	"text": "[color=goldenrod]\"The temple trembles as visions of power and annihilation unfold around you. The final, absolute merge calls to you, promising dominion over all around. Why resist? The world is a banquet, and we are its rightful feast.\"[/color]",
+	"choices": [
+	  {
+		"text": "Accept the deeper merge, letting godling guide fully.",
+		"effects": {"flags": {"mutation_stage2": true}},
+		"goto": "temple_puzzle_dark"
+	  },
+	  {
+		"text": "Resist, holding some humanity.",
+		"effects": {"flags": {"sanity_loss": true}},
+		"goto": "temple_puzzle_dark"
+	  }
+	]
+  },
+  {
+	"id": "temple_puzzle_cautious",
+	"speaker": "Narration",
+	"text": "[color=white]Kael encounters the temple’s inner sanctum: a complex maze of glyphs, traps, and arcane locks. The murals from the first shrine echo in his memory, a guide to the puzzle. Careful thought is needed to proceed safely, but the urge to simply power through is a deep, primal one.[/color]",
+	"choices": [
+	  {
+		"text": "Solve it carefully using murals' knowledge.",
+		"effects": {"flags": {"solved_puzzle_carefully": true}},
+		"goto": "fork_path_cautious"
 	  },
 	  {
 		"text": "Rush through with brute force.",
-		"effects": {"morality": -20, "bond": 30},
-		"goto": "fork_path"
+		"effects": {"flags": {"rushed_puzzle": true}},
+		"goto": "fork_path_cautious"
 	  }
 	]
   },
   {
-	"id": "fork_path",
+	"id": "temple_puzzle_bold",
 	"speaker": "Narration",
-	"text": "Paths diverge: your bond with the godling and your past choices determine your next challenge.",
+	"text": "[color=white]The sanctum tests both might and mind. The puzzle, a cascade of floating sigils, offers multiple solutions. Bold choices could yield great rewards, but a single misstep might cost you dearly. The godling’s voice urges you to power through it, to use your newfound strength, not your frail mind.[/color]",
+	"choices": [
+	  {
+		"text": "Solve it carefully.",
+		"effects": {"flags": {"solved_puzzle_carefully": true}},
+		"goto": "fork_path_bold"
+	  },
+	  {
+		"text": "Force it with strength.",
+		"effects": {"flags": {"forced_puzzle_solution": true}},
+		"goto": "fork_path_bold"
+	  }
+	]
+  },
+  {
+	"id": "temple_puzzle_dark",
+	"speaker": "Narration",
+	"text": "[color=white]The inner sanctum bends to your will. The godling's power flows through the maze, showing you a path of destruction. Danger and power intertwine; every choice stains the soul, but every choice also brings you closer to ultimate dominion. The puzzle is not meant to be solved, but to be broken.[/color]",
+	"choices": [
+	  {
+		"text": "Solve carefully, resisting full corruption.",
+		"effects": {"flags": {"solved_puzzle_carefully": true}},
+		"goto": "fork_path_dark"
+	  },
+	  {
+		"text": "Use brute force, letting the godling guide fully.",
+		"effects": {"flags": {"forced_puzzle_solution": true}},
+		"goto": "fork_path_dark"
+	  }
+	]
+  },
+  {
+	"id": "fork_path_cautious",
+	"speaker": "Narration",
+	"text": "[color=white]As you leave the temple, the world seems to split before you. Two paths diverge: one lit by a faint, hopeful glow, the other shrouded in oppressive shadow. Your cautious approach and the morality you’ve clung to will shape the challenges ahead in Act 3.[/color]",
 	"effects": {},
-	"exit_to": "act3_womb_below"
+	"exit_to": "cautious_start"
+  },
+  {
+	"id": "fork_path_bold",
+	"speaker": "Narration",
+	"text": "[color=white]The world trembles. Paths diverge before you: one of pure, unbridled power, the other of hard-won influence. Your bold choices and the growing bond with the godling have influenced what awaits you in Act 3.[/color]",
+	"effects": {},
+	"exit_to": "bold_start"
+  },
+  {
+	"id": "fork_path_dark",
+	"speaker": "Narration",
+	"text": "[color=white]The paths ahead are not of stone, but of purpose. The deep merge and your dark deeds dictate the horrors and the incredible power awaiting you in Act 3. The world is yours for the taking; the only question is how you will break it.[/color]",
+	"effects": {},
+	"exit_to": "dark_start"
   }
 ]

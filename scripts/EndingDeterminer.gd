@@ -1,28 +1,53 @@
-# Narration-friendly Ending Definitions
-static var endings = [
-	{"key": "benevolent", "morality_range": [50, 100], "bond_range": [30, 100]},  # hero who helps others
-	{"key": "predatory", "morality_range": [-100, -50], "bond_range": [50, 100]}, # ruthless but bonded to godling
-	{"key": "tyrant", "morality_range": [-100, -50], "bond_range": [0, 49]},      # selfish, evil, low bond
-	{"key": "trickster", "morality_range": [-49, -20], "bond_range": [30, 100]},  # clever manipulator / shared merge
-	{"key": "mortal", "morality_range": [-19, 49], "bond_range": [0, 100]},       # average choices, survives but not divine
-	{"key": "lost", "morality_range": [-100, 100], "bond_range": [0, 100]}        # fallback
-]
+# EndingDeterminer.gd
+extends Node
 
-static func determine_ending(morality:int, bond:int, flags:Dictionary) -> String:
-	# Predatory override: ruthless + high bond
-	if morality < -50 and bond >= 50:
-		return "predatory"
-	# Tyrant: ruthless + low bond
-	if morality < -50 and bond < 50:
-		return "tyrant"
-	# Trickster: cunning choices flagged
-	if flags.get("shared_merge", false) and morality < 0:
-		return "trickster"
-	# Benevolent: high morality + high bond
-	if morality >= 50 and bond >= 50:
-		return "benevolent"
-	# Mortal: normal human path
-	if morality >= -20 and morality < 50:
-		return "mortal"
-	# Fallback
-	return "lost"
+static func determine_ending(flags: Dictionary) -> String:
+	# This function returns the simplified key for endings.json based on flags.
+	# The order of these checks matters; more specific or "final" endings should be checked first.
+
+	# --- Low-Bond Paths (Final Confrontation) ---
+	# These are the direct results of defying the godling.
+
+	if flags.has("assimilated_godling"):
+		return "ending:godling_absorbed_dark"
+
+	if flags.has("obliterated_godling"):
+		return "ending:godling_obliterated_dark"
+
+	if flags.has("forced_submission"):
+		return "ending:godling_dominated_bold"
+
+	if flags.has("attacked_head_on"):
+		return "ending:godling_slain_bold"
+
+	if flags.has("attempted_sever_connection"):
+		return "ending:godling_slain_cautious"
+
+	if flags.has("pleaded_peaceful_separation"):
+		return "ending:godling_negotiated_cautious"
+
+	# --- High-Bond Paths (Final Merge) ---
+	# These are the results of submitting to the godling's influence.
+	
+	if flags.has("final_submissive_dark"):
+		return "ending:predatory_dark"
+
+	if flags.has("final_equal_merge_dark"):
+		return "ending:trickster_dark"
+
+	if flags.has("final_submissive_bold"):
+		return "ending:predatory_bold"
+
+	if flags.has("final_equal_merge_bold"):
+		return "ending:trickster_bold"
+		
+	if flags.has("final_submissive_cautious"):
+		return "ending:predatory_cautious"
+
+	if flags.has("final_equal_merge_cautious"):
+		return "ending:trickster_cautious"
+
+	# --- Fallback (Lowest Priority) ---
+	# If no specific ending conditions are met, default to a 'lost' ending.
+	# This can be a useful debugging tool.
+	return "ending:godling_obliterated_dark"

@@ -8,14 +8,16 @@ signal choice_selected(index)
 func clear_text():
 	dialogue_text.clear()
 
+# This function needs to be updated to accept the full history text.
+# It should not clear the text, but rather set the full BBCode string.
 func show_line(speaker:String, text:String):
-	dialogue_text.clear()
-	var color := "[color=white]"
-	if speaker == "Kael":
-		color = "[color=purple]"
-	elif speaker == "Godling":
-		color = "[color=orange]"
-	dialogue_text.bbcode_text = "%s[b]%s:[/b] %s[/color]" % [color, speaker, text]
+	# The 'speaker' parameter is no longer used for formatting,
+	# as the text is pre-formatted in the SceneController.
+	dialogue_text.bbcode_text = text
+
+# Add this new function to scroll the RichTextLabel.
+func scroll_to_end():
+	dialogue_text.scroll_to_line(dialogue_text.get_line_count() - 1)
 
 # Show multiple choices
 func show_choices(choices:Array):

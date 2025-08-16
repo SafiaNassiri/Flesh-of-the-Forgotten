@@ -1,26 +1,62 @@
 [
   {
-	"ending": "benevolent",
-	"description": "You chose compassion over conquest. With a steady heart and a guiding hand, you protect rather than rule, leaving a legacy of peace and trust."
+	"id": "ending:godling_negotiated_cautious",
+	"speaker": "Narration",
+	"text": "Your cautious approach allowed you to negotiate. The godling’s power is now a part of you, but not its will. You are a new kind of deity, one that serves as a guardian rather than a conqueror. You have become a benevolent god."
   },
   {
-	"ending": "predatory",
-	"description": "Your bond became a chain, your kindness a mask. You feed on the connection you’ve forged, drawing strength from dependency until nothing remains but hunger."
+	"id": "ending:godling_slain_cautious",
+	"speaker": "Narration",
+	"text": "Your morality allowed you to sever the connection, but at a cost. The godling’s essence is scattered, its power now your own. But you are forever changed, a mortal with a divine scar, and you have become a mortal legend."
   },
   {
-	"ending": "mortal",
-	"description": "Power slips through your fingers like sand. You walk away not as a legend, but as a person—free from burden, yet forever changed by what you’ve seen."
+	"id": "ending:godling_slain_bold",
+	"speaker": "Narration",
+	"text": "Your boldness allowed you to defeat the godling. Its power is now a part of you, but so is its predatory will. You are a conqueror, and your new godhood is based on conquest. You have become a predatory tyrant."
   },
   {
-	"ending": "tyrant",
-	"description": "You claim the throne with an iron will. Fear becomes your crown, control your currency. Under your rule, loyalty is bought in blood."
+	"id": "ending:godling_dominated_bold",
+	"speaker": "Narration",
+	"text": "Your boldness allowed you to dominate the godling. It is now a slave to your will, and its power is your own. You have become an unstoppable force, a puppet master of the divine. You have become a tyrant."
   },
   {
-	"ending": "trickster",
-	"description": "Neither hero nor villain, you weave chaos into the fabric of fate. Through cunning and misdirection, you turn every alliance into a game you always win."
+	"id": "ending:godling_absorbed_dark",
+	"speaker": "Narration",
+	"text": "Your darkness allowed you to absorb the godling entirely. Its will is your own, and its power is your birthright. You are not a godling, you are the god, and the world is your toy. You have become the ultimate trickster."
   },
   {
-	"ending": "lost",
-	"description": "You wander without purpose, your deeds forgotten and your potential unrealized. The world moves on around you, and you are left in the shadows of what could have been."
+	"id": "ending:godling_obliterated_dark",
+	"speaker": "Narration",
+	"text": "Your darkness allowed you to obliterate the godling. But in doing so, you have lost all sense of self. Your mind is a vortex of chaotic energy, and you are lost forever in the shadows of what could have been. You have become the lost god."
+  },
+  {
+	"id": "ending:predatory_cautious",
+	"speaker": "Narration",
+	"text": "You chose to merge carefully, retaining your identity. You are a new kind of deity, one that serves as a guardian rather than a conqueror. But your caution has a cost, and your power will slowly consume you. You have become a benevolent predator."
+  },
+  {
+	"id": "ending:trickster_cautious",
+	"speaker": "Narration",
+	"text": "You chose to merge carefully, retaining your identity. You are a new kind of deity, one that serves as a guardian rather than a conqueror. But your caution has a cost, and your power will slowly consume you. You have become a benevolent trickster."
+  },
+  {
+	"id": "ending:predatory_bold",
+	"speaker": "Narration",
+	"text": "You chose to merge boldly, retaining your identity. You are a new kind of deity, one that serves as a conqueror rather than a guardian. But your boldness has a cost, and your power will slowly consume you. You have become a predatory god."
+  },
+  {
+	"id": "ending:trickster_bold",
+	"speaker": "Narration",
+	"text": "You chose to merge boldly, retaining your identity. You are a new kind of deity, one that serves as a conqueror rather than a guardian. But your boldness has a cost, and your power will slowly consume you. You have become a trickster god."
+  },
+  {
+	"id": "ending:predatory_dark",
+	"speaker": "Narration",
+	"text": "Your darkness allowed you to merge with the godling entirely. Its will is your own, and its power is your birthright. You are not a godling, you are the god, and the world is your toy. You have become the ultimate predator."
+  },
+  {
+	"id": "ending:trickster_dark",
+	"speaker": "Narration",
+	"text": "Your darkness allowed you to merge with the godling entirely. Its will is your own, and its power is your birthright. You are not a godling, you are the god, and the world is your toy. You have become the ultimate trickster."
   }
 ]

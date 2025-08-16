@@ -1,0 +1,15 @@
+res://scenes/ui/DialogBox.tscn
+res://scripts/SceneController.gd
+res://dialogue/act1_shrine.json
+res://dialogue/act2_market.json
+res://dialogue/act3_womb_below.json
+res://scenes/MainMenu.tscn
+res://scenes/EndGame.tscn
+res://autoload/DialogueRouter.gd
+res://dialogue/endings.json
+res://scripts/EndingDeterminer.gd
+res://scripts/MainMenu.gd
+res://dialogue/endings_info.json
+res://scripts/EndGame.gd
+res://autoload/GameState.gd
+res://scripts/DialogBox.gd

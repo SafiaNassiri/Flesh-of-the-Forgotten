@@ -1,26 +1,50 @@
 {
-  "benevolent": {
-	"title": "Benevolent Ending",
-	"text": "Light returns to the land as the godling’s essence heals the wounds of war. Villages flourish, rivers sparkle, and Kael’s deeds are remembered as a legend of compassion and courage."
+  "ending:godling_negotiated_cautious": {
+	"title": "A Benevolent Guardian",
+	"text": "Your cautious approach allowed you to negotiate. The godling’s power is now a part of you, but not its will. You are a new kind of deity, one that serves as a guardian rather than a conqueror. You have become a benevolent god."
   },
-  "predatory": {
-	"title": "Predatory Ending",
-	"text": "The godling’s hunger consumes everything in its path. Mountains crumble, forests wither, and the skies darken as whispers of fear echo through empty cities. Kael is lost to the shadows."
+  "ending:godling_slain_cautious": {
+	"title": "A Mortal Legend",
+	"text": "Your morality allowed you to sever the connection, but at a cost. The godling’s essence is scattered, its power now your own. But you are forever changed, a mortal with a divine scar, and you have become a mortal legend."
   },
-  "mortal": {
-	"title": "Mortal Ending",
-	"text": "Kael strikes true, ending the godling’s reign. Freed from divine influence, he walks the earth as a mortal, bearing the weight of his choices and leaving a legacy that will outlive him."
+  "ending:godling_slain_bold": {
+	"title": "A Predatory Tyrant",
+	"text": "Your boldness allowed you to defeat the godling. Its power is now a part of you, but so is its predatory will. You are a conqueror, and your new godhood is based on conquest. You have become a predatory tyrant."
   },
-  "tyrant": {
-	"title": "Tyrant Ending",
-	"text": "Empowered by the godling’s soul, Kael rises as a ruler of unmatched strength. His decrees shape nations, his wrath enforces order, and though feared, his dominion lasts through unyielding power."
+  "ending:godling_dominated_bold": {
+	"title": "A Tyrant",
+	"text": "Your boldness allowed you to dominate the godling. It is now a slave to your will, and its power is your own. You have become an unstoppable force, a puppet master of the divine. You have become a tyrant."
   },
-  "trickster": {
-	"title": "Trickster Ending",
-	"text": "Kael and the godling become one, a being of cunning and chaos. Reality bends under their influence, laughter and mischief mingle with terror, and the world becomes an unpredictable stage for their games."
+  "ending:godling_absorbed_dark": {
+	"title": "The Ultimate Trickster",
+	"text": "Your darkness allowed you to absorb the godling entirely. Its will is your own, and its power is your birthright. You are not a godling, you are the god, and the world is your toy. You have become the ultimate trickster."
   },
-  "lost": {
-	"title": "Lost Ending",
-	"text": "Kael drifts through the world without direction. Opportunities pass him by, allies fade into memory, and the power he carried slips away. Nothing is won, nothing is remembered, and the story of his life dissolves into quiet obscurity."
+  "ending:godling_obliterated_dark": {
+	"title": "The Lost God",
+	"text": "Your darkness allowed you to obliterate the godling. But in doing so, you have lost all sense of self. Your mind is a vortex of chaotic energy, and you are lost forever in the shadows of what could have been. You have become the lost god."
+  },
+  "ending:predatory_cautious": {
+	"title": "A Benevolent Predator",
+	"text": "You chose to merge carefully, retaining your identity. You are a new kind of deity, one that serves as a guardian rather than a conqueror. But your caution has a cost, and your power will slowly consume you. You have become a benevolent predator."
+  },
+  "ending:trickster_cautious": {
+	"title": "A Benevolent Trickster",
+	"text": "You chose to merge carefully, retaining your identity. You are a new kind of deity, one that serves as a guardian rather than a conqueror. But your caution has a cost, and your power will slowly consume you. You have become a benevolent trickster."
+  },
+  "ending:predatory_bold": {
+	"title": "A Predatory God",
+	"text": "You chose to merge boldly, retaining your identity. You are a new kind of deity, one that serves as a conqueror rather than a guardian. But your boldness has a cost, and your power will slowly consume you. You have become a predatory god."
+  },
+  "ending:trickster_bold": {
+	"title": "A Trickster God",
+	"text": "You chose to merge boldly, retaining your identity. You are a new kind of deity, one that serves as a conqueror rather than a guardian. But your boldness has a cost, and your power will slowly consume you. You have become a trickster god."
+  },
+  "ending:predatory_dark": {
+	"title": "The Ultimate Predator",
+	"text": "Your darkness allowed you to merge with the godling entirely. Its will is your own, and its power is your birthright. You are not a godling, you are the god, and the world is your toy. You have become the ultimate predator."
+  },
+  "ending:trickster_dark": {
+	"title": "The Ultimate Trickster",
+	"text": "Your darkness allowed you to merge with the godling entirely. Its will is your own, and its power is your birthright. You are not a godling, you are the god, and the world is your toy. You have become the ultimate trickster."
   }
 }
