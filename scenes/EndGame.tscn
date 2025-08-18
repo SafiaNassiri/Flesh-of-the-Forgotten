@@ -19,6 +19,7 @@ offset_bottom = 648.0
 
 [node name="Background" type="TextureRect" parent="Panel"]
 modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 0
 offset_right = 1150.0
 offset_bottom = 644.0
 texture = ExtResource("2_ho1j5")

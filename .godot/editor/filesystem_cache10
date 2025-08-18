@@ -1,32 +1,32 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1755387340
-export_presets.cfg::TextFile::-1::1755384547::0::1::::<><><>0<>0<><>::
+::res://::1755491705
+export_presets.cfg::TextFile/TextFile::-1::1755387871::0::1::::<><><>0<>0<><>::
 GameStoryStructure.txt::TextFile/TextFile::-1::1755114422::0::1::::<><><>0<>0<><>::
-README.md::TextFile/TextFile::-1::1755285665::0::1::::<><><>0<>0<><>::
+README.md::TextFile/TextFile::-1::1755387843::0::1::::<><><>0<>0<><>::
 ::res://autoload/::1755384418
-DialogueRouter.gd::GDScript::3391505943713751895::1755384271::0::1::::<>Node<><>0<>0<><>::
-GameState.gd::GDScript::6220031317145650852::1755384271::0::1::::<>Node<><>0<>0<><>::
+DialogueRouter.gd::GDScript/GDScript::3391505943713751895::1755384271::0::1::::<>Node<><>0<>0<><>::
+GameState.gd::GDScript/GDScript::6220031317145650852::1755384271::0::1::::<>Node<><>0<>0<><>::
 ::res://dialogue/::1755384418
-act1_shrine.json::JSON::-1::1755384271::0::1::::<><><>0<>0<><>::
-act2_market.json::JSON::-1::1755384271::0::1::::<><><>0<>0<><>::
-act3_womb_below.json::JSON::-1::1755384271::0::1::::<><><>0<>0<><>::
-endings.json::JSON::4037040811564085676::1755384271::0::1::::<><><>0<>0<><>::
-endings_info.json::JSON::-1::1755384271::0::1::::<><><>0<>0<><>::
-::res://Images/::1755387377
-Screenshot 2025-08-16 193521.png::CompressedTexture2D::406106826994807943::1755387344::1755387401::1::::<><><>0<>0<>75307f52314a15185b1266713d5ec88b<>res://.godot/imported/Screenshot 2025-08-16 193521.png-35344498d6367f9a352d6b700e60e1ee.ctex::
-Screenshot 2025-08-16 193605.png::CompressedTexture2D::1224723412410844554::1755387377::1755387401::1::::<><><>0<>0<>febc2d4b71a0f4a5e621e2e760de1ed2<>res://.godot/imported/Screenshot 2025-08-16 193605.png-e4d4ec2f629fe9adc178215542870a6a.ctex::
-::res://scenes/::1755384532
-EndGame.tscn::PackedScene::2705378983705438018::1755384271::0::1::::<><><>0<>0<><>::uid://bbb07jkd3rqce::::res://scripts/EndGame.gd<>uid://unnx1awb1jkk::::res://SFX/707041__vilkas_sound__vs-button-click-04.mp3<>uid://becqb5cs55qlu::::res://SFX/55831__sergenious__fantasy.wav
-Main.tscn::PackedScene::4460983383485174393::1755384532::0::1::::<><><>0<>0<><>::uid://bkb6j82pg233j::::res://scenes/ui/DialogBox.tscn<>uid://j6tvweu1e8jk::::res://scripts/SceneController.gd
-MainMenu.tscn::PackedScene::3701830524897843086::1755384271::0::1::::<><><>0<>0<><>::uid://fsui23n35kob::::res://scripts/MainMenu.gd<>uid://dsjq38nqxasev::::res://SFX/614091__szegvari__dark-atmo-vocal-myst-thriller-fantasy.wav<>uid://unnx1awb1jkk::::res://SFX/707041__vilkas_sound__vs-button-click-04.mp3
-::res://scenes/ui/::1755384532
-DialogBox.tscn::PackedScene::3092273572419307017::1755384532::0::1::::<><><>0<>0<><>::uid://28agngegbdlj::::res://scripts/DialogBox.gd<>uid://unnx1awb1jkk::::res://SFX/707041__vilkas_sound__vs-button-click-04.mp3
+act1_shrine.json::JSON/JSON::-1::1755384271::0::1::::<><><>0<>0<><>::
+act2_market.json::JSON/JSON::-1::1755384271::0::1::::<><><>0<>0<><>::
+act3_womb_below.json::JSON/JSON::-1::1755384271::0::1::::<><><>0<>0<><>::
+endings.json::JSON/JSON::4037040811564085676::1755384271::0::1::::<><><>0<>0<><>::
+endings_info.json::JSON/JSON::-1::1755384271::0::1::::<><><>0<>0<><>::
+::res://Images/::1755387401
+Screenshot 2025-08-16 193521.png::CompressedTexture2D/CompressedTexture2D::406106826994807943::1755387344::1755387401::1::::<><><>0<>0<>75307f52314a15185b1266713d5ec88b<>res://.godot/imported/Screenshot 2025-08-16 193521.png-35344498d6367f9a352d6b700e60e1ee.ctex::
+Screenshot 2025-08-16 193605.png::CompressedTexture2D/CompressedTexture2D::1224723412410844554::1755387377::1755387401::1::::<><><>0<>0<>febc2d4b71a0f4a5e621e2e760de1ed2<>res://.godot/imported/Screenshot 2025-08-16 193605.png-e4d4ec2f629fe9adc178215542870a6a.ctex::
+::res://scenes/::1755388356
+EndGame.tscn::PackedScene::2705378983705438018::1755388356::0::1::::<><><>0<>0<><>::uid://bbb07jkd3rqce::::res://scripts/EndGame.gd<>uid://unnx1awb1jkk::::res://SFX/707041__vilkas_sound__vs-button-click-04.mp3<>uid://rpjasd22yche::::res://Images/Screenshot 2025-08-16 193605.png<>uid://becqb5cs55qlu::::res://SFX/55831__sergenious__fantasy.wav
+Main.tscn::PackedScene::4460983383485174393::1755388356::0::1::::<><><>0<>0<><>::uid://bkb6j82pg233j::::res://scenes/ui/DialogBox.tscn<>uid://j6tvweu1e8jk::::res://scripts/SceneController.gd
+MainMenu.tscn::PackedScene::3701830524897843086::1755388356::0::1::::<><><>0<>0<><>::uid://fsui23n35kob::::res://scripts/MainMenu.gd<>uid://dsjq38nqxasev::::res://SFX/614091__szegvari__dark-atmo-vocal-myst-thriller-fantasy.wav<>uid://rpjasd22yche::::res://Images/Screenshot 2025-08-16 193605.png<>uid://unnx1awb1jkk::::res://SFX/707041__vilkas_sound__vs-button-click-04.mp3
+::res://scenes/ui/::1755388356
+DialogBox.tscn::PackedScene::3092273572419307017::1755388356::0::1::::<><><>0<>0<><>::uid://28agngegbdlj::::res://scripts/DialogBox.gd<>uid://unnx1awb1jkk::::res://SFX/707041__vilkas_sound__vs-button-click-04.mp3<>uid://rpjasd22yche::::res://Images/Screenshot 2025-08-16 193605.png
 ::res://scripts/::1755384418
-DialogBox.gd::GDScript::1963234651136457587::1755384271::0::1::::<>CanvasLayer<><>0<>0<><>::
-EndGame.gd::GDScript::2460249463641917360::1755384271::0::1::::<>Control<><>0<>0<><>::
-EndingDeterminer.gd::GDScript::8226897125818420605::1755384271::0::1::::<>Node<><>0<>0<><>::
-MainMenu.gd::GDScript::389333105984052949::1755384271::0::1::::<>Node<><>0<>0<><>::
-SceneController.gd::GDScript::696887590289279872::1755384271::0::1::::<>Node<><>0<>0<><>::
+DialogBox.gd::GDScript/GDScript::1963234651136457587::1755384271::0::1::::<>CanvasLayer<><>0<>0<><>::
+EndGame.gd::GDScript/GDScript::2460249463641917360::1755384271::0::1::::<>Control<><>0<>0<><>::
+EndingDeterminer.gd::GDScript/GDScript::8226897125818420605::1755384271::0::1::::<>Node<><>0<>0<><>::
+MainMenu.gd::GDScript/GDScript::389333105984052949::1755384271::0::1::::<>Node<><>0<>0<><>::
+SceneController.gd::GDScript/GDScript::696887590289279872::1755384271::0::1::::<>Node<><>0<>0<><>::
 ::res://SFX/::1755384443
 55831__sergenious__fantasy.wav::AudioStreamWAV/AudioStreamWAV::2672279651080757338::1755384271::1755384271::1::::<><><>0<>0<>481926130ced99fead798489163e316f<>res://.godot/imported/55831__sergenious__fantasy.wav-a9af58564248151b37ec8eaa9a4dedb4.sample::
 539813__szegvari__temple-fantasy-vocal-ambient.wav::AudioStreamWAV/AudioStreamWAV::7142547321916039955::1755384271::1755384271::1::::<><><>0<>0<>8ddb3bb3f9f639738d53d5f2f6b9d23e<>res://.godot/imported/539813__szegvari__temple-fantasy-vocal-ambient.wav-35303479c20941189781e2f249dbe475.sample::
